@@ -1,0 +1,15 @@
+10:20:17 **** Incremental Build of configuration Debug for project 9-28 Functions and Parameters ****
+make all 
+Building file: ../src/9-28 Functions and Parameters.cpp
+Invoking: GCC C++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/9-28 Functions and Parameters.d" -MT"src/9-28\ Functions\ and\ Parameters.d" -o "src/9-28 Functions and Parameters.o" "../src/9-28 Functions and Parameters.cpp"
+Finished building: ../src/9-28 Functions and Parameters.cpp
+ 
+Building target: 9-28 Functions and Parameters
+Invoking: GCC C++ Linker
+g++  -o "9-28 Functions and Parameters"  ./src/9-28\ Functions\ and\ Parameters.o ./src/ArrayFunctions.o ./src/Functions.o   
+Finished building target: 9-28 Functions and Parameters
+ 
+
+10:20:17 Build Finished (took 386ms)
+

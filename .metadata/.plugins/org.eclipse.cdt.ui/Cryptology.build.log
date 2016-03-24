@@ -1,0 +1,15 @@
+09:42:49 **** Build of configuration Debug for project Cryptology ****
+make all 
+Building file: ../src/Cryptology.cpp
+Invoking: GCC C++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/Cryptology.d" -MT"src/Cryptology.o" -o "src/Cryptology.o" "../src/Cryptology.cpp"
+Finished building: ../src/Cryptology.cpp
+ 
+Building target: Cryptology
+Invoking: GCC C++ Linker
+g++  -o "Cryptology"  ./src/Cryptology.o   
+Finished building target: Cryptology
+ 
+
+09:42:50 Build Finished (took 698ms)
+

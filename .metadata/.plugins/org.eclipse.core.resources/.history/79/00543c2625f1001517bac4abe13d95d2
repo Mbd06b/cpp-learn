@@ -1,0 +1,86 @@
+/*
+ * Array.h
+ *
+ *  Created on: Feb 29, 2016
+ *      Author: mbd06b
+ */
+
+#ifndef ARRAY_H_
+#define ARRAY_H_
+
+
+
+template <class D, int Low , int High >
+class Array
+{
+	public:
+		enum Exceptions {IndexOutOfBounds = 1};
+
+//Constructors
+		Array (); //default, a pointer array with no rows or columns.
+		Array (const Array <D, Low, High> &); //copy constructor
+		~Array ();//destructor
+
+
+		Array <D, Low, High> & operator = 	  (const Array<D, Low, High> &);
+		D & operator [] (int) throw (); //int is the index location.
+		D   operator [] (int) const throw ();
+
+
+
+
+			//void bool GetAt(itn i, D & d){
+				//d = D [i];
+				//	}
+
+
+
+	private:
+		D gArray [High - Low + 1]; //array of int || string || double || or whatever
+								  //this does not need to be a pointer array because we are passing the size in the template arguments
+								  //if we didn't know the size, we would use a pointer and allocate memory with new & Delete in the constructors.
+
+
+
+
+
+};
+
+//Array Access Operator Overload.
+template <class D, int Low, int High >
+D & Array <D, Low, High>:: operator [] (int toAccess) throw (){
+	throw IndexOutOfBounds;
+
+
+
+
+//	throw 5;
+
+}
+
+
+//Default
+template <class D, int Low, int High >
+Array <D, Low, High>::Array(){
+}
+
+//Destructor
+template <class D, int Low, int High >
+Array <D, Low, High>::~Array(){
+}
+
+//Copy Constructor
+template <class D, int Low, int High >
+Array <D, Low, High>::Array(const Array<D, Low, High> & toCopy){
+
+
+	for(int i = 0; i < (High - Low + 1);i++){
+		gArray [i] = toCopy.gArray[i];
+	}
+}
+
+
+
+#endif /* ARRAY_H_ */
+
+

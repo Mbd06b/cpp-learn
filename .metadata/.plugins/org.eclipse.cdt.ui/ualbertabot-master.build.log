@@ -1,0 +1,6 @@
+11:49:08 **** Clean-only build of configuration Default for project ualbertabot-master ****
+make clean 
+make: *** No rule to make target `clean'.  Stop.
+
+11:49:08 Build Finished (took 116ms)
+

@@ -1,0 +1,25 @@
+18:02:00 **** Incremental Build of configuration Debug for project Test Bench ****
+make all 
+Building file: ../src/Test Bench.cpp
+Invoking: GCC C++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/Test Bench.d" -MT"src/Test\ Bench.d" -o "src/Test Bench.o" "../src/Test Bench.cpp"
+../src/Test Bench.cpp:13:44: error: expected ‘)’ before ‘;’ token
+ int compareCards(const void *, const void *;
+                                            ^
+../src/Test Bench.cpp:14:18: error: ‘Card’ was not declared in this scope
+ int evaluateHand(Card[]);
+                  ^
+../src/Test Bench.cpp:14:23: error: expected primary-expression before ‘]’ token
+ int evaluateHand(Card[]);
+                       ^
+../src/Test Bench.cpp: In function ‘int evaluateHand(Card*)’:
+../src/Test Bench.cpp:35:29: error: ‘int evaluateHand(Card*)’ redeclared as different kind of symbol
+ int evaluateHand(Card hand[]){
+                             ^
+../src/Test Bench.cpp:14:5: error: previous declaration of ‘int evaluateHand’
+ int evaluateHand(Card[]);
+     ^
+make: *** [src/Test Bench.o] Error 1
+
+18:02:00 Build Finished (took 279ms)
+

@@ -1,0 +1,13 @@
+21:05:34 **** Build of configuration Default for project Ualbertabot ****
+make all 
+Building file: ../Source/research/visualizer/Display.cpp
+Invoking: GCC C++ Compiler
+g++ -O2 -g -Wall -c -fmessage-length=0 -MMD -MP -MF"Source/research/visualizer/Display.d" -MT"Source/research/visualizer/Display.o" -o "Source/research/visualizer/Display.o" "../Source/research/visualizer/Display.cpp"
+../Source/research/visualizer/Display.cpp:1:20: fatal error: Common.h: No such file or directory
+ #include "Common.h"
+                    ^
+compilation terminated.
+make: *** [Source/research/visualizer/Display.o] Error 1
+
+21:05:35 Build Finished (took 351ms)
+

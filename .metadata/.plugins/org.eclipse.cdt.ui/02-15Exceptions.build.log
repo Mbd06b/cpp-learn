@@ -1,0 +1,15 @@
+14:47:28 **** Incremental Build of configuration Debug for project 02-15Exceptions ****
+make all 
+Building file: ../src/02-15Exceptions.cpp
+Invoking: GCC C++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/02-15Exceptions.d" -MT"src/02-15Exceptions.o" -o "src/02-15Exceptions.o" "../src/02-15Exceptions.cpp"
+../src/02-15Exceptions.cpp:18:25: error: expected type-specifier before ‘...’ token
+ void Func1 (int) throw (...);
+                         ^
+../src/02-15Exceptions.cpp:19:25: error: expected type-specifier before ‘...’ token
+ void Func2 (int) throw (...);// if there is a potential to have a throw in the function.  throw (...) just lets people know that Func2 might throw an exception.
+                         ^
+make: *** [src/02-15Exceptions.o] Error 1
+
+14:47:28 Build Finished (took 550ms)
+

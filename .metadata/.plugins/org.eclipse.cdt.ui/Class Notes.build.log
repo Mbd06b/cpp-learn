@@ -1,0 +1,15 @@
+10:09:25 **** Build of configuration Debug for project Class Notes ****
+make all 
+Building file: ../src/Class Notes.cpp
+Invoking: GCC C++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/Class Notes.d" -MT"src/Class\ Notes.d" -o "src/Class Notes.o" "../src/Class Notes.cpp"
+Finished building: ../src/Class Notes.cpp
+ 
+Building target: Class Notes
+Invoking: GCC C++ Linker
+g++  -o "Class Notes"  ./src/Class\ Notes.o   
+Finished building target: Class Notes
+ 
+
+10:09:25 Build Finished (took 446ms)
+

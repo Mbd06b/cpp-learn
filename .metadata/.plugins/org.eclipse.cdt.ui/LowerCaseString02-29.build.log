@@ -1,0 +1,14 @@
+14:47:33 **** Incremental Build of configuration Debug for project LowerCaseString02-29 ****
+make all 
+Building file: ../src/02-29LowerCaseString.cpp
+Invoking: GCC C++ Compiler
+g++ -I/home/mbd06b/eclipse/libraries -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/02-29LowerCaseString.d" -MT"src/02-29LowerCaseString.o" -o "src/02-29LowerCaseString.o" "../src/02-29LowerCaseString.cpp"
+In file included from ../src/02-29LowerCaseString.cpp:10:0:
+../src/LowerCaseString.h:12:24: fatal error: WCS_String.h: No such file or directory
+ #include <WCS_String.h>
+                        ^
+compilation terminated.
+make: *** [src/02-29LowerCaseString.o] Error 1
+
+14:47:34 Build Finished (took 278ms)
+

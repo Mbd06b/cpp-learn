@@ -1,0 +1,15 @@
+10:00:21 **** Build of configuration Debug for project 10-14 Sinking Sort ****
+make all 
+Building file: ../src/Sort.cpp
+Invoking: GCC C++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/Sort.d" -MT"src/Sort.d" -o "src/Sort.o" "../src/Sort.cpp"
+Finished building: ../src/Sort.cpp
+ 
+Building target: 10-14 Sinking Sort
+Invoking: GCC C++ Linker
+g++  -o "10-14 Sinking Sort"  ./src/10-14\ Sinking\ Sort.o ./src/Sort.o   
+Finished building target: 10-14 Sinking Sort
+ 
+
+10:00:21 Build Finished (took 239ms)
+

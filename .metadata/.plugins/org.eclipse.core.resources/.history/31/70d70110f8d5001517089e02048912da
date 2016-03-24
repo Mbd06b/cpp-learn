@@ -1,0 +1,114 @@
+/*
+ * class.h
+ *
+ *  Created on: Feb 3, 2016
+ *      Author: mbd06b
+ */
+
+#ifndef CLASS_H_
+#define CLASS_H_
+
+#include <iostream>
+#include <string.h>
+using namespace std;
+
+
+
+class String{
+
+	public:
+					String		 (); //Default constructor.- "one with no parameters to initialize the class to empty;"
+					String		 (const char []);//C-TYPE Constructor one with a pointer to a “C” type string as a parameter to initialize the class to contain a copy of that string;
+					String 		 (const String &);//COPY Class Constructor and one with a parameter that is of class String to initialize to a copy of that value.
+
+					~String		 (); //Destructor
+
+
+
+//------------Methods---------------
+			int		    Compare  (const char []) const;//"Comparison function (Compare) to allow the comparison of the String object to another String object or to a “C” type string."
+			int			Compare  (const String &) const;
+
+			//Length function (Len) to return the number of characters stored in the String object.
+			unsigned long 	Length  () const;
+
+			void			Display  (const String &) const;
+
+
+//"Copy function (Copy) to copy another String object into this one or copy a “C” type string into this object."
+			String &	Copy 	 (const String &); //STRING COPY
+			String & 	Copy 	 (const char []); //CTYPE STRING COPY
+			String &    Concat	 (const String &);
+			String &    Concat	 (const char []);
+
+
+
+
+		//------------OPERATOR FOR THE DISPLAY INLINE FUNC---------------
+					   operator const char *	 () const;//const here for the ostream Display method because they are not changing anything in the class.
+
+
+	private:
+		unsigned long	numChars; //size_t aka unsigned long (positive only)
+		size_t numSlots;
+		char * pData;
+
+		//variables for concatenation
+		size_t numTempChars;
+		size_t numTempSlots;
+		char * pTempData;
+
+};
+
+//Comparison function (Compare) to allow the comparison of the String object to another String object or to a “C” type string.
+inline int String::Compare (const char str []) const{
+
+	return strcmp(pData, str); //will return -1,0, or 1;
+};
+
+inline int String::Compare(const String & str) const{
+
+	return strcmp(pData,str);
+}
+
+
+
+//------------------------DISPLAY FUNCTION ------------------------------------------
+//Display function (Display) to display the characters in the String object.
+inline ostream & operator << (ostream & out, const String & str){
+	out << (const char *) str;
+	return out;
+}
+
+inline String::operator const char * () const{
+	return pData;
+}
+
+inline unsigned long String::Length() const{
+
+	return numChars;
+
+}
+
+//DISPLAY FUNCTION
+
+
+void String::Display (const String & str) const{
+
+cout << pData << endl;
+
+};
+
+
+
+/*
+
+Concatenation function (Concat) to allow concatenation of the String object to another and to allow concatenation of the String object to a “C” type string.
+
+
+ */
+
+
+
+
+#endif /* CLASS_H_ */

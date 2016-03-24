@@ -1,0 +1,10 @@
+10:11:37 **** Incremental Build of configuration Debug for project ProjectAir ****
+make all 
+Building target: ProjectAir
+Invoking: GCC C++ Linker
+g++  -o "ProjectAir"  ./src/(11-09)\ AirProject.o ./src/Commands.o ./src/Planes.o ./src/ReadInt.o ./src/ReadString.o   
+/bin/sh: 1: Syntax error: "(" unexpected
+make: *** [ProjectAir] Error 2
+
+10:11:37 Build Finished (took 68ms)
+

@@ -1,0 +1,10 @@
+11:42:19 **** Build of configuration Debug for project (10-28) Structures (Cards) ****
+make all 
+Building target: lib
+Invoking: GCC C++ Linker
+g++ -shared -o "lib(10-28) Structures (Cards)"  ./src/(10-28)\ Structures\ (Cards).o ./src/Card.o   
+/bin/sh: 1: Syntax error: "(" unexpected
+make: *** [lib(10-28) Structures (Cards)] Error 2
+
+11:42:19 Build Finished (took 111ms)
+

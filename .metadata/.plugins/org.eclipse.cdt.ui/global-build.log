@@ -1,0 +1,197 @@
+22:10:05 **** Incremental Build of configuration Debug for project Lab03GenericDataArray ****
+make all 
+Building file: ../src/Lab03GenericDataArray.cpp
+Invoking: GCC C++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/Lab03GenericDataArray.d" -MT"src/Lab03GenericDataArray.o" -o "src/Lab03GenericDataArray.o" "../src/Lab03GenericDataArray.cpp"
+Finished building: ../src/Lab03GenericDataArray.cpp
+ 
+Building target: Lab03GenericDataArray
+Invoking: GCC C++ Linker
+g++  -o "Lab03GenericDataArray"  ./src/Lab03GenericDataArray.o   
+Finished building target: Lab03GenericDataArray
+ 
+14:47:24 **** Incremental Build of configuration Debug for project 01-20 ExampleClass ****
+make all 
+make: Nothing to be done for `all'.
+14:47:27 **** Incremental Build of configuration Debug for project 01-25myStringConstructors ****
+make all 
+make: Nothing to be done for `all'.
+14:47:27 **** Incremental Build of configuration Debug for project 02-03 IntArray ****
+make all 
+make: Nothing to be done for `all'.
+14:47:28 **** Incremental Build of configuration Debug for project 02-08GenericArray ****
+make all 
+make: Nothing to be done for `all'.
+14:47:28 **** Incremental Build of configuration Debug for project 02-15Exceptions ****
+make all 
+Building file: ../src/02-15Exceptions.cpp
+Invoking: GCC C++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/02-15Exceptions.d" -MT"src/02-15Exceptions.o" -o "src/02-15Exceptions.o" "../src/02-15Exceptions.cpp"
+../src/02-15Exceptions.cpp:18:25: error: expected type-specifier before ‘...’ token
+ void Func1 (int) throw (...);
+                         ^
+../src/02-15Exceptions.cpp:19:25: error: expected type-specifier before ‘...’ token
+ void Func2 (int) throw (...);// if there is a potential to have a throw in the function.  throw (...) just lets people know that Func2 might throw an exception.
+                         ^
+make: *** [src/02-15Exceptions.o] Error 1
+14:47:29 **** Incremental Build of configuration Debug for project 02-17Name ****
+make all 
+Building file: ../src/02-17Name.cpp
+Invoking: GCC C++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/02-17Name.d" -MT"src/02-17Name.o" -o "src/02-17Name.o" "../src/02-17Name.cpp"
+In file included from ../src/02-17Name.cpp:10:0:
+../src/Name.h:14:63: fatal error: WCS_String.h: No such file or directory
+ #include <WCS_String.h>  //Bill will provide this class later.
+                                                               ^
+compilation terminated.
+make: *** [src/02-17Name.o] Error 1
+14:47:29 **** Incremental Build of configuration Debug for project 02-22Name2 ****
+make all 
+make: Nothing to be done for `all'.
+14:47:30 **** Clean-only build of configuration Debug for project 02-29LowerCaseString ****
+make clean 
+rm -rf  ./src/02-29LowerCaseString.o ./src/LowerCaseString.o  ./src/02-29LowerCaseString.d ./src/LowerCaseString.d  lib02-29LowerCaseString
+ 
+
+**** Build of configuration Debug for project 02-29LowerCaseString ****
+
+Nothing to build for project 02-29LowerCaseString
+14:47:30 **** Incremental Build of configuration Debug for project 03-21FileIO ****
+make all 
+Building file: ../src/03-21FileIO.cpp
+Invoking: GCC C++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/03-21FileIO.d" -MT"src/03-21FileIO.o" -o "src/03-21FileIO.o" "../src/03-21FileIO.cpp"
+../src/03-21FileIO.cpp: In function ‘int main()’:
+../src/03-21FileIO.cpp:71:12: error: ‘x’ was not declared in this scope
+  myFile >> x;  //to read
+            ^
+../src/03-21FileIO.cpp:75:21: error: expected primary-expression before ‘)’ token
+  myFile.getline (---);
+                     ^
+make: *** [src/03-21FileIO.o] Error 1
+14:47:31 **** Incremental Build of configuration Debug for project 03-21Static ****
+make all 
+Building file: ../src/03-21Static.cpp
+Invoking: GCC C++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/03-21Static.d" -MT"src/03-21Static.o" -o "src/03-21Static.o" "../src/03-21Static.cpp"
+In file included from ../src/03-21Static.cpp:11:0:
+../src/MyClass.h:30:1: error: expected ‘;’ after class definition
+ }
+ ^
+make: *** [src/03-21Static.o] Error 1
+14:47:31 **** Incremental Build of configuration Debug for project 03-23ReadfromFile ****
+make all 
+make: Nothing to be done for `all'.
+14:47:32 **** Incremental Build of configuration Debug for project 03-23WritetoFile ****
+make all 
+make: Nothing to be done for `all'.
+14:47:32 **** Incremental Build of configuration Debug for project AnotherGenericArray ****
+make all 
+make: Nothing to be done for `all'.
+14:47:32 **** Incremental Build of configuration Debug for project Lab03GenericDataArray ****
+make all 
+Building file: ../src/Lab03GenericDataArray.cpp
+Invoking: GCC C++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/Lab03GenericDataArray.d" -MT"src/Lab03GenericDataArray.o" -o "src/Lab03GenericDataArray.o" "../src/Lab03GenericDataArray.cpp"
+Finished building: ../src/Lab03GenericDataArray.cpp
+ 
+Building target: Lab03GenericDataArray
+Invoking: GCC C++ Linker
+g++  -o "Lab03GenericDataArray"  ./src/Lab03GenericDataArray.o   
+Finished building target: Lab03GenericDataArray
+ 
+14:47:33 **** Incremental Build of configuration Debug for project Lab11CharSort ****
+make all 
+make: Nothing to be done for `all'.
+14:47:33 **** Incremental Build of configuration Debug for project Lab12DynNameSort ****
+make all 
+make: Nothing to be done for `all'.
+14:47:33 **** Incremental Build of configuration Debug for project LabOneClasses ****
+make all 
+make: Nothing to be done for `all'.
+14:47:33 **** Incremental Build of configuration Debug for project LowerCaseString02-29 ****
+make all 
+Building file: ../src/02-29LowerCaseString.cpp
+Invoking: GCC C++ Compiler
+g++ -I/home/mbd06b/eclipse/libraries -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/02-29LowerCaseString.d" -MT"src/02-29LowerCaseString.o" -o "src/02-29LowerCaseString.o" "../src/02-29LowerCaseString.cpp"
+In file included from ../src/02-29LowerCaseString.cpp:10:0:
+../src/LowerCaseString.h:12:24: fatal error: WCS_String.h: No such file or directory
+ #include <WCS_String.h>
+                        ^
+compilation terminated.
+make: *** [src/02-29LowerCaseString.o] Error 1
+14:47:34 **** Incremental Build of configuration Debug for project Poker ****
+make all 
+make: Nothing to be done for `all'.
+14:47:34 **** Incremental Build of configuration Debug for project Project ****
+make all 
+make: Nothing to be done for `all'.
+14:47:34 **** Incremental Build of configuration Debug for project TestReview ****
+make all 
+Building file: ../src/BMI.cpp
+Invoking: GCC C++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/BMI.d" -MT"src/BMI.o" -o "src/BMI.o" "../src/BMI.cpp"
+In file included from ../src/BMI.cpp:8:0:
+../src/BMI.h:23:7: error: ‘D’ is not a template
+  BMI (D <string>, D <int>, D <double>);
+       ^
+../src/BMI.h:23:19: error: ‘D’ is not a template
+  BMI (D <string>, D <int>, D <double>);
+                   ^
+../src/BMI.h:23:28: error: ‘D’ is not a template
+  BMI (D <string>, D <int>, D <double>);
+                            ^
+../src/BMI.h:68:1: error: invalid use of template-name ‘BMI’ without an argument list
+ BMI::BMI(){
+ ^
+../src/BMI.h:77:1: error: invalid use of template-name ‘BMI’ without an argument list
+ BMI::BMI(D <string> name, int height, double weight){
+ ^
+../src/BMI.h:86:1: error: invalid use of template-name ‘BMI’ without an argument list
+ BMI::~BMI(){}; //destructor.
+ ^
+../src/BMI.h:88:8: error: ‘template<class D> class BMI’ used without template parameters
+ string BMI::getName() const {
+        ^
+../src/BMI.h:88:23: error: non-member function ‘std::string getName()’ cannot have cv-qualifier
+ string BMI::getName() const {
+                       ^
+../src/BMI.h: In function ‘std::string getName()’:
+../src/BMI.h:89:9: error: ‘newName’ was not declared in this scope
+  return newName;
+         ^
+../src/BMI.h: At global scope:
+../src/BMI.h:92:6: error: ‘template<class D> class BMI’ used without template parameters
+ int  BMI::getHeight() const {
+      ^
+../src/BMI.h:92:23: error: non-member function ‘int getHeight()’ cannot have cv-qualifier
+ int  BMI::getHeight() const {
+                       ^
+../src/BMI.h: In function ‘int getHeight()’:
+../src/BMI.h:93:9: error: ‘newHeight’ was not declared in this scope
+  return newHeight;
+         ^
+../src/BMI.h: At global scope:
+../src/BMI.h:96:8: error: ‘template<class D> class BMI’ used without template parameters
+ double BMI::getWeight() const {
+        ^
+../src/BMI.h:96:25: error: non-member function ‘double getWeight()’ cannot have cv-qualifier
+ double BMI::getWeight() const {
+                         ^
+../src/BMI.h: In function ‘double getWeight()’:
+../src/BMI.h:97:9: error: ‘newWeight’ was not declared in this scope
+  return newWeight;
+         ^
+../src/BMI.h: In function ‘std::string getName()’:
+../src/BMI.h:90:1: warning: control reaches end of non-void function [-Wreturn-type]
+ }
+ ^
+../src/BMI.h: In function ‘int getHeight()’:
+../src/BMI.h:94:1: warning: control reaches end of non-void function [-Wreturn-type]
+ }
+ ^
+../src/BMI.h: In function ‘double getWeight()’:
+../src/BMI.h:98:1: warning: control reaches end of non-void function [-Wreturn-type]
+ }
+ ^
+make: *** [src/BMI.o] Error 1

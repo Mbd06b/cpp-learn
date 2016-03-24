@@ -1,0 +1,36 @@
+//============================================================================
+// Name        : 03-21Static.cpp
+// Author      : 
+// Version     :
+// Copyright   : Your copyright notice
+// Description : Hello World in C++, Ansi-style
+//============================================================================
+
+#include <iostream>
+#include "Functions.h"
+#include "MyClass.h"
+using namespace std;
+
+int Func2();
+
+extern int Global; // extern means that this variable is declared in another .cpp file.
+
+int main() {
+
+
+	cout << "Func1 gives back " << Func1() << endl;
+	cout << "Func1 gives back " << Func1() << endl;
+	cout << "Func1 gives back " << Func1() << endl;
+
+	cout << "FUnc2 Gives back " << Func2() << endl;
+
+	cout << "Global has the value of " << Global << endl; //cannot access Global unless extern int Global: is declared.
+	cout << "MyClass.B has the value of " << Test1::GetB() << endl;
+
+
+	return 0;
+}
+
+int Func2 (){
+	return -1;
+}

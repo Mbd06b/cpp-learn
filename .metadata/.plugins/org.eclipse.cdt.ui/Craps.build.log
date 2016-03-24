@@ -1,0 +1,15 @@
+09:42:48 **** Build of configuration Debug for project Craps ****
+make all 
+Building file: ../src/Craps.cpp
+Invoking: GCC C++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/Craps.d" -MT"src/Craps.o" -o "src/Craps.o" "../src/Craps.cpp"
+Finished building: ../src/Craps.cpp
+ 
+Building target: Craps
+Invoking: GCC C++ Linker
+g++  -o "Craps"  ./src/Craps.o   
+Finished building target: Craps
+ 
+
+09:42:49 Build Finished (took 779ms)
+

@@ -1,0 +1,10 @@
+09:42:46 **** Build of configuration Debug for project (10-26)BinarySearch ****
+make all 
+Building target: (10-26)BinarySearch
+/bin/sh: 1: Syntax error: "(" unexpected
+Invoking: GCC C++ Linker
+g++  -o "(10-26)BinarySearch"  ./src/(10-26)BinarySearch.o ./src/BinarySFunc.o   
+make: *** [(10-26)BinarySearch] Error 2
+
+09:42:46 Build Finished (took 141ms)
+

@@ -1,0 +1,102 @@
+//============================================================================
+// DESCRIPTION : Program 11, CharSort Lab
+// CLASS       : COSC 1436.S01
+// AUTHOR      : Matthew Dowell
+// DATE        : 10/28/2015
+//============================================================================
+
+/* Sort (char * Names[])  // we are comparing an array of pointer locations,  Not an array, this allows us
+ * 						//to effectively manipulate multi-dimensional arrays because we do not need to be specific
+ * 						//about the multiple dimensions.
+ * 	{ char* Temp;
+ * 	if (strcmp (Names [i], Names [i++]))
+ * 		{Temp = Names [i];
+ * 		}
+ *
+ *char * Temp;
+ * if ((strcmp (Names [i], Names [i + 1]) > 0))
+ * 		{
+ * 		Temp = Names [i],
+ * 		Names [i] = Names [i + 1];
+ * 		Names [i + 1] = Temp;
+ *
+ *
+ *
+ *
+ */
+
+	#include "ReadString.h"
+	#include <iostream>
+	#include <string.h>
+
+	using namespace std;
+
+	int main() {
+
+			const int FirstGuess = 20; //Initial size guess for our char *pArray
+			int NamesCounter = 0; //tracks number of names(slots) needed for our dynamic array.
+			int Rows;
+			int i = 0;
+			bool Test = false;
+			int Validation = 0;
+			char **pNameArray; //a pointer to pass the values of our array.
+
+
+/*------------------------------MAX TEST FOR ROWS (How many names), cannot be > 0 or < 20. MAXIMUM IS 20--------------------------------------
+		while (Test != true)
+		{
+			cout << "Enter how many Names you want to enter (max 20): " << endl;
+			cin >> Rows;
+			cin.ignore(); //ignores 1 char (\n) after cin. this is important because in GetString, it sees the \n and returns nothing one time
+
+			if (Rows > 20 )
+			{
+				cout << "You can't enter more than 20.  Try again." << endl;
+				Test = false;
+			}
+			else if (Rows <= 0)
+			{
+				cout << "Enter a valid number" << endl;
+				Test = false;
+			}
+			else
+			{
+			Test = true;
+			}
+		}
+----------------------------------------------------------------------------------*/
+
+	cout << "Enter Names to Sort: " << endl;
+
+	cin.ignore();
+
+
+	// Create the Array, after getting my Row values
+		char *pArray [FirstGuess]; //creates a pointer array with {FirstGuess} number of slots.
+
+	//-----------------------------Loop to input our names, with dynamic array sizing based on how many names entered------------------------
+			while (pArray [i] < 0)
+				{
+				cout << ">";
+				pArray [i] = ReadString(); //Returns a Name "B'I'L'L'\0"
+				NamesCounter++;
+				cout << "    You Entered: " << pArray [i];
+				cout << endl;
+
+				}
+
+			cout << "Unsorted names are " << endl;
+					for (int i = 0; i < Rows; i++)
+						{
+						cout << pNameArray [i] << ", ";
+						}
+					cout << endl;
+	//---------------------------------------pArray is now Full and ready to input into **Dynamic Array-------------------
+
+		pNameArray = new char * [Rows]; //creating the dimension of our pointer array.
+
+
+
+	return 0;
+	}
+

@@ -1,0 +1,19 @@
+10:06:09 **** Incremental Build of configuration Debug for project 09-30 Functions with Arrays ****
+make all 
+Building file: ../src/Main.cpp
+Invoking: GCC C++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/Main.d" -MT"src/Main.d" -o "src/Main.o" "../src/Main.cpp"
+../src/Main.cpp: In function ‘int main()’:
+../src/Main.cpp:20:79: error: ‘CountCharacters’ was not declared in this scope
+  cout << "Number of characters in " << Str1 << " is " << CountCharacters (Str1) << endl;
+                                                                               ^
+../src/Main.cpp:17:7: warning: unused variable ‘ValidOperators’ [-Wunused-variable]
+  char ValidOperators [] = "+-*/XxCc";
+       ^
+../src/Main.cpp:18:8: warning: unused variable ‘Op’ [-Wunused-variable]
+  char  Op;
+        ^
+make: *** [src/Main.o] Error 1
+
+10:06:09 Build Finished (took 215ms)
+

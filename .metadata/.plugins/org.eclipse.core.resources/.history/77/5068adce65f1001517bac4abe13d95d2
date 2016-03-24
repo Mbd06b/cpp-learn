@@ -1,0 +1,53 @@
+//============================================================================
+// Name        : Lab03GenericDataArray.cpp
+// Author      :
+// Version     :
+// Copyright   : Your copyright notice
+// Description : Hello World in C++, Ansi-style
+//============================================================================
+
+
+#include "Array.h"
+#include <iostream>
+using namespace std;
+
+
+#include <iostream>
+using namespace std;
+
+int main (){
+
+Array <int, -3, 6>  testObject;
+
+Array <int, -3, 6>  secondObj;
+
+testObject.setAt(-3,10);
+testObject.setAt(-2,10);
+
+try{
+
+	testObject.setAt(-4, 15);
+catch(int exception);
+}
+
+
+
+
+	return 0;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,15 @@
+14:47:32 **** Incremental Build of configuration Debug for project Lab03GenericDataArray ****
+make all 
+Building file: ../src/Lab03GenericDataArray.cpp
+Invoking: GCC C++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/Lab03GenericDataArray.d" -MT"src/Lab03GenericDataArray.o" -o "src/Lab03GenericDataArray.o" "../src/Lab03GenericDataArray.cpp"
+Finished building: ../src/Lab03GenericDataArray.cpp
+ 
+Building target: Lab03GenericDataArray
+Invoking: GCC C++ Linker
+g++  -o "Lab03GenericDataArray"  ./src/Lab03GenericDataArray.o   
+Finished building target: Lab03GenericDataArray
+ 
+
+14:47:33 Build Finished (took 480ms)
+

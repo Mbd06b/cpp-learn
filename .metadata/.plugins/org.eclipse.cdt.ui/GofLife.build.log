@@ -1,0 +1,15 @@
+12:18:05 **** Incremental Build of configuration Debug for project GofLife ****
+make all 
+Building file: ../src/GofLife.cpp
+Invoking: GCC C++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/GofLife.d" -MT"src/GofLife.d" -o "src/GofLife.o" "../src/GofLife.cpp"
+Finished building: ../src/GofLife.cpp
+ 
+Building target: GofLife
+Invoking: GCC C++ Linker
+g++  -o "GofLife"  ./src/GofLife.o   
+Finished building target: GofLife
+ 
+
+12:18:05 Build Finished (took 585ms)
+

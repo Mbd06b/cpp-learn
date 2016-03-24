@@ -1,0 +1,34 @@
+//============================================================================
+// Name        : (10-19).cpp
+// Author      : 
+// Version     :
+// Copyright   : Your copyright notice
+// Description : Hello World in C++, Ansi-style
+//============================================================================
+
+#include <iostream>
+using namespace std;
+
+int main() {
+
+	int * pInt; //the * means that this variable will contain the address of pInt;
+  char* pChar; //the space between the data type and * is optional
+  int	X; 		//just a style thing,  adding 'p' to the beginning our our named variable
+  	  	  	  	 //helps us to identify that this is a pointer.
+
+  X = 5;
+  pInt = &X; //the & here means get the address of variable X
+
+  cout << "X is at location " << pInt << " and contains " << *pInt << endl;
+
+
+
+  	 *pInt = -99; //places a value at the address found in pInt
+  	 cout << "X now contains " << X << endl;
+
+  	 //doing *pInt means to get what is at the address in pInt
+	  //this is known as dereferencing pInt
+
+
+  return 0;
+}

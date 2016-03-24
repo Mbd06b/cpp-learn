@@ -1,0 +1,15 @@
+10:57:59 **** Incremental Build of configuration Debug for project Program4Solution ****
+make all 
+Building file: ../src/Program4Solution.cpp
+Invoking: GCC C++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/Program4Solution.d" -MT"src/Program4Solution.d" -o "src/Program4Solution.o" "../src/Program4Solution.cpp"
+Finished building: ../src/Program4Solution.cpp
+ 
+Building target: Program4Solution
+Invoking: GCC C++ Linker
+g++  -o "Program4Solution"  ./src/Program4Solution.o   
+Finished building target: Program4Solution
+ 
+
+10:57:59 Build Finished (took 378ms)
+
