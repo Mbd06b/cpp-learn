@@ -6,6 +6,7 @@ int main (){
   
   
   cout << "Hello World" << endl; 
+  cout << "added Eclipse C++ nature" << endl;
   
   
   return 0; 
