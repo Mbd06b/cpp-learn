@@ -1,1 +1,1 @@
-src/WhileTest.d: ../src/WhileTest.cpp
+src/WhileTest.o: ../src/WhileTest.cpp

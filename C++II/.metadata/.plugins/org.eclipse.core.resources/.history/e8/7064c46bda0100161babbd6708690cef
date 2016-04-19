@@ -1,0 +1,107 @@
+/*
+ * DigitString.h
+ *
+ *  Created on: Apr 13, 2016
+ *      Author: mbd06b
+ */
+
+#ifndef DIGITSTRING_H_
+#define DIGITSTRING_H_
+
+#include "myStringclass.h"
+using namespace std;
+
+class digitString : public String{
+
+public:									digitString		();
+										digitString		(const String &);
+										digitString		(const char []);
+										~digitString		();
+
+
+										bool  digitCheck ();
+
+										digitString &    Concat	 (const String &);
+										digitString &    Concat	 (const char []);
+
+										digitString   operator & (const String &);
+										digitString   operator & (const char []);
+										digitString & operator &= (const String &);
+										digitString & operator &= (const char []);
+
+private:
+
+};
+
+
+
+//Default Constructor  - "one with no parameters to initialize the class to empty;"
+digitString::digitString (){
+};
+
+//Other Constructor
+digitString::digitString(const String & str): String (str){
+digitCheck();
+};
+
+digitString::digitString (const char str []): String (str){
+digitCheck();
+};
+
+digitString::~digitString(){
+};
+
+
+bool digitString::digitCheck(){
+	for(int i = 0; i < (strlen(*this)); i++){
+		pData[i]
+	}
+
+	return std::all_of(str.begin(), str.end(), ::isdigit)
+	};
+
+}
+
+digitString & digitString::Concat(const String & str){
+digitCheck();
+String::Concat(str);
+
+return *this;
+}
+
+digitString & digitString::Concat(const char str []){
+String::Concat(str);
+toUpper();
+return *this;
+}
+
+
+inline digitString & digitString::operator &= (const char str []){
+return Concat (str);
+}
+
+inline digitString & digitString::operator &= (const String & str){
+return Concat (str);
+}
+
+
+
+inline digitString digitString::operator & (const char str []){
+digitString temp (*this);
+return temp.Concat (str);
+}
+
+
+inline digitString digitString::operator & (const String & str){
+String temp (*this);
+temp.Concat (str);
+return temp;
+}
+
+inline digitString operator & (const digitString & str, const char pChar []){
+String temp (str);
+temp.Concat (str);
+return temp;
+};
+
+#endif /* DIGITSTRING_H_ */

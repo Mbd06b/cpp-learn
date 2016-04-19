@@ -1,1 +1,1 @@
-src/Palindrome.d: ../src/Palindrome.cpp
+src/Palindrome.o: ../src/Palindrome.cpp

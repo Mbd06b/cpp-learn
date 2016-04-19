@@ -1,0 +1,57 @@
+//============================================================================
+// Name        : 03-28qsort.cpp
+// Author      : 
+// Version     :
+// Copyright   : Your copyright notice
+// Description : Hello World in C++, Ansi-style
+//============================================================================
+
+#include <iostream>
+#include <stdlib.h>
+using namespace std;
+
+class Temp{
+	public:
+						Temp(); //constructor
+			 static int Compare (const void *, const void *);  //compare method has to be static
+			 void 		Display ();
+
+	private:
+			 char Words [5] [81]; //array of 5 words, upto 80 chars long.
+
+};
+
+int main() {
+
+	Temp T1;
+
+	cout << "Names before sorting:" < endl;
+	T1.Display();
+
+
+
+
+	return 0;
+}
+
+Temp::Temp (){
+
+		strcpy (Words [0], "George");
+		strcpy (Words [1], "Bobby");
+		strcpy (Words [2], "Susan");
+		strcpy (Words [3], "Darla");
+		strcpy (Words [4], "Abercrombie");
+		strcpy (Words [5], "Fitch");
+}
+
+void Temp::Display(){
+	int i;
+
+	for (i = 0; i < 5; i++) {
+		cout << "\t" << Words [i] << endl;
+	}
+}
+
+int Temp::Compare (const void * one, const void * two){
+
+}

@@ -1,1 +1,1 @@
-src/LoopForSums.d: ../src/LoopForSums.cpp
+src/LoopForSums.o: ../src/LoopForSums.cpp

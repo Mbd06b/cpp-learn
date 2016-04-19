@@ -1,0 +1,10 @@
+14:09:25 **** Incremental Build of configuration Debug for project (10-26)Array of Pointers ****
+make all 
+/bin/sh: 1: Syntax error: "(" unexpected
+Building target: (10-26)Array of Pointers
+make: *** [(10-26)Array of Pointers] Error 2
+Invoking: GCC C++ Linker
+g++  -o "(10-26)Array of Pointers"  ./src/(10-26)Array\ of\ Pointers.o   
+
+14:09:25 Build Finished (took 77ms)
+

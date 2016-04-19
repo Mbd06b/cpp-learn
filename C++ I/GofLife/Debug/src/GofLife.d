@@ -1,1 +1,1 @@
-src/GofLife.d: ../src/GofLife.cpp
+src/GofLife.o: ../src/GofLife.cpp

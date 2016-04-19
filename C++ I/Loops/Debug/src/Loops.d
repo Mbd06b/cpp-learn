@@ -1,1 +1,1 @@
-src/Loops.d: ../src/Loops.cpp
+src/Loops.o: ../src/Loops.cpp

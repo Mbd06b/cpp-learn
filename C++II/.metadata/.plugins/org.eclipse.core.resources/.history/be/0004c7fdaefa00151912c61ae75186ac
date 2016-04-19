@@ -1,0 +1,19 @@
+/*
+ * Address.h
+ *
+ *  Created on: Apr 4, 2016
+ *      Author: mbd06b
+ */
+
+#ifndef ADDRESS_H_
+#define ADDRESS_H_
+
+#include "myStringclass.h"
+
+class Address: public String {
+public:
+	Address();
+	virtual ~Address();
+};
+
+#endif /* ADDRESS_H_ */

@@ -27,7 +27,7 @@ class Test1child : public Test1{ //any instance of Test1a shares the same memebe
 							//that is being shared by instances of Test1;
 
 
-}
+};
 
 
 

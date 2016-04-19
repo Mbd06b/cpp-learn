@@ -1,1 +1,1 @@
-src/SimpleFunction.d: ../src/SimpleFunction.cpp
+src/SimpleFunction.o: ../src/SimpleFunction.cpp

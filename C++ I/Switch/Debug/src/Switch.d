@@ -1,1 +1,1 @@
-src/Switch.d: ../src/Switch.cpp
+src/Switch.o: ../src/Switch.cpp

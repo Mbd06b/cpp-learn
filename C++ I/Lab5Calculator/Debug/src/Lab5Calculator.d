@@ -1,1 +1,1 @@
-src/Lab5Calculator.d: ../src/Lab5Calculator.cpp
+src/Lab5Calculator.o: ../src/Lab5Calculator.cpp

@@ -1,0 +1,50 @@
+14:09:37 **** Incremental Build of configuration Debug for project GoLifeNotes ****
+make all 
+Building file: ../src/GoLifeNotes.cpp
+Invoking: GCC C++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/GoLifeNotes.d" -MT"src/GoLifeNotes.o" -o "src/GoLifeNotes.o" "../src/GoLifeNotes.cpp"
+../src/GoLifeNotes.cpp: In function ‘int main()’:
+../src/GoLifeNotes.cpp:23:16: warning: unused variable ‘WaitTime’ [-Wunused-variable]
+  const time_t  WaitTime (2); //sets time a 2 seconds
+                ^
+../src/GoLifeNotes.cpp:28:8: warning: unused variable ‘Whiletest’ [-Wunused-variable]
+   int  Whiletest;
+        ^
+../src/GoLifeNotes.cpp:31:11: warning: unused variable ‘CurrTime’ [-Wunused-variable]
+   time_t  CurrTime; //shortcut way of writing unsigned long
+           ^
+../src/GoLifeNotes.cpp: At global scope:
+../src/GoLifeNotes.cpp:87:1: error: expected unqualified-id before ‘for’
+ for(int r=0; r<ROWS; r++)
+ ^
+../src/GoLifeNotes.cpp:87:14: error: ‘r’ does not name a type
+ for(int r=0; r<ROWS; r++)
+              ^
+../src/GoLifeNotes.cpp:87:22: error: ‘r’ does not name a type
+ for(int r=0; r<ROWS; r++)
+                      ^
+../src/GoLifeNotes.cpp:102:1: error: expected unqualified-id before ‘for’
+ for(int r = 0; r < ROWS; r++)
+ ^
+../src/GoLifeNotes.cpp:102:16: error: ‘r’ does not name a type
+ for(int r = 0; r < ROWS; r++)
+                ^
+../src/GoLifeNotes.cpp:102:26: error: ‘r’ does not name a type
+ for(int r = 0; r < ROWS; r++)
+                          ^
+../src/GoLifeNotes.cpp:110:1: error: expected unqualified-id before ‘for’
+ for(int k = 0; k < 10; k++)
+ ^
+../src/GoLifeNotes.cpp:110:16: error: ‘k’ does not name a type
+ for(int k = 0; k < 10; k++)
+                ^
+../src/GoLifeNotes.cpp:110:24: error: ‘k’ does not name a type
+ for(int k = 0; k < 10; k++)
+                        ^
+../src/GoLifeNotes.cpp:184:1: error: expected declaration before ‘}’ token
+ }
+ ^
+make: *** [src/GoLifeNotes.o] Error 1
+
+14:09:37 Build Finished (took 399ms)
+

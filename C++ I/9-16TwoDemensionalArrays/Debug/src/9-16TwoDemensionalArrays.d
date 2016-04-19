@@ -1,1 +1,1 @@
-src/9-16TwoDemensionalArrays.d: ../src/9-16TwoDemensionalArrays.cpp
+src/9-16TwoDemensionalArrays.o: ../src/9-16TwoDemensionalArrays.cpp

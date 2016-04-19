@@ -1,0 +1,49 @@
+//============================================================================
+// DESCRIPTION : Lab Five  C++II ToUpper Inheritance Class, with myStringClass.
+// CLASS       : COSC 1437.S02 – Lab 4
+// AUTHOR      : Matthew Dowell
+// DATE        : 04/06/2015
+//============================================================================
+
+#include <iostream>
+#include "UCString.h"
+
+using namespace std;
+
+int main() {
+
+
+	UCString A2;
+	String A3;
+
+//	A2 = ("charlie");
+	A3 = ("charlie");
+
+	cout << A2 << endl;
+
+
+	cout << "I tried to run" << endl;
+
+
+
+/*
+ * try{
+ *
+ * DigitString DS;
+ * }
+ * catch (WCS_String::Exceptions e){
+ * }
+ * catch (DigitString::Exceptions e){
+ * }
+ * catch (...){ //this will catch something, but you can't tell what you've caught.
+ * }
+ *
+ * the compiler should continue along after it receives the catch.
+ *
+ *
+ *
+ *
+ */
+
+	return 0;
+}

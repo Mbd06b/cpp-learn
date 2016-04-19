@@ -1,1 +1,1 @@
-src/Program4Solution.d: ../src/Program4Solution.cpp
+src/Program4Solution.o: ../src/Program4Solution.cpp

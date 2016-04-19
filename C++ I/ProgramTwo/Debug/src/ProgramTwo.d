@@ -1,1 +1,1 @@
-src/ProgramTwo.d: ../src/ProgramTwo.cpp
+src/ProgramTwo.o: ../src/ProgramTwo.cpp

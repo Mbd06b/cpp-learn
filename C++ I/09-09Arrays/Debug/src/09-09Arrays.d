@@ -1,1 +1,1 @@
-src/09-09Arrays.d: ../src/09-09Arrays.cpp
+src/09-09Arrays.o: ../src/09-09Arrays.cpp

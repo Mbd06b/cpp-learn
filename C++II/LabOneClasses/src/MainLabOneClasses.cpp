@@ -6,8 +6,8 @@
 //============================================================================
 
 #include <iostream>
-#include "class.h"
 #include "string.h"
+#include "myStringclass.h"
 
 using namespace std;
 

@@ -1,0 +1,29 @@
+//============================================================================
+// Name        : Lab04NameClass.cpp
+// Author      : 
+// Version     :
+// Copyright   : Your copyright notice
+// Description : Hello World in C++, Ansi-style
+//============================================================================
+
+#include <iostream>
+#include "Name.h"
+#include "myStringclass.h"
+using namespace std;
+
+int main() {
+
+	Name A1;
+
+	A1.setName("Matthew", first);
+	A1.setName("Blake", middle);
+	A1.setName("Dowell", last);
+
+	cout << "getName(first) sample: " << A1.getName(first) << endl;
+
+	cout << endl;
+	cout << "Display() full sample:" << A1.Display() << endl;
+
+
+	return 0;
+}

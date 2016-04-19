@@ -1,0 +1,128 @@
+/*
+ * Person.h
+ *
+ *  Created on: Apr 4, 2016
+ *      Author: mbd06b
+ */
+
+#ifndef PERSON_H_
+#define PERSON_H_
+#include "Name.h"
+#include "Address.h"
+
+class Person{
+	public:
+								Person ();
+								Person (Person &);
+								~Person ();
+
+
+								Name    	 getName		() const;
+								Address   	 getAddress		() const;
+
+
+								Person &    setFName  (const String &);
+								Person &    setMName  (const String &);
+								Person &    setLName  (const String &);
+								Person &    setStreet (const String &);
+								Person &    setCity   (const String &);
+								Person &    setState  (const String &);
+								Person &    setZip    (const String &);
+
+
+								void	 	Display 	();
+								ostream &  	 Display 	(ostream & = out)const;
+
+
+								//operators
+								void		    Read	 (istream &);//method used to facilitate the read in '>>' operator.
+						        Address & 	    operator = 	 (const Address &);
+
+
+	private:
+		Name nameData;
+		Address addressData;
+
+};
+
+Person::Person(){
+}
+
+Person::Person(Person & toCopy){
+	nameData = toCopy.nameData;
+	addressData = toCopy.addressData;
+}
+
+Person::~Person(){
+}
+
+
+Name      Person::getName() const{
+	 return nameData;
+}
+
+Address   Person::getAddress () const {
+	return addressData;
+}
+
+
+Person &  Person::setFName  (const String & str){
+	nameData.setName(str, first);
+	return *this;
+}
+Person &  Person::setMName  (const String & str){
+	nameData.setName(str,middle);
+	return *this;
+}
+
+Person &  Person:: setLName  (const String & str){
+	nameData.setName(str,last);
+	return *this;
+}
+Person &  Person::setStreet (const String & str){
+	addressData.setStreet(str);
+	return *this;
+}
+Person &  Person::setCity   (const String & str){
+	addressData.setCity(str);
+	return *this;
+}
+
+Person &  Person::setState  (const String & str){
+	addressData.setState(str);
+	return *this;
+}
+Person &  Person::setZip    (const String & str){
+	addressData.setZip(str);
+	return *this;
+}
+
+
+inline void	 	Person::Display (){
+	nameData.Display();
+	addressData.Display();
+}
+
+
+inline ostream &  Display (ostream & out, Person & myPerson)const{
+	return myPerson.Display(out);
+}
+
+
+//operators
+inline istream & operator >> (istream & in, Person & myPerson) {
+	myPerson.Read (in);
+		return in;
+
+}
+
+Address &   Person::operator =  (const Address & toCopy){
+		nameData = toCopy.nameData;
+		addressData = toCopy.addressData;
+		return *this;
+}
+
+
+
+
+#endif /* PERSON_H_ */

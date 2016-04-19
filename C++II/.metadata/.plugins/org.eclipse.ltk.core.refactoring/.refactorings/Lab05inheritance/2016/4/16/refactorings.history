@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename resource &apos;Lab05inheritance/src/toUpperclass.h&apos; to &apos;UCString.h&apos;" description="Rename resource &apos;toUpperclass.h&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="src/toUpperclass.h" name="UCString.h" stamp="1460404306076" updateReferences="true"/>
+</session>
