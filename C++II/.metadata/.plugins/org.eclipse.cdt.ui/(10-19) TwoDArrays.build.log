@@ -1,4 +1,4 @@
-14:09:24 **** Incremental Build of configuration Debug for project (10-19) TwoDArrays ****
+15:05:41 **** Incremental Build of configuration Debug for project (10-19) TwoDArrays ****
 make all 
 Building target: (10-19) TwoDArrays
 Invoking: GCC C++ Linker
@@ -6,5 +6,5 @@ g++  -o "(10-19) TwoDArrays"  ./src/(10-19)\ TwoDArrays.o
 /bin/sh: 1: Syntax error: "(" unexpected
 make: *** [(10-19) TwoDArrays] Error 2
 
-14:09:24 Build Finished (took 112ms)
+15:05:41 Build Finished (took 136ms)
 

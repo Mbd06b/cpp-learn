@@ -1,4 +1,4 @@
-14:09:32 **** Incremental Build of configuration Debug for project 10-5 MidTermReview ****
+15:05:48 **** Incremental Build of configuration Debug for project 10-5 MidTermReview ****
 make all 
 Building file: ../src/10-5 MidTermReview.cpp
 Invoking: GCC C++ Compiler
@@ -1093,5 +1093,5 @@ In file included from /usr/include/c++/4.8/istream:882:0,
             ^
 make: *** [src/10-5 MidTermReview.o] Error 1
 
-14:09:33 Build Finished (took 943ms)
+15:05:49 Build Finished (took 794ms)
 

@@ -1,4 +1,4 @@
-14:09:40 **** Incremental Build of configuration Debug for project LowerCaseString02-29 ****
+15:21:31 **** Incremental Build of configuration Debug for project LowerCaseString02-29 ****
 make all 
 Building file: ../src/02-29LowerCaseString.cpp
 Invoking: GCC C++ Compiler
@@ -10,5 +10,5 @@ In file included from ../src/02-29LowerCaseString.cpp:10:0:
 compilation terminated.
 make: *** [src/02-29LowerCaseString.o] Error 1
 
-14:09:40 Build Finished (took 386ms)
+15:21:32 Build Finished (took 268ms)
 

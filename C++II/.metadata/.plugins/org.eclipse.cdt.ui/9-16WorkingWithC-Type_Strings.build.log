@@ -1,4 +1,4 @@
-14:09:33 **** Incremental Build of configuration Debug for project 9-16WorkingWithC-Type_Strings ****
+15:05:49 **** Incremental Build of configuration Debug for project 9-16WorkingWithC-Type_Strings ****
 make all 
 Building file: ../src/9-16WorkingWithC-Type_Strings.cpp
 Invoking: GCC C++ Compiler
@@ -23,5 +23,5 @@ In file included from ../src/9-16WorkingWithC-Type_Strings.cpp:11:0:
        ^
 make: *** [src/9-16WorkingWithC-Type_Strings.o] Error 1
 
-14:09:34 Build Finished (took 432ms)
+15:05:50 Build Finished (took 287ms)
 

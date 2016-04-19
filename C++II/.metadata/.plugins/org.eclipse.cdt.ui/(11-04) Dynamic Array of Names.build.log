@@ -1,4 +1,4 @@
-14:09:26 **** Incremental Build of configuration Debug for project (11-04) Dynamic Array of Names ****
+15:05:43 **** Incremental Build of configuration Debug for project (11-04) Dynamic Array of Names ****
 make all 
 Building file: ../src/(11-04) Dynamic Array of Names.cpp
 Invoking: GCC C++ Compiler
@@ -20,5 +20,5 @@ g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/(11-04) Dynamic Array o
  ^
 make: *** [src/(11-04) Dynamic Array of Names.o] Error 1
 
-14:09:26 Build Finished (took 372ms)
+15:05:43 Build Finished (took 343ms)
 

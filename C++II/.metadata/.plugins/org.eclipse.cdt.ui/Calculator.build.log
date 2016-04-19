@@ -1,4 +1,4 @@
-14:09:35 **** Incremental Build of configuration Debug for project Calculator ****
+15:05:50 **** Incremental Build of configuration Debug for project Calculator ****
 make all 
 Building file: ../src/Calculator.cpp
 Invoking: GCC C++ Compiler
@@ -28,5 +28,5 @@ g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/Calculator.d" -MT"src/C
        ^
 make: *** [src/Calculator.o] Error 1
 
-14:09:35 Build Finished (took 316ms)
+15:05:51 Build Finished (took 365ms)
 

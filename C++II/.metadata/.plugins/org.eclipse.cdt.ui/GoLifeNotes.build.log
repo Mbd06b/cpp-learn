@@ -1,4 +1,4 @@
-14:09:37 **** Incremental Build of configuration Debug for project GoLifeNotes ****
+15:05:53 **** Incremental Build of configuration Debug for project GoLifeNotes ****
 make all 
 Building file: ../src/GoLifeNotes.cpp
 Invoking: GCC C++ Compiler
@@ -46,5 +46,5 @@ g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/GoLifeNotes.d" -MT"src/
  ^
 make: *** [src/GoLifeNotes.o] Error 1
 
-14:09:37 Build Finished (took 399ms)
+15:05:53 Build Finished (took 487ms)
 

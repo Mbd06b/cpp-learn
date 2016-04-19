@@ -1,4 +1,4 @@
-14:09:36 **** Incremental Build of configuration Debug for project ClassNotes ****
+15:05:51 **** Incremental Build of configuration Debug for project ClassNotes ****
 make all 
 Building file: ../src/Class Notes.cpp
 Invoking: GCC C++ Compiler
@@ -22,5 +22,5 @@ g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/Class Notes.d" -MT"src/
  ^
 make: *** [src/Class Notes.o] Error 1
 
-14:09:36 Build Finished (took 330ms)
+15:05:52 Build Finished (took 375ms)
 

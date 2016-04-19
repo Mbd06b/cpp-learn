@@ -1,4 +1,4 @@
-14:09:25 **** Incremental Build of configuration Debug for project (10-26)BinarySearch ****
+15:05:42 **** Incremental Build of configuration Debug for project (10-26)BinarySearch ****
 make all 
 Building target: (10-26)BinarySearch
 Invoking: GCC C++ Linker
@@ -6,5 +6,5 @@ g++  -o "(10-26)BinarySearch"  ./src/(10-26)BinarySearch.o ./src/BinarySFunc.o
 /bin/sh: 1: Syntax error: "(" unexpected
 make: *** [(10-26)BinarySearch] Error 2
 
-14:09:25 Build Finished (took 87ms)
+15:05:42 Build Finished (took 71ms)
 

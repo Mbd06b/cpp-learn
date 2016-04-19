@@ -1,4 +1,4 @@
-14:09:31 **** Incremental Build of configuration Debug for project 09-30 Functions with Arrays ****
+15:05:47 **** Incremental Build of configuration Debug for project 09-30 Functions with Arrays ****
 make all 
 Building file: ../src/Main.cpp
 Invoking: GCC C++ Compiler
@@ -15,5 +15,5 @@ g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/Main.d" -MT"src/Main.o"
         ^
 make: *** [src/Main.o] Error 1
 
-14:09:31 Build Finished (took 317ms)
+15:05:47 Build Finished (took 345ms)
 

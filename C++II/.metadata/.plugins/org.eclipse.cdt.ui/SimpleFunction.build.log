@@ -1,6 +1,6 @@
-14:09:42 **** Incremental Build of configuration Debug for project SimpleFunction ****
+15:05:58 **** Incremental Build of configuration Debug for project SimpleFunction ****
 make all 
 make: Nothing to be done for `all'.
 
-14:09:42 Build Finished (took 79ms)
+15:05:58 Build Finished (took 90ms)
 

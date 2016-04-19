@@ -1,4 +1,4 @@
-14:09:27 **** Incremental Build of configuration Debug for project (11-16) Bitwise Operators ****
+15:05:44 **** Incremental Build of configuration Debug for project (11-16) Bitwise Operators ****
 make all 
 Building target: (11-16) Bitwise Operators
 Invoking: GCC C++ Linker
@@ -6,5 +6,5 @@ g++  -o "(11-16) Bitwise Operators"  ./src/(11-16)\ Bitwise\ Operators.o
 /bin/sh: 1: Syntax error: "(" unexpected
 make: *** [(11-16) Bitwise Operators] Error 2
 
-14:09:27 Build Finished (took 75ms)
+15:05:44 Build Finished (took 113ms)
 

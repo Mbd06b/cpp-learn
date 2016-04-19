@@ -1,4 +1,4 @@
-14:09:33 **** Incremental Build of configuration Debug for project 9-14CharArrays ****
+15:05:49 **** Incremental Build of configuration Debug for project 9-14CharArrays ****
 make all 
 Building file: ../src/9-14CharArrays.cpp
 Invoking: GCC C++ Compiler
@@ -12,5 +12,5 @@ g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/9-14CharArrays.d" -MT"s
                             ^
 make: *** [src/9-14CharArrays.o] Error 1
 
-14:09:33 Build Finished (took 372ms)
+15:05:49 Build Finished (took 294ms)
 

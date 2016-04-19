@@ -1,31 +1,6 @@
-14:48:25 **** Incremental Build of configuration Debug for project 03-21Static ****
+15:21:29 **** Incremental Build of configuration Debug for project 03-21Static ****
 make all 
-Building file: ../src/03-21Static.cpp
-Invoking: GCC C++ Compiler
-g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/03-21Static.d" -MT"src/03-21Static.o" -o "src/03-21Static.o" "../src/03-21Static.cpp"
-Finished building: ../src/03-21Static.cpp
- 
-Building file: ../src/Functions.cpp
-Invoking: GCC C++ Compiler
-g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/Functions.d" -MT"src/Functions.o" -o "src/Functions.o" "../src/Functions.cpp"
-../src/Functions.cpp:13:12: warning: ‘myVar’ defined but not used [-Wunused-variable]
- static int myVar; //this variable can be used by any function in this .cpp file .
-            ^
-../src/Functions.cpp:28:12: warning: ‘int Func2()’ defined but not used [-Wunused-function]
- static int Func2 (){  //static here means this function can only be called in this cpp. file.
-            ^
-Finished building: ../src/Functions.cpp
- 
-Building file: ../src/MyClass.cpp
-Invoking: GCC C++ Compiler
-g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/MyClass.d" -MT"src/MyClass.o" -o "src/MyClass.o" "../src/MyClass.cpp"
-Finished building: ../src/MyClass.cpp
- 
-Building target: 03-21Static
-Invoking: GCC C++ Linker
-g++  -o "03-21Static"  ./src/03-21Static.o ./src/Functions.o ./src/MyClass.o   
-Finished building target: 03-21Static
- 
+make: Nothing to be done for `all'.
 
-14:48:25 Build Finished (took 505ms)
+15:21:29 Build Finished (took 69ms)
 

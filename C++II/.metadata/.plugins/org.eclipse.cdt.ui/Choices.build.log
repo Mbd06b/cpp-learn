@@ -1,4 +1,4 @@
-14:09:35 **** Incremental Build of configuration Debug for project Choices ****
+15:05:51 **** Incremental Build of configuration Debug for project Choices ****
 make all 
 Building file: ../src/Choices.cpp
 Invoking: GCC C++ Compiler
@@ -12,5 +12,5 @@ g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/Choices.d" -MT"src/Choi
  ^
 make: *** [src/Choices.o] Error 1
 
-14:09:36 Build Finished (took 405ms)
+15:05:51 Build Finished (took 261ms)
 

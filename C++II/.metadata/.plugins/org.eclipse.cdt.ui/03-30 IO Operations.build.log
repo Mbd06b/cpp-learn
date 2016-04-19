@@ -1,15 +1,6 @@
-14:26:07 **** Incremental Build of configuration Debug for project 03-30 IO Operations ****
+15:21:30 **** Incremental Build of configuration Debug for project 03-30 IO Operations ****
 make all 
-Building file: ../src/Main.cpp
-Invoking: GCC C++ Compiler
-g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/Main.d" -MT"src/Main.o" -o "src/Main.o" "../src/Main.cpp"
-Finished building: ../src/Main.cpp
- 
-Building target: 03-30 IO Operations
-Invoking: GCC C++ Linker
-g++  -o "03-30 IO Operations"  ./src/Main.o   
-Finished building target: 03-30 IO Operations
- 
+make: Nothing to be done for `all'.
 
-14:26:07 Build Finished (took 416ms)
+15:21:30 Build Finished (took 93ms)
 

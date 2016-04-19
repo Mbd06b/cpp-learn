@@ -1,4 +1,4 @@
-14:09:24 **** Incremental Build of configuration Debug for project (10-21) Dynamic Memory ****
+15:05:41 **** Incremental Build of configuration Debug for project (10-21) Dynamic Memory ****
 make all 
 Building file: ../src/(10-21) Dynamic Memory.cpp
 Invoking: GCC C++ Compiler
@@ -21,5 +21,5 @@ g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/(10-21) Dynamic Memory.
  ^
 make: *** [src/(10-21) Dynamic Memory.o] Error 1
 
-14:09:25 Build Finished (took 372ms)
+15:05:42 Build Finished (took 484ms)
 
