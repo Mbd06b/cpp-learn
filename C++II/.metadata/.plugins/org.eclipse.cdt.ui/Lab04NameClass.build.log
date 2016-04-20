@@ -1,6 +1,6 @@
-15:21:31 **** Incremental Build of configuration Debug for project Lab04NameClass ****
+15:05:41 **** Incremental Build of configuration Debug for project Lab04NameClass ****
 make all 
 make: Nothing to be done for `all'.
 
-15:21:31 Build Finished (took 67ms)
+15:05:41 Build Finished (took 89ms)
 

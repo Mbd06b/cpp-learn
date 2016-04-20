@@ -1,6 +1,6 @@
-15:21:27 **** Incremental Build of configuration Debug for project 01-25myStringConstructors ****
+15:05:37 **** Incremental Build of configuration Debug for project 01-25myStringConstructors ****
 make all 
 make: Nothing to be done for `all'.
 
-15:21:28 Build Finished (took 93ms)
+15:05:37 Build Finished (took 67ms)
 

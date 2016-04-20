@@ -1,0 +1,26 @@
+
+#define STUDENT_H_
+
+#include "Name.h"
+#include "Array.h"
+
+
+
+class Student {
+
+public:
+
+
+
+private:
+	Name lastName;
+	Array <int, 0, 4> grades; //five integer slots
+
+
+};
+
+
+
+
+
+#endif /* Student.h */

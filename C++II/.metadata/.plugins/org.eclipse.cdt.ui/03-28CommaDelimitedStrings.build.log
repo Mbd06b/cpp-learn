@@ -1,6 +1,6 @@
-15:21:30 **** Incremental Build of configuration Default for project 03-28CommaDelimitedStrings ****
+15:07:33 **** Incremental Build of configuration Default for project 03-28CommaDelimitedStrings ****
 make all 
 make: Nothing to be done for `all'.
 
-15:21:30 Build Finished (took 98ms)
+15:07:33 Build Finished (took 79ms)
 

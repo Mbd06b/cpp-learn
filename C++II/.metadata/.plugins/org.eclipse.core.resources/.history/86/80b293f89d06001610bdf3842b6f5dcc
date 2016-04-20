@@ -1,0 +1,23 @@
+
+#define STUDENT_H_
+
+#include "Name.h"
+#include
+
+
+class Student {
+
+public:
+
+
+
+private:
+	Name lastName;
+
+};
+
+
+
+
+
+#endif /* Student.h */

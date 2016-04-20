@@ -1,0 +1,40 @@
+15:52:17 **** Incremental Build of configuration Default for project Lab06StudentIO ****
+make all 
+Building file: ../src/MainStudentIO.cpp
+Invoking: GCC C++ Compiler
+g++ -O2 -g -Wall -c -fmessage-length=0 -MMD -MP -MF"src/MainStudentIO.d" -MT"src/MainStudentIO.o" -o "src/MainStudentIO.o" "../src/MainStudentIO.cpp"
+In file included from ../src/MainStudentIO.cpp:9:0:
+../src/Student.h: In member function ‘bool Student::Read(std::fstream&)’:
+../src/Student.h:51:11: error: no match for ‘operator=’ (operand types are ‘Name’ and ‘char [81]’)
+  lastName = Line;
+           ^
+../src/Student.h:51:11: note: candidate is:
+In file included from ../src/Student.h:5:0,
+                 from ../src/MainStudentIO.cpp:9:
+../src/Name.h:146:8: note: Name& Name::operator=(const Name&)
+ Name & Name::operator = (const Name & toCopy){
+        ^
+../src/Name.h:146:8: note:   no known conversion for argument 1 from ‘char [81]’ to ‘const Name&’
+In file included from ../src/MainStudentIO.cpp:9:0:
+../src/Student.h:52:22: error: ‘i’ was not declared in this scope
+  cout << "Line: " << i <<;
+                      ^
+../src/Student.h:52:26: error: expected primary-expression before ‘;’ token
+  cout << "Line: " << i <<;
+                          ^
+../src/Student.h: At global scope:
+../src/Student.h:63:6: error: prototype for ‘void Student::Read(std::fstream&)’ does not match any in class ‘Student’
+ void Student::Read (fstream & file){
+      ^
+../src/Student.h:46:14: error: candidate is: bool Student::Read(std::fstream&)
+ inline bool  Student::Read (fstream & in){
+              ^
+In file included from ../src/MainStudentIO.cpp:9:0:
+../src/Student.h: In member function ‘void Student::displayStudent(const Student&)’:
+../src/Student.h:94:31: error: ‘getGrades’ was not declared in this scope
+   getGrades (Lines [i], Grades);
+                               ^
+make: *** [src/MainStudentIO.o] Error 1
+
+15:52:18 Build Finished (took 374ms)
+

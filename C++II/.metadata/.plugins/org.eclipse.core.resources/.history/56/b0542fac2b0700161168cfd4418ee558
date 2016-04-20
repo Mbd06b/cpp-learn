@@ -1,0 +1,47 @@
+
+#ifndef STUDENT_H_
+#define STUDENT_H_
+
+#include "Name.h"
+#include "Array.h"
+
+
+
+class Student {
+
+public:
+					Student ();
+					Student (const Student &);
+					Student (const Name &, const Array<int, 0, 4> &);
+					~Student ();
+
+					Read	(ifstream & );
+
+
+
+
+
+private:
+	Name lastName;
+	Array <int, 0, 4> grades; //five integer slots
+
+
+};
+
+Student::Student(){
+}
+
+Student::Student (const Student & student){
+	lastName = student.lastName;
+	grades = student.grades;
+};
+
+Student::~Student(){
+}
+
+
+Student::Read (ifstream & in){
+	;
+}
+
+#endif /* STUDENT_H_*/

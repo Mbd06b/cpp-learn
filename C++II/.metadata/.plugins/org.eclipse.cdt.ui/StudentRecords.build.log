@@ -1,6 +1,6 @@
-15:21:32 **** Incremental Build of configuration Debug for project StudentRecords ****
+15:05:43 **** Incremental Build of configuration Debug for project StudentRecords ****
 make all 
 make: Nothing to be done for `all'.
 
-15:21:32 Build Finished (took 79ms)
+15:05:43 Build Finished (took 75ms)
 

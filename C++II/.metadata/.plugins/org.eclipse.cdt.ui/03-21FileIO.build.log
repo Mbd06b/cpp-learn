@@ -1,0 +1,15 @@
+15:05:39 **** Incremental Build of configuration Debug for project 03-21FileIO ****
+make all 
+Building file: ../src/03-21FileIO.cpp
+Invoking: GCC C++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/03-21FileIO.d" -MT"src/03-21FileIO.o" -o "src/03-21FileIO.o" "../src/03-21FileIO.cpp"
+Finished building: ../src/03-21FileIO.cpp
+ 
+Building target: 03-21FileIO
+Invoking: GCC C++ Linker
+g++  -o "03-21FileIO"  ./src/03-21FileIO.o   
+Finished building target: 03-21FileIO
+ 
+
+15:05:39 Build Finished (took 479ms)
+

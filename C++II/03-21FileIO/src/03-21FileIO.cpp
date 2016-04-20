@@ -15,6 +15,7 @@ int main() {
 	fstream myFile; // there is a constructor that takes the same parameters
 					// as the open method
 
+
 	myFile.open (
 				//first parameter is the file name, MUST BE C-TYPE string.
 				//if not fully qualified, (like data.txt), the system looks in the current worknig directory
@@ -68,12 +69,13 @@ int main() {
 	//if you open a file make sure at some point you close it.
 	myFile.close(); //if you don't close, you may lose saved data.
 
+/*
 	myFile >> x;  //to read
 
 	myFile << x; //to write
 
 	myFile.getline (---);
-
+*/
 
 
 	return 0;

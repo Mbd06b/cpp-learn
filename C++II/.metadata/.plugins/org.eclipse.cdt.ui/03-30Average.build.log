@@ -1,6 +1,6 @@
-15:21:30 **** Incremental Build of configuration Debug for project 03-30Average ****
+15:05:41 **** Incremental Build of configuration Debug for project 03-30Average ****
 make all 
 make: Nothing to be done for `all'.
 
-15:21:30 Build Finished (took 94ms)
+15:05:41 Build Finished (took 69ms)
 

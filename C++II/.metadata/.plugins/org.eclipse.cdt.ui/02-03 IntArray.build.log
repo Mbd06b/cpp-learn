@@ -1,6 +1,6 @@
-15:21:29 **** Incremental Build of configuration Debug for project 02-03 IntArray ****
+15:05:37 **** Incremental Build of configuration Debug for project 02-03 IntArray ****
 make all 
 make: Nothing to be done for `all'.
 
-15:21:29 Build Finished (took 92ms)
+15:05:37 Build Finished (took 68ms)
 
