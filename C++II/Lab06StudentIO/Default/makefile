@@ -44,7 +44,7 @@ all: Lab06StudentIO
 Lab06StudentIO: $(OBJS) $(USER_OBJS)
 	@echo 'Building target: $@'
 	@echo 'Invoking: GCC C++ Linker'
-	g++  -o "Lab06StudentIO" $(OBJS) $(USER_OBJS) $(LIBS)
+	g++ -L/home/mbd06b/WSfilesforEclipse -o "Lab06StudentIO" $(OBJS) $(USER_OBJS) $(LIBS)
 	@echo 'Finished building target: $@'
 	@echo ' '
 

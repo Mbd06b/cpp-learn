@@ -28,6 +28,9 @@
 							</tool>
 							<tool id="cdt.managedbuild.tool.gnu.c.linker.base.1873724303" name="GCC C Linker" superClass="cdt.managedbuild.tool.gnu.c.linker.base"/>
 							<tool id="cdt.managedbuild.tool.gnu.cpp.linker.base.165019657" name="GCC C++ Linker" superClass="cdt.managedbuild.tool.gnu.cpp.linker.base">
+								<option id="gnu.cpp.link.option.paths.1363007759" superClass="gnu.cpp.link.option.paths" valueType="libPaths">
+									<listOptionValue builtIn="false" value="/home/mbd06b/WSfilesforEclipse"/>
+								</option>
 								<inputType id="cdt.managedbuild.tool.gnu.cpp.linker.input.1760700365" superClass="cdt.managedbuild.tool.gnu.cpp.linker.input">
 									<additionalInput kind="additionalinputdependency" paths="$(USER_OBJS)"/>
 									<additionalInput kind="additionalinput" paths="$(LIBS)"/>
@@ -46,13 +49,19 @@
 	<storageModule moduleId="cdtBuildSystem" version="4.0.0">
 		<project id="Lab06StudentIO.null.1884804039" name="Lab06StudentIO"/>
 	</storageModule>
-	<storageModule moduleId="scannerConfiguration">
-		<autodiscovery enabled="true" problemReportingEnabled="true" selectedProfileId=""/>
-	</storageModule>
 	<storageModule moduleId="org.eclipse.cdt.core.LanguageSettingsProviders"/>
 	<storageModule moduleId="refreshScope" versionNumber="2">
 		<configuration configurationName="Default">
 			<resource resourceType="PROJECT" workspacePath="/Lab06StudentIO"/>
 		</configuration>
+	</storageModule>
+	<storageModule moduleId="scannerConfiguration">
+		<autodiscovery enabled="true" problemReportingEnabled="true" selectedProfileId=""/>
+		<scannerConfigBuildInfo instanceId="cdt.managedbuild.toolchain.gnu.base.1546338855;cdt.managedbuild.toolchain.gnu.base.1546338855.679204429;cdt.managedbuild.tool.gnu.cpp.compiler.base.557125783;cdt.managedbuild.tool.gnu.cpp.compiler.input.2143740024">
+			<autodiscovery enabled="true" problemReportingEnabled="true" selectedProfileId=""/>
+		</scannerConfigBuildInfo>
+		<scannerConfigBuildInfo instanceId="cdt.managedbuild.toolchain.gnu.base.1546338855;cdt.managedbuild.toolchain.gnu.base.1546338855.679204429;cdt.managedbuild.tool.gnu.c.compiler.base.2033687282;cdt.managedbuild.tool.gnu.c.compiler.input.284754803">
+			<autodiscovery enabled="true" problemReportingEnabled="true" selectedProfileId=""/>
+		</scannerConfigBuildInfo>
 	</storageModule>
 </cproject>
