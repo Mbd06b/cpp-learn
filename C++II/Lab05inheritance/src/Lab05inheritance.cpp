@@ -42,7 +42,7 @@ int main() {
 	cout << endl;
 	cout << "Exception test, loading digitString with invalid characters" << endl;
 	try{
-	   // digitString DStest ("12afc25");
+	  //  digitString DStest ("12afc25");
 	    digitString DStest4 ("12345");
 
 	    DStest4 &= A2;

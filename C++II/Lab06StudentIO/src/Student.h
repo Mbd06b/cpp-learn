@@ -20,9 +20,10 @@ class Student {
 
 				void	 read ();
 
-Array <Student, 0, 24> &  importData (fstream &);
-				void	 displayStudent (const Student &);
-				void	 getGrades  	(char [], Array<int, 0, 4>);
+				bool 	 importObject (fstream &);
+
+				void	 displayStudent ();
+				void	 getGrades  	(char []);
 
 
 
@@ -34,40 +35,7 @@ Array <Student, 0, 24> &  importData (fstream &);
 };
 
 
-inline Array <Student, 0, 24> & Student::importData (fstream & file){ //from file
 
-	 //we need a place to capture our data from file
-	int linecounter = 1; //line counter
-	int studentcounter = 0; //starting odd, to delinate names and grades by even and odd lines.
-	char Line [80];
-
-	if(file.good()){ //if file is open properly, continue
-
-
-		//file.getline(line,80); //gets the line (should be name, to start)
-
-		do{
-			file.getline(Line,80);
-
-			if(linecounter % 2 == 0){ //if line is even, load grades
-					getGrades(Line, this[studentcounter].grades);
-					studentcounter++; //and go to next student.
-			}else{
-			this[studentcounter].studentName.setFirst(Line); //should capture a Name
-			};
-
-			linecounter++;
-		}while(!file.eof());
-		file.clear();
-		file.close();
-
-	}else{
-		cout << "file did not open in importData method" << endl;
-	};
-
-
-	return *this;
-}
 
 
 /*

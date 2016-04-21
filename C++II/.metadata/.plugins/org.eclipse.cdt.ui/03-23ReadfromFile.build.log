@@ -1,6 +1,6 @@
-15:05:40 **** Incremental Build of configuration Debug for project 03-23ReadfromFile ****
+15:12:13 **** Incremental Build of configuration Debug for project 03-23ReadfromFile ****
 make all 
 make: Nothing to be done for `all'.
 
-15:05:40 Build Finished (took 95ms)
+15:12:13 Build Finished (took 78ms)
 

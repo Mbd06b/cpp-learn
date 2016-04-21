@@ -1,4 +1,4 @@
-15:05:39 **** Incremental Build of configuration Debug for project 03-21FileIO ****
+15:12:12 **** Incremental Build of configuration Debug for project 03-21FileIO ****
 make all 
 Building file: ../src/03-21FileIO.cpp
 Invoking: GCC C++ Compiler
@@ -11,5 +11,5 @@ g++  -o "03-21FileIO"  ./src/03-21FileIO.o
 Finished building target: 03-21FileIO
  
 
-15:05:39 Build Finished (took 479ms)
+15:12:12 Build Finished (took 416ms)
 

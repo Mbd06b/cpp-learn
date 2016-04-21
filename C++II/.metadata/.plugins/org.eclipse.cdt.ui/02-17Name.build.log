@@ -1,4 +1,4 @@
-15:05:38 **** Incremental Build of configuration Debug for project 02-17Name ****
+15:12:11 **** Incremental Build of configuration Debug for project 02-17Name ****
 make all 
 Building file: ../src/02-17Name.cpp
 Invoking: GCC C++ Compiler
@@ -10,5 +10,5 @@ In file included from ../src/02-17Name.cpp:10:0:
 compilation terminated.
 make: *** [src/02-17Name.o] Error 1
 
-15:05:39 Build Finished (took 279ms)
+15:12:11 Build Finished (took 235ms)
 
