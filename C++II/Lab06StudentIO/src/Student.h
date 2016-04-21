@@ -18,29 +18,57 @@ class Student {
 						Student (const Name &, const Array<int, 0, 4> &);
 						~Student ();
 
-				bool	 Read	(fstream &);
+				void	 read ();
+
+Array <Student, 0, 24> &  importData (fstream &);
 				void	 displayStudent (const Student &);
-				void 	 readGrades (Name &, Array <int, 0, 4> &); //from file
-				void 	 showGrades (int []);
+				void	 getGrades  	(char [], Array<int, 0, 4>);
 
 
 
 
 	private:
-		Name lastName;
+		Name studentName;
 		Array <int, 0, 4> grades; //five integer slots
+
 };
 
-Student::Student(){
+
+inline Array <Student, 0, 24> & Student::importData (fstream & file){ //from file
+
+	 //we need a place to capture our data from file
+	int linecounter = 1; //line counter
+	int studentcounter = 0; //starting odd, to delinate names and grades by even and odd lines.
+	char Line [80];
+
+	if(file.good()){ //if file is open properly, continue
+
+
+		//file.getline(line,80); //gets the line (should be name, to start)
+
+		do{
+			file.getline(Line,80);
+
+			if(linecounter % 2 == 0){ //if line is even, load grades
+					getGrades(Line, this[studentcounter].grades);
+					studentcounter++; //and go to next student.
+			}else{
+			this[studentcounter].studentName.setFirst(Line); //should capture a Name
+			};
+
+			linecounter++;
+		}while(!file.eof());
+		file.clear();
+		file.close();
+
+	}else{
+		cout << "file did not open in importData method" << endl;
+	};
+
+
+	return *this;
 }
 
-Student::Student (const Student & student){
-	lastName = student.lastName;
-	grades = student.grades;
-};
-
-Student::~Student(){
-}
 
 /*
 inline bool  Student::Read (fstream & in){
@@ -60,43 +88,9 @@ inline bool  Student::Read (fstream & in){
 }
 */
 
-void Student::Read (fstream & file){
-//void Student::getGrades (Name & name, Array <int, 0, 4> grades){
-
-	char * pNumber;
-	int i = 0;
-	pNumber = strtok (Line, ","); // strtok dilimeates a C-type String by whatever character you put in the argument, (commas ",");
-	while (pNumber != NULL){
-		grades [i++] = atoi (pNumber); //atoi changes the ascii code into integer
-		pNumber = strtok (NULL, ",");
-
-	}
-}
-
-void Student::showGrades (int Grades []){
-	int i;
-
-	for (i = 0; i < 5; i++){
-		cout << Grades [i] << ", ";
-	}
-}
-
-void Student::displayStudent (const Student & student){
-
-	char Lines [10] [25] = {"100,100,100,100,100",
-							"95,100,80,75,40,",
-							"35,38,44,53,75"};
 
 
-	int Grades [5]; //three sets of 5 grades.
 
-	for (int i = 0; i < 3; i++){
-		getGrades (Lines [i], Grades);
-		cout << "Grades [" << i << "] are: " << endl;
-		showGrades (Grades);
 
-	}
-
-}
 
 #endif /* STUDENT_H_*/

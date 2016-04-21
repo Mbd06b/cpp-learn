@@ -5,14 +5,17 @@
 # Add inputs and outputs from these tool invocations to the build variables 
 CPP_SRCS += \
 ../src/MainStudentIO.cpp \
+../src/Student.cpp \
 ../src/myStringclass.cpp 
 
 OBJS += \
 ./src/MainStudentIO.o \
+./src/Student.o \
 ./src/myStringclass.o 
 
 CPP_DEPS += \
 ./src/MainStudentIO.d \
+./src/Student.d \
 ./src/myStringclass.d 
 
 

@@ -11,30 +11,32 @@
 //http://www.cplusplus.com/reference/fstream/fstream/
 #include <iostream>
 
+
 using namespace std; 
 
 int main (){
 
   Array  <Student, 0, 25> studentGArray;
   fstream studentFile;
-  int i = 0;
-
- /*Create .txt file test, location is project folder, (does not appear in workspace)
-  fileTest.open("testfile123.txt");
-  	  fileTest << "Hello World \n";
-  fileTest.close();
-  cout << "File has been written!";
- */
+  int numofLines = 0;
+  string line;
+  char Line [80];
+  int number = 1;
   
+
   studentFile.open("Lab06data.txt", ios_base::in);
 
   if (studentFile.is_open ()){
 	  cout << "File is open" << endl;
+
+	//  studentGArray.importData(studentFile);
+
+
   } else
 	  cout << "File is not open" << endl;
   
 
-  while(studentGArray[i++].Read(studentFile));
+ // while(studentGArray[i++].Read(studentFile));
 
   
   return 0; 

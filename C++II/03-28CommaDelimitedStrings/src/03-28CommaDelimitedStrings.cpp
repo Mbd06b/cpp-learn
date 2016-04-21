@@ -18,7 +18,7 @@ int main() {
 
 	int Grades [5]; //three sets of 5 grades.
 
-	for (i = 0; i < 3; i++){
+	for (i = 0; i < 2; i++){
 		getGrades (Lines [i], Grades);
 		cout << "Grades [" << i << "] are: " << endl;
 		showGrades (Grades);
