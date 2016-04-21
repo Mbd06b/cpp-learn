@@ -34,7 +34,7 @@ Student::~Student(){
 		   (file.close());
 		   return false;
 		}else{
-		file.getline(Line,80);
+		file.getline(Line,80); //moves line forward by 1; 
 		getGrades(Line);
 			return true;
 		};
