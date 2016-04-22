@@ -33,11 +33,23 @@ int main (){
 	  cout << "File is not open" << endl;
   };
   
-  for (int i = 0; i < 4; i++){
+
+  for (int i = 0; i < (studentGArray.importCount()); i++){
 	  studentGArray[i].displayStudent();
 	  cout << endl;
 	  cout << endl;
   }
+
+  studentGArray.sortStudents();
+
+  cout << "Students Sorted: " << endl;
+
+  for (int i = 0; i < (studentGArray.importCount()); i++){
+	  studentGArray[i].displayStudent();
+	  cout << endl;
+	  cout << endl;
+  }
+
 
 
 

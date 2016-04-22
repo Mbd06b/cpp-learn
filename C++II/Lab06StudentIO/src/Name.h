@@ -22,8 +22,10 @@ class Name {
 								Name (const Name &); //copy
 								~Name();
 
-
-					String  	getName		(const whichName) const; //enum whichName "first, middle, last"
+					Name 		getName		() const;
+					Name  &		getName		();
+					String		get1Name	(const whichName)const;
+					String & 	get1Name	(const whichName); //enum whichName "first, middle, last"
 					Name &      setName		(const String &, whichName); //enum whichName "first, middle, or last"
 
 					Name &		setFirst	(const String &);
@@ -76,7 +78,7 @@ inline ostream & Name::Display (ostream & out) const
 
 inline ostream & operator << (ostream & out, Name & myName){
 
-  return out << myName.getName(first) << " " << myName.getName(middle) << " " << myName.getName(last);
+  return out << myName.get1Name(first) << " " << myName.get1Name(middle) << " " << myName.get1Name(last);
 
 
 }

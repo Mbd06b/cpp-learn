@@ -55,8 +55,12 @@ Name & Name::setLast(const String & str){
    return *this;
 };
 
+Name &  Name::getName(){
+	return *this;
+};
 
-String  Name::getName(const whichName num) const{
+
+String &  Name::get1Name(const whichName num){
 
 	if(num == first){
 	return sFirst;

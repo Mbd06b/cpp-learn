@@ -6,44 +6,48 @@
  */
 
 #include "Student.h"
+#include <stdlib.h>
 
 
 
 
 Student::Student(){
-}
+};
 
 Student::Student (const Student & student){
 	studentName = student.studentName;
 	grades = student.grades;
+
 };
 
 Student::~Student(){
-}
+};
 
 
- bool Student::importObject (fstream & file){ //from file
+bool Student::importObject (fstream & file){ //from file
 
 
 	char Line [80];
 		//file.getline(line,80); //gets the line (should be name, to start)
 		file.getline(Line,80);
-		studentName.setFirst(Line);//should capture a Name
+
+
 
 	if(strcmp(Line,"EOF") == 0){ //should avoid loading the EOF.
 		   (file.close());
 		   return false;
 		}else{
+		studentName.setFirst(Line);//should capture a Name
 		file.getline(Line,80);
 		getGrades(Line);
 			return true;
 		};
 
+};
+
+Name & Student::getSName(){
+	return studentName.getName();
 }
-
-
-
-
 
 void Student::displayStudent (){
 
@@ -51,7 +55,7 @@ void Student::displayStudent (){
 	for(int i = 0; i < 5; i++){ //and the grades
 	cout << grades [i] << ", ";
 	};
-}
+};
 
 
 void Student::getGrades (char Line []){
@@ -65,4 +69,4 @@ void Student::getGrades (char Line []){
 		pNumber = strtok (NULL, ",");
 	}
 
-}
+};

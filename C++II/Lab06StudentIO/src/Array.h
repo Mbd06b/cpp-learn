@@ -17,6 +17,7 @@ class Array
 {
 	public:
 		enum Exceptions {IndexOutOfBounds = 1};
+		enum SortType {AtoZ, ZtoA};
 
 //Constructors
 						Array       (); //default, a pointer array with no rows or columns.
@@ -29,10 +30,13 @@ class Array
 					D   setAt       (int, D) const throw ();
 
  Array <D, Low, High> & Copy 	    (const Array<D, Low, High> &);
+ 	 	 		   void sortStudents   ();
   	  	  	  	   void importData  (fstream &); //for importing files into Array
+  	  	  	  	   int importCount () const; //see import counter
 Array <D, Low, High>  & operator = 	(const Array<D, Low, High> &);
 					D & operator [] (int) throw (); //int is the index location.
 					D   operator [] (int) const throw ();
+
 
 
 
@@ -47,8 +51,37 @@ Array <D, Low, High>  & operator = 	(const Array<D, Low, High> &);
 		D gArray [High - Low + 1]; //array of int || string || double || or whatever
 								  //this does not need to be a pointer array because we are passing the size in the template arguments
 								  //if we didn't know the size, we would use a pointer and allocate memory with new & Delete in the constructors.
+		size_t importCounter;
 
 };
+
+template <class D, int Low, int High>
+void Array<D,Low,High>::sortStudents (){ //int a is our Array size (NumElements in SortLab)
+
+if(importCounter){ //if Zero, there are no objects to sort
+	 int	NumElements = importCounter; //
+	 bool	Sorted;
+	 D Temp; // a temporary place to store our object as we sort.
+
+	 do{
+		Sorted = true;
+		NumElements--; //NumElements -- we are subtracting 1 from our array, because we don't want the last element in our array to analyze an unkwn value beyond our array
+		for (int i = 0; i < NumElements; i++){
+			if ((gArray[i].getSName()) > (gArray[i + 1].getSName()))  //what do I do if The element above is higher than the element below?
+				//if (((gArray [i + 1].getstudentName())).Compare(getStudentName(gArray[i].studentName)) > 0)
+			{
+			Temp = gArray [i];   //save the existing value
+			gArray [i] = gArray [i + 1]; //swop the value
+			gArray [i + 1] = Temp;  // assign the new value
+			Sorted = false;
+			}
+
+		}
+	  }while (!Sorted);//END DO LOOP  ! Is NOT, so !Sorted is Not-Sorted.
+	}else
+	{cout << "Nothing to Sort" << endl;};
+}
+
 
 template <class D, int Low, int High>
 void Array<D, Low,High>::importData (fstream & file){
@@ -57,13 +90,19 @@ void Array<D, Low,High>::importData (fstream & file){
 	do{
 		result = gArray[i++].importObject(file);
 	}while(result);
-
-
+	importCounter = --i; //result is false (eof bit hit) subtract 1 to get internal array count.
 };
+
+template <class D, int Low, int High>
+int  Array<D,Low,High>::importCount ()const{
+	return importCounter; //num objects loaded by importData
+}
+
 
 //Default
 template <class D, int Low, int High >
 Array <D, Low, High>::Array(){
+	importCounter = 0;
 }
 
 //Destructor
@@ -78,6 +117,7 @@ Array <D, Low, High>::Array(const Array<D, Low, High> & toCopy){
 	for(int i = 0; i < (High - Low + 1);i++){
 		gArray [i] = toCopy.gArray[i];
 	}
+	importCounter = toCopy.importCounter;
 }
 
 //Copy Method

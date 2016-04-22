@@ -5,25 +5,25 @@
 #include "Name.h"
 #include "Array.h"
 #include <fstream>
-#include <stdlib.h>
-#include <string.h>
+
 
 
 
 class Student {
 
 	public:
-						Student ();
-						Student (const Student &);
-						Student (const Name &, const Array<int, 0, 4> &);
-						~Student ();
+						Student 			();
+						Student				(const Student &);
+						Student 			(const Name &, const Array<int, 0, 4> &);
+						~Student 			();
 
-				void	 read ();
+				void	 read				();
 
-				bool 	 importObject (fstream &);
+				bool 	 importObject 		(fstream &);
 
-				void	 displayStudent ();
-				void	 getGrades  	(char []);
+				void	 displayStudent 	();
+				Name & 	 getSName		();
+				void	 getGrades  		(char []);
 
 
 
@@ -35,26 +35,6 @@ class Student {
 };
 
 
-
-
-
-/*
-inline bool  Student::Read (fstream & in){
-
-	char Line [81];
-
-	in.getline(Line,81); //getline refrences the entire line, upto 81 chars.
-	lastName = Line;
-	cout << "Line: " << i <<;
-
-	if(strcmp(Line, "EOF") != 0){
-		//Get grades
-		return true;
-	}else{
-		return false;
-	}
-}
-*/
 
 
 
