@@ -1,15 +1,6 @@
-15:12:13 **** Incremental Build of configuration Default for project 03-28CommaDelimitedStrings ****
+16:04:07 **** Incremental Build of configuration Default for project 03-28CommaDelimitedStrings ****
 make all 
-Building file: ../src/03-28CommaDelimitedStrings.cpp
-Invoking: GCC C++ Compiler
-g++ -O2 -g -Wall -c -fmessage-length=0 -MMD -MP -MF"src/03-28CommaDelimitedStrings.d" -MT"src/03-28CommaDelimitedStrings.o" -o "src/03-28CommaDelimitedStrings.o" "../src/03-28CommaDelimitedStrings.cpp"
-Finished building: ../src/03-28CommaDelimitedStrings.cpp
- 
-Building target: 03-28CommaDelimitedStrings
-Invoking: GCC C++ Linker
-g++  -o "03-28CommaDelimitedStrings"  ./src/03-28CommaDelimitedStrings.o   
-Finished building target: 03-28CommaDelimitedStrings
- 
+make: Nothing to be done for `all'.
 
-15:12:14 Build Finished (took 530ms)
+16:04:07 Build Finished (took 115ms)
 

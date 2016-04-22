@@ -1,15 +1,6 @@
-15:12:15 **** Incremental Build of configuration Debug for project Lab05inheritance ****
+16:04:09 **** Incremental Build of configuration Debug for project Lab05inheritance ****
 make all 
-Building file: ../src/Lab05inheritance.cpp
-Invoking: GCC C++ Compiler
-g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/Lab05inheritance.d" -MT"src/Lab05inheritance.o" -o "src/Lab05inheritance.o" "../src/Lab05inheritance.cpp"
-Finished building: ../src/Lab05inheritance.cpp
- 
-Building target: Lab05inheritance
-Invoking: GCC C++ Linker
-g++  -o "Lab05inheritance"  ./src/Lab05inheritance.o ./src/myStringclass.o   
-Finished building target: Lab05inheritance
- 
+make: Nothing to be done for `all'.
 
-15:12:15 Build Finished (took 418ms)
+16:04:09 Build Finished (took 66ms)
 

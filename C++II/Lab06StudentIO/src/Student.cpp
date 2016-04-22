@@ -12,7 +12,7 @@
 
 
 Student::Student(){
-};
+}
 
 Student::Student (const Student & student){
 	studentName = student.studentName;
@@ -37,8 +37,12 @@ bool Student::importObject (fstream & file){ //from file
 		   (file.close());
 		   return false;
 		}else{
+<<<<<<< HEAD
 		studentName.setFirst(Line);//should capture a Name
 		file.getline(Line,80);
+=======
+		file.getline(Line,80); //moves line forward by 1; 
+>>>>>>> branch 'master' of https://MatthewBDowell@bitbucket.org/MatthewBDowell/mbd06b-c-learn.git
 		getGrades(Line);
 			return true;
 		};

@@ -1,6 +1,6 @@
-15:12:16 **** Incremental Build of configuration Debug for project LabOneClasses ****
+16:04:11 **** Incremental Build of configuration Debug for project LabOneClasses ****
 make all 
 make: Nothing to be done for `all'.
 
-15:12:16 Build Finished (took 117ms)
+16:04:11 Build Finished (took 69ms)
 

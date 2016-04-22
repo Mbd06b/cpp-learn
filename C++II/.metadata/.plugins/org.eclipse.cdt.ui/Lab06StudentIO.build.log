@@ -1,6 +1,25 @@
-17:24:18 **** Incremental Build of configuration Default for project Lab06StudentIO ****
+16:04:10 **** Incremental Build of configuration Default for project Lab06StudentIO ****
 make all 
-make: Nothing to be done for `all'.
+Building file: ../src/MainStudentIO.cpp
+Invoking: GCC C++ Compiler
+g++ -O2 -g -Wall -c -fmessage-length=0 -MMD -MP -MF"src/MainStudentIO.d" -MT"src/MainStudentIO.o" -o "src/MainStudentIO.o" "../src/MainStudentIO.cpp"
+Finished building: ../src/MainStudentIO.cpp
+ 
+Building file: ../src/Name.cpp
+Invoking: GCC C++ Compiler
+g++ -O2 -g -Wall -c -fmessage-length=0 -MMD -MP -MF"src/Name.d" -MT"src/Name.o" -o "src/Name.o" "../src/Name.cpp"
+Finished building: ../src/Name.cpp
+ 
+Building file: ../src/Student.cpp
+Invoking: GCC C++ Compiler
+g++ -O2 -g -Wall -c -fmessage-length=0 -MMD -MP -MF"src/Student.d" -MT"src/Student.o" -o "src/Student.o" "../src/Student.cpp"
+Finished building: ../src/Student.cpp
+ 
+Building target: Lab06StudentIO
+Invoking: GCC C++ Linker
+g++ -L/home/mbd06b/WSfilesforEclipse -o "Lab06StudentIO"  ./src/MainStudentIO.o ./src/Name.o ./src/Student.o ./src/myStringclass.o   
+Finished building target: Lab06StudentIO
+ 
 
-17:24:18 Build Finished (took 77ms)
+16:04:11 Build Finished (took 1s.454ms)
 
