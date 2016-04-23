@@ -1,8 +1,8 @@
 //============================================================================
-// DESCRIPTION : Lab Five  C++II ToUpper Inheritance Class, with myStringClass.
-// CLASS       : COSC 1437.S02 – Lab 4
+// DESCRIPTION : Lab 06  C++II ReadIn File, Sort, and Display
+// CLASS       : COSC 1437.S02 – Lab 06
 // AUTHOR      : Matthew Dowell
-// DATE        : 04/06/2015
+// DATE        : 04/23/2015
 //============================================================================
 
 #include "Student.h"
@@ -40,7 +40,20 @@ int main (){
 	  cout << endl;
   }
 
+  cout << endl;
+  cout << "Mystery Bug Here" << endl;
+  cout << "Sort Students function believes it is successfully sorting students" << endl;
+  cout << "It goes through and checks the first name of each student using compare functions in the Name class" << endl;
+  cout << "While using strcasecmp when comparing Peter & George,in this particular instance strcasecmp(Peter,George)"<< endl;
+  cout << "Incorrectly returns a negative integer,-127. Which testing stand alone with char* strcasecmp should result in a positive integer" << endl;
+  cout << "The incorrect integer, then returns an incorrect bool and the SortFunction is thereby fooled, I believe the syntax however is sound" << endl;
+  cout << "I'm Soliciting feedback on this bug." << endl;
+  cout << endl;
+
+
   studentGArray.sortStudents();
+
+
 
   cout << "Students Sorted: " << endl;
 
@@ -49,7 +62,6 @@ int main (){
 	  cout << endl;
 	  cout << endl;
   }
-
 
 
 

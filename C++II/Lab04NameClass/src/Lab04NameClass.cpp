@@ -31,7 +31,7 @@ cout << "By Grapthar's Hammer! Never Give Up, Never Surrender!" << endl;
 cout << "Name Tests" << endl;
 cout << endl;
 
-	A1.setName("Matthew", first);
+	A1.setName("Peter", first);
 	A1.setName("Blake", middle);
 	A1.setName("Dowell", last);
 
@@ -48,7 +48,8 @@ cout << endl;
 
 
 	cout << endl;
-	A2.setLast("Alpha");
+	A2.setLast("Dowell");
+	A2.setFirst("George");
 	test = A1.Compare(A2);
 	cout << "Compare Test (A1.Compare(A2) is: " << test << endl;
 

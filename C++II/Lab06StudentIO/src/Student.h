@@ -31,6 +31,7 @@ class Student {
 	private:
 		Name studentName;
 		Array <int, 0, 4> grades; //five integer slots
+		int averageGrade;
 
 };
 

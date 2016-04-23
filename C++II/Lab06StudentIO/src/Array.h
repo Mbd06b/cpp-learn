@@ -62,18 +62,17 @@ if(importCounter){ //if Zero, there are no objects to sort
 	 int	NumElements = importCounter; //
 	 bool	Sorted;
 	 D Temp; // a temporary place to store our object as we sort.
+	 NumElements--; //NumElements -- we are subtracting 1 from our array, because we don't want the EOF beyond our array
 
 	 do{
 		Sorted = true;
-		NumElements--; //NumElements -- we are subtracting 1 from our array, because we don't want the last element in our array to analyze an unkwn value beyond our array
 		for (int i = 0; i < NumElements; i++){
-			if ((gArray[i].getSName()) > (gArray[i + 1].getSName()))  //what do I do if The element above is higher than the element below?
-				//if (((gArray [i + 1].getstudentName())).Compare(getStudentName(gArray[i].studentName)) > 0)
-			{
-			Temp = gArray [i];   //save the existing value
-			gArray [i] = gArray [i + 1]; //swop the value
-			gArray [i + 1] = Temp;  // assign the new value
-			Sorted = false;
+			if ((gArray[i].getSName()) > (gArray[i + 1].getSName())){  //what do I do if The element above is higher than the element below?
+
+				Temp = gArray [i];   //save the existing value
+				gArray [i] = gArray [i + 1]; //swop the value
+				gArray [i + 1] = Temp;  // assign the new value
+				Sorted = false;
 			}
 
 		}

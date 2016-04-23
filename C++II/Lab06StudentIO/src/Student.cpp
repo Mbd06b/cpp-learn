@@ -12,11 +12,13 @@
 
 
 Student::Student(){
+	averageGrade = 0;
 }
 
 Student::Student (const Student & student){
 	studentName = student.studentName;
 	grades = student.grades;
+	averageGrade = student.averageGrade;
 
 };
 
@@ -32,17 +34,13 @@ bool Student::importObject (fstream & file){ //from file
 		file.getline(Line,80);
 
 
-
 	if(strcmp(Line,"EOF") == 0){ //should avoid loading the EOF.
 		   (file.close());
 		   return false;
 		}else{
-<<<<<<< HEAD
+
 		studentName.setFirst(Line);//should capture a Name
-		file.getline(Line,80);
-=======
 		file.getline(Line,80); //moves line forward by 1; 
->>>>>>> branch 'master' of https://MatthewBDowell@bitbucket.org/MatthewBDowell/mbd06b-c-learn.git
 		getGrades(Line);
 			return true;
 		};
@@ -59,6 +57,7 @@ void Student::displayStudent (){
 	for(int i = 0; i < 5; i++){ //and the grades
 	cout << grades [i] << ", ";
 	};
+	cout << "|| Average: " << averageGrade;
 };
 
 
@@ -66,11 +65,15 @@ void Student::getGrades (char Line []){
 
 	char * pNumber;
 	int i = 0;
+	int sum = 0;
 	pNumber = strtok (Line, ","); // strtok dilimeates a C-type String by whatever character you put in the argument, (commas ",");
 
 	while (pNumber != NULL){
-		grades [i++] = atoi (pNumber); //atoi changes the ascii code into
+		grades [i] = atoi (pNumber); //atoi changes the ascii code into
+		sum += grades[i];
+		i++;
 		pNumber = strtok (NULL, ",");
 	}
+	averageGrade = sum/i;  //calculates grade average when grades are captured.
 
 };

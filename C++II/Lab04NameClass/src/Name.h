@@ -124,11 +124,11 @@ String  Name::getName(const whichName num) const{
 inline int Name::Compare(const Name & thisName) const {
 
 	int check;
-	check = strcmp(sLast, thisName.sLast);
+	check = strcasecmp(sLast, thisName.sLast);
 		if(check == 0){ 								//if last names are the same, check
-			check = strcmp(sFirst, thisName.sFirst);	    //check first names
+			check = strcasecmp(sFirst, thisName.sFirst);	    //check first names
 			  if (check == 0){							//if first names are the same,
-					check = strcmp(sMiddle, thisName.sMiddle); 	//check middle
+					check = strcasecmp(sMiddle, thisName.sMiddle); 	//check middle
 					  if (check == 0){					//if all names are the same
 						  	  	  return check;					//return check, which == 0 ;
 					  }else return check; 				//middle is > or < 0;
