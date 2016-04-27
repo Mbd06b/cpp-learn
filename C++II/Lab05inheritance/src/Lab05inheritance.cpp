@@ -67,6 +67,8 @@ int main() {
 
 		DStest3 &= DStest2;
 
+		DStest3 = "abcdefg";
+
 		cout << "Valid digitString Tests worked without exception: " << endl;
 		cout << "DSTest3 is: " << DStest3 << endl;
 

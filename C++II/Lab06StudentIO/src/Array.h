@@ -64,6 +64,10 @@ if(importCounter){ //if Zero, there are no objects to sort
 	 D Temp; // a temporary place to store our object as we sort.
 	 NumElements--; //NumElements -- we are subtracting 1 from our array, because we don't want the EOF beyond our array
 
+cout << "Display before sort:" << endl;
+
+
+
 	 do{
 		Sorted = true;
 		for (int i = 0; i < NumElements; i++){
