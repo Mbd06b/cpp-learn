@@ -4,6 +4,9 @@
 
 #include "Name.h"
 #include "Array.h"
+#include "FLString.h"
+#include "PhoneNo.h"
+#include "Address.h"
 #include <fstream>
 
 
@@ -31,6 +34,9 @@ class Student {
 
 	private:
 		Name studentName;
+	//  IDnum <digitString,  studentID;
+	//  Address studentAddress;
+	//  PhoneNo studentPhone;   NEEDS THE FLSTRING
 		Array <int, 0, 4> grades; //five integer slots
 		int averageGrade;
 
