@@ -209,6 +209,7 @@ D  Array<D,Low,High>::setAt (int indexNum, D data)const throw (){
 	return gArray [indexNum - Low] = data;
 }
 
+
 #endif /* ARRAY_H_ */
 
 
