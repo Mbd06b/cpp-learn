@@ -14,7 +14,7 @@
  * Recommendation for building the class
  *
  * template <int Size>
- * class FLString : public string   // create a fixed length string
+ * class FLString : public string   // create a fixed L string
  * 		{
  *
  * 		}
@@ -26,28 +26,27 @@
  * 		typedef FLString <9> ID;
  *
  *
- * 	The program will need to sort by Name or ID number.
- * 	 We will need two different SORT methods in the student name class.
- *
- *
- *
- * 	When we write to a disk, Bill says that the easiest way to do that is one string at a time.
- * 	Example:
- *
- * Name-
-	 * 	First
-	 * 	Middle
-	 * 	Last
-  Address-
-	 * 	Street
-	 * 	City
-	 * 	State
-	 * 	Zip
-  Phone-
-	 * 	Area Code
-	 * 	Phone NUmber
-	 * 	ID
  */
+
+
+#include "myStringclass.h"
+
+template <int L> //L - length
+class FLString : public String{
+
+public:
+					FLString		();
+					FLString		(const String &);
+					FLString		(const char []);
+		virtual		~FLString		();
+
+
+
+private:
+
+
+};
+
 
 
 #endif /* SRC_FLSTRING_H_ */
