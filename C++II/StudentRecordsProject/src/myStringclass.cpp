@@ -5,8 +5,6 @@
 
 #define STRING_SIZE 50
 
-#pragma warning (disable:4996)
-
 #include "myStringclass.h"
 using namespace std;
 

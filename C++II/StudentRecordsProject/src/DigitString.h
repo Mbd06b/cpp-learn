@@ -9,7 +9,6 @@
 #define DIGITSTRING_H_
 
 #include "myStringclass.h"
-#include <stdexcept>
 using namespace std;
 
 class digitString : public String{

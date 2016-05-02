@@ -5,8 +5,8 @@
  *      Author: mbd06b
  */
 
-#ifndef SRC_FLSTRING_H_
-#define SRC_FLSTRING_H_
+#ifndef FLSTRING_H_
+#define FLSTRING_H_
 
 
 
@@ -30,23 +30,33 @@
 
 
 #include "myStringclass.h"
+#include <string.h>
+
 
 template <int L> //L - length
 class FLString : public String{
 
 public:
 					FLString		();
-					FLString		(const String &);
+					FLString		(const FLString <L> &);
 					FLString		(const char []);
-		virtual		~FLString		();
+					~FLString		();
 
 
 
 private:
+					String & operator  = (const String &);
+					String & operator = (const char []);
+
+
+					String   operator & (const String &);
+					String   operator & (const char []);
+					String & operator &= (const String &);
+					String & operator &= (const char []);
 
 
 };
 
 
 
-#endif /* SRC_FLSTRING_H_ */
+#endif /* FLSTRING_H_ */

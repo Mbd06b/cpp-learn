@@ -17,7 +17,10 @@ FLString<L>::FLString (){
 
 //Other Constructor
 template <int L>
-FLString<L>::FLString(const FLtring & str): String (str){
+FLString<L>::FLString(const FLString <L> & str): String (str){
+	if((strlen(str)) != L){
+		 throw invalid_argument("digitString class can only accept digits");
+	}
 
 };
 
@@ -30,7 +33,7 @@ FLString<L>::~FLString<L>(){
 };
 
 
-
+/*
 template <int L>
 inline FLString<L> & FLString<L>::Copy (const String & str){
 
@@ -61,6 +64,6 @@ inline FLString<L> & FLString<L>::setAt (char c, int i){
 	return *this;
 }
 
-
+*/
 
 

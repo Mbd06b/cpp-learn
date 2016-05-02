@@ -55,6 +55,26 @@ Array <D, Low, High>  & operator = 	(const Array<D, Low, High> &);
 
 };
 
+//Default
+template <class D, int Low, int High >
+Array <D, Low, High>::Array(){
+	importCounter = 0;
+}
+
+//Destructor
+template <class D, int Low, int High >
+Array <D, Low, High>::~Array(){
+}
+
+//Copy Constructor
+template <class D, int Low, int High >
+Array <D, Low, High>::Array(const Array<D, Low, High> & toCopy){
+
+	for(int i = 0; i < (High - Low + 1);i++){
+		gArray [i] = toCopy.gArray[i];
+	}
+	importCounter = toCopy.importCounter;
+}
 
 template <class D, int Low, int High>
 void Array<D,Low,High>::sortStudents (){ //int a is our Array size (NumElements in SortLab)
@@ -102,27 +122,6 @@ int  Array<D,Low,High>::importCount ()const{
 	return importCounter; //num objects loaded by importData
 }
 
-
-//Default
-template <class D, int Low, int High >
-Array <D, Low, High>::Array(){
-	importCounter = 0;
-}
-
-//Destructor
-template <class D, int Low, int High >
-Array <D, Low, High>::~Array(){
-}
-
-//Copy Constructor
-template <class D, int Low, int High >
-Array <D, Low, High>::Array(const Array<D, Low, High> & toCopy){
-
-	for(int i = 0; i < (High - Low + 1);i++){
-		gArray [i] = toCopy.gArray[i];
-	}
-	importCounter = toCopy.importCounter;
-}
 
 //Copy Method
 template <class D, int Low, int High >

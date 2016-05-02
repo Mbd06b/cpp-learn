@@ -10,7 +10,12 @@
 
 #include <iostream>
 #include <string.h>
+#include <stdexcept>
+
+
+#pragma warning (disable:4996)
 using namespace std;
+
 
 
 
@@ -62,6 +67,8 @@ class String{
 		//Items 1 and 4 will require a String object on the left of the operator.
 			String & operator  = (const String &);
 			String & operator = (const char []);
+			char &	operator [] (int);
+			char    operator [] (int) const;
 
 		//------------------Comparison operators #2 (“<”, “<=”, “==”, “!=”, “>=”, “>”)-----------
 	    //Items 2 and 3 should have versions that allow both a String object and a “C” type string on the left of the operator
@@ -120,6 +127,21 @@ inline bool String::digitCheck() const{
 	}
 	return true;
 };
+
+inline char & String::operator [] (int i)
+	{
+	if (IsValidSubscript (i))
+			return pData [i];
+		else
+			throw invalid_argument("No char exists at that location pData[i] in String");
+	}
+
+inline char String::operator [] (int i) const
+	{
+	return (*const_cast <String *> (this)).operator [] (i);
+	}
+
+
 
 inline bool String::IsValidSubscript (int i) const{
 		return (i >= 0) && (i < static_cast <int> (numChars));
