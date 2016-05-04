@@ -9,7 +9,7 @@
 #include <fstream> //fstream is used for file operations.
 //http://www.cplusplus.com/reference/fstream/fstream/
 #include <iostream>
-
+#include <stdlib.h>
 
 using namespace std; 
 
@@ -40,9 +40,20 @@ int main (){
   fstream studentFile;
   string line;
 
-  
+ //to Open a file, by prompting the user.
+  fstream studentFile2;
+  String fileName;
+  cout << "Enter File Name" << endl;
+  cin >> fileName;
+  studentFile2.open((const char *) fileName, ios_base::out);
+	if(studentFile2.is_open()){
+		cout << "Student File 2 is open to write" << endl;
+	};
 
-  studentFile.open("Lab06data.txt", ios_base::in);
+
+cout << "Next Place" << endl;
+
+  studentFile.open("ToRead.txt", ios_base::in);
 
   if (studentFile.is_open ()){
 	  cout << "File is open" << endl;
@@ -57,13 +68,8 @@ int main (){
 
   studentGArray.sortStudents();
 
-  cout << "Students Sorted: " << endl;
 
-  for (int i = 0; i < (studentGArray.importCount()); i++){
-	  studentGArray[i].displayStudent();
-	  cout << endl;
-	  cout << endl;
-  }
+  cout << "Students Sorted: " << endl;
 
 
 

@@ -17,7 +17,7 @@ class digitString : public String{
 public:									digitString		();
 										digitString		(const String &);
 										digitString		(const char []);
-										~digitString		();
+						virtual			~digitString		();
 
 										digitString &    Concat	 (const String &);
 										digitString &    Concat	 (const char []);
@@ -32,6 +32,8 @@ public:									digitString		();
 										digitString & operator &= (const char []);
 										digitString & operator = (const String &);
 										digitString & operator = (const char []);
+
+
 
 private:
 

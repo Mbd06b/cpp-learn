@@ -17,7 +17,7 @@ public:
 					UCString		();
 					UCString		(const String &);
 					UCString		(const char []);
-					~UCString		();
+			virtual	~UCString		();
 
 					UCString &    Concat	 (const String &);
 					UCString &    Concat	 (const char []);
@@ -31,6 +31,9 @@ public:
 					UCString & operator &= (const char []);
 					UCString & operator = (const String &);
 					UCString & operator = (const char []);
+
+
+
 
 private:
 					String & 	toLower 		  ();
@@ -125,6 +128,7 @@ inline UCString operator & (const UCString & str, const char pChar []){
 	temp.Concat (str);
 	return temp;
 };
+
 
 
 #endif /* UCSTRING_H_ */

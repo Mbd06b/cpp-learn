@@ -22,10 +22,8 @@ class Name {
 								Name (const Name &); //copy
 								~Name();
 
-					Name 		getName		() const;
-					Name  &		getName		();
-					String		get1Name	(const whichName)const;
-					String & 	get1Name	(const whichName); //enum whichName "first, middle, last"
+				const Name  &	getName		()const;
+				const String &	get1Name	(const whichName)const;//enum whichName "first, middle, last"
 					Name &      setName		(const String &, whichName); //enum whichName "first, middle, or last"
 
 					Name &		setFirst	(const String &);

@@ -33,6 +33,7 @@ class Array
  	 	 		   void sortStudents   ();
   	  	  	  	   void importData  (fstream &); //for importing files into Array
   	  	  	  	   int importCount () const; //see import counter
+  	  	  	 const int & getImportCount () const;
 Array <D, Low, High>  & operator = 	(const Array<D, Low, High> &);
 					D & operator [] (int) throw (); //int is the index location.
 					D   operator [] (int) const throw ();
@@ -208,6 +209,11 @@ D  Array<D,Low,High>::setAt (int indexNum, D data)const throw (){
 	return gArray [indexNum - Low] = data;
 }
 
+
+template <class D, int Low, int High>
+const int & Array<D,Low,High>::getImportCount() const{
+	return importCounter;
+}
 
 #endif /* ARRAY_H_ */
 

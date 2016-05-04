@@ -25,6 +25,11 @@ Student::Student (const Student & student){
 Student::~Student(){
 };
 
+int Student::sCompare (const Student & a, const Student & b){
+
+	return (a.getSName().Compare(b.getSName()));
+}
+
 
 bool Student::importObject (fstream & file){ //from file
 
@@ -47,7 +52,7 @@ bool Student::importObject (fstream & file){ //from file
 
 };
 
-Name & Student::getSName(){
+const Name & Student::getSName()const{
 	return studentName.getName();
 }
 

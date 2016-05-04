@@ -47,12 +47,12 @@ public:
 private:
 	String street;
 	String city;
-	//FLString 2 - Uppercase	state;
-	//FLString 5- digitstring  zipcode;
+	String	state;
+	FLdigitString<6> zipcode;
 };
 
 
 
 
 
-#endif /* SRC_ADDRESS_H_ */
+#endif /* ADDRESS_H_ */

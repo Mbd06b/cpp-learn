@@ -67,8 +67,8 @@ class String{
 		//Items 1 and 4 will require a String object on the left of the operator.
 			String & operator  = (const String &);
 			String & operator = (const char []);
-			char &	operator [] (int);
-			char    operator [] (int) const;
+			char &	operator []	(int);
+			char	operator []	(int)const;
 
 		//------------------Comparison operators #2 (“<”, “<=”, “==”, “!=”, “>=”, “>”)-----------
 	    //Items 2 and 3 should have versions that allow both a String object and a “C” type string on the left of the operator
@@ -389,6 +389,7 @@ inline istream & operator >> (istream & in, String & str){   //this is a stand-a
 	str.Read (in);
 	return in;
 }
+
 
 /*
 

@@ -15,8 +15,8 @@ public:			phoneNo ();
 
 
 private:
-	digitString areaCode; //FL 3
-	digitString directPhone; //FL 7
+	FLdigitString<4> areaCode;
+	FLdigitString<8> directPhone;
 
 
 };

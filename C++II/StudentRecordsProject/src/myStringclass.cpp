@@ -10,7 +10,6 @@ using namespace std;
 
 //Default Constructor  - "one with no parameters to initialize the class to empty;"
 String::String (){
-
 	numChars = 0;
 	numSlots = numChars;
 	pData = new char [numChars +1];

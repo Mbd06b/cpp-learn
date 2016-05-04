@@ -23,6 +23,24 @@ digitString::~digitString(){
 };
 
 
+//Copy function (Copy) to copy another String object into this one or copy a “C” type string into this object.
+digitString & digitString::Copy(const digitString & str){
+	if (this != &str){ //chcek to see if we are trying to copy over ourselves.
+		String::Copy(str);
+	}else;
+	return *this; //*this returning the string (object/method) I belong to.
+};
+
+digitString & digitString::Copy(const char str []){
+digitString temp (str);
+	if(!temp.digitCheck()){
+			throw invalid_argument("digitString class can only accept digits");
+		}else
+		String::Copy(str);
+	return *this;
+};
+
+
 digitString & digitString::Concat(const String & str){
 	if(!str.digitCheck()){
 		throw invalid_argument("digitString class can only accept digits");
@@ -95,3 +113,5 @@ digitString temp (str);
 temp.Concat (str);
 return temp;
 };
+
+
