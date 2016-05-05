@@ -21,19 +21,19 @@ public:
 			FLdigitString<L> &	Copy 	 (const digitString &);
 			FLdigitString<L> &   Copy	 (const char []);
 			FLdigitString<L> &	setAt	 (char, int);
+			FLdigitString<L> &  setFLDstring (const String &);
 			FLdigitString<L> & operator = (const String &);
 			FLdigitString<L> & operator = (const char []);
 
 
 private:
-		UCString   operator & (const String &);
-		UCString   operator & (const char []);
-		UCString & operator &= (const String &);
-		UCString & operator &= (const char []);
-		UCString & operator = (const String &);
-		UCString & operator = (const char []);
-		UCString &    Concat	 (const String &);
-		UCString &    Concat	 (const char []);
+			digitString &    Concat	 (const String &);
+			digitString &    Concat	 (const char []);
+			digitString   operator & (const String &);
+			digitString   operator & (const char []);
+			digitString & operator &= (const String &);
+			digitString & operator &= (const char []);
+
 
 };
 
@@ -77,14 +77,28 @@ FLdigitString<L> & FLdigitString<L>::setAt(char c, int i){
 			throw invalid_argument("digitString class can only accept digits");
 		}else
 	if(i > L){
-		throw invalid_argument("Index out of Bounds")
-	}
+		throw invalid_argument("Index out of Bounds");
+	}else
 	String::setAt(c,i);
 	return *this;
 }
 
 template <size_t L>
-inline FLdigitString<L> & FLdigitString<L>::operator = (const String & str){
+FLdigitString<L> &  FLdigitString<L>::setFLDstring (const String & str){
+	String temp = str;
+	if(!temp.digitCheck()){ //if not a digit
+			throw invalid_argument("digitString class can only accept digits");
+		}else
+	if(str.Length() != (L - 1)){
+		throw invalid_argument("Index out of Bounds");
+	}else
+	this = str;
+	return *this;
+};
+
+
+template <size_t L>
+ FLdigitString<L> & FLdigitString<L>::operator = (const String & str){
 	String temp (str);
 		if(!temp.digitCheck()){
 			throw invalid_argument("digitString class can only accept digits");
@@ -98,7 +112,7 @@ inline FLdigitString<L> & FLdigitString<L>::operator = (const String & str){
 }
 
 template <size_t L>
-inline FLdigitString<L> & FLdigitString<L>::operator = (const char str []){
+ FLdigitString<L> & FLdigitString<L>::operator = (const char str []){
 	String temp (str);
 	if(!temp.digitCheck()){
 				throw invalid_argument("digitString class can only accept digits");

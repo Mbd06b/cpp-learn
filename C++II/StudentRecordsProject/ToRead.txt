@@ -1,9 +1,41 @@
-﻿Alfred
-99,88,77,66,55
-Peter
-100,100,100,100,100
-George
-75,85,95,100,44
-Frank
-44,55,66,77,88
+﻿Callum
+Mackenzie
+Kraig
+421 Glennloch Lane
+Hadrian
+Minnesota
+12345
+123
+123456
+123456789
+Jackson
+Christopher
+Maximus
+610 Green Hollow Lane
+Avonlea
+Saskatchewan
+77766
+412
+4778987
+197457896
+Gracelyn
+Anastasia
+Romanov
+1924 Gatewood Avenue
+Rochester
+New York
+58964
+113
+5698732
+191854893
+Anna
+Elizabeth
+Underhill
+35 North View Road
+Lighthouse Island
+Maine
+83267
+832
+3811234
+852764304
 EOF

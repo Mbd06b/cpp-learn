@@ -44,7 +44,21 @@ Address & Address::setCity(const String & str){
 	city = str;
 	return *this;
 }
-//Address &   Address::setState(const String &){};
+Address &  Address::setState(const String & str){
+	state = str;
+	return *this;
+};
+
+Address & Address::setZip(const FLdigitString<6> & str){
+	String temp;
+	for(int i = 0; i < 5; i++){
+		temp[i] = str[i];
+	}
+	zip = temp;
+	return *this;
+}
+
+
 //int	Address::Compare(const Address &) const{};
 
 

@@ -6,19 +6,26 @@
  */
 
 #include "Student.h"
+#include "Name.h"
+#include "FLdigitString.h"
+#include "PhoneNo.h"
+#include "Address.h"
 #include <stdlib.h>
 
+#define STRING_SIZE 80
 
 
 
 Student::Student(){
-	averageGrade = 0;
 }
 
 Student::Student (const Student & student){
 	studentName = student.studentName;
-	grades = student.grades;
-	averageGrade = student.averageGrade;
+	studentID = student.studentID;
+	studentAddress = student.studentAddress;
+	studentPhone = student.studentPhone;
+	//grades = student.grades;
+	//averageGrade = student.averageGrade;
 
 };
 
@@ -34,19 +41,37 @@ int Student::sCompare (const Student & a, const Student & b){
 bool Student::importObject (fstream & file){ //from file
 
 
-	char Line [80];
-		//file.getline(line,80); //gets the line (should be name, to start)
-		file.getline(Line,80);
+	char Line [STRING_SIZE];
 
+	file.getline(Line,STRING_SIZE); //gets the line (should be name, to start)
 
-	if(strcmp(Line,"EOF") == 0){ //should avoid loading the EOF.
+		if(strcmp(Line,"EOF") == 0){ //should avoid loading the EOF.
 		   (file.close());
 		   return false;
 		}else{
 
-		studentName.setFirst(Line);//should capture a Name
-		file.getline(Line,80); //moves line forward by 1; 
-		getGrades(Line);
+			studentName.setFirst(Line);//should capture a Name
+			file.getline(Line,STRING_SIZE); //moves line forward by 1;
+			studentName.setMiddle(Line);
+			file.getline(Line,STRING_SIZE); //moves line forward by 1;
+			studentName.setLast(Line);
+			file.getline(Line,STRING_SIZE); //moves line forward by 1;
+			studentAddress.setStreet(Line);
+			file.getline(Line,STRING_SIZE); //moves line forward by 1;
+			studentAddress.setCity(Line);
+			file.getline(Line,STRING_SIZE); //moves line forward by 1;
+			studentAddress.setState(Line);
+			file.getline(Line,STRING_SIZE); //moves line forward by 1;
+			studentAddress.setZip(Line);
+			file.getline(Line,STRING_SIZE); //moves line forward by 1;
+			studentPhone.setareaCode(Line);
+			file.getline(Line,STRING_SIZE); //moves line forward by 1;
+			studentPhone.setphoneNum(Line);
+			file.getline(Line,STRING_SIZE); //moves line forward by 1;
+			setstudentID(Line);
+			file.getline(Line,STRING_SIZE); //moves line forward by 1;
+
+//		getGrades(Line);
 			return true;
 		};
 
@@ -56,16 +81,22 @@ const Name & Student::getSName()const{
 	return studentName.getName();
 }
 
+Student & 	Student::setstudentID (const String & str){
+
+	studentID.setFLDstring(str);
+	return *this;
+}
+
 void Student::displayStudent (){
 
 	studentName.Display();    //display the name
-	for(int i = 0; i < 5; i++){ //and the grades
-	cout << grades [i] << ", ";
-	};
-	cout << "|| Average: " << averageGrade;
+	studentID.Display();
+	studentAddress.Display();
+	studentPhone.Display();
+
 };
 
-
+/*
 void Student::getGrades (char Line []){
 
 	char * pNumber;
@@ -82,3 +113,4 @@ void Student::getGrades (char Line []){
 	averageGrade = sum/i;  //calculates grade average when grades are captured.
 
 };
+*/

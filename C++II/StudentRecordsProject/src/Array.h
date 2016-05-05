@@ -17,7 +17,11 @@ class Array
 {
 	public:
 		enum Exceptions {IndexOutOfBounds = 1};
-		enum SortType {AtoZ, ZtoA};
+		enum SortOption {InvalidSort = -1,
+						byLast,
+						byFirst,
+						byMiddle,
+						numSortOptions};
 
 //Constructors
 						Array       (); //default, a pointer array with no rows or columns.
@@ -30,7 +34,7 @@ class Array
 					D   setAt       (int, D) const throw ();
 
  Array <D, Low, High> & Copy 	    (const Array<D, Low, High> &);
- 	 	 		   void sortStudents   ();
+ 	 	 		   void sortStudents   (SortOption);
   	  	  	  	   void importData  (fstream &); //for importing files into Array
   	  	  	  	   int importCount () const; //see import counter
   	  	  	 const int & getImportCount () const;
@@ -78,17 +82,13 @@ Array <D, Low, High>::Array(const Array<D, Low, High> & toCopy){
 }
 
 template <class D, int Low, int High>
-void Array<D,Low,High>::sortStudents (){ //int a is our Array size (NumElements in SortLab)
+void Array<D,Low,High>::sortStudents (SortOption option){ //int a is our Array size (NumElements in SortLab)
 
 if(importCounter){ //if Zero, there are no objects to sort
 	 int	NumElements = importCounter; //
 	 bool	Sorted;
 	 D Temp; // a temporary place to store our object as we sort.
 	 NumElements--; //NumElements -- we are subtracting 1 from our array, because we don't want the EOF beyond our array
-
-cout << "Display before sort:" << endl;
-
-
 
 	 do{
 		Sorted = true;

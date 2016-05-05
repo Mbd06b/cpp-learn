@@ -4,7 +4,7 @@
 
 #include "Name.h"
 #include "Array.h"
-//#include "FLString.h"
+#include "FLdigitString.h"
 #include "PhoneNo.h"
 #include "Address.h"
 #include <fstream>
@@ -26,9 +26,11 @@ class Student {
 				bool 	 importObject 		(fstream &);
 				int		 sCompare 			(const Student &, const Student &);
 
+		Student & 	 setstudentID 		(const String &);
+
 				void	 displayStudent 	();
 		const	Name & 	 getSName			()const;
-				void	 getGrades  		(char []);
+				//void	 getGrades  		(char []);
 
 
 
@@ -36,11 +38,12 @@ class Student {
 	private:
 		Name studentName;
 		FLdigitString <7>  studentID;
-	//  Address studentAddress;
-	//  PhoneNo studentPhone;   NEEDS THE FLSTRING
+		Address studentAddress;
+		phoneNo studentPhone;
+	/*
 		Array <int, 0, 4> grades; //five integer slots
 		int averageGrade;
-
+	*/
 };
 
 

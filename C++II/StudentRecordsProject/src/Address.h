@@ -9,6 +9,7 @@
 #define SRC_ADDRESS_H_
 
 #include "myStringclass.h"
+#include "FLdigitString.h"
 #include <iostream>
 
 
@@ -19,15 +20,17 @@ public:
 				Address (Address &);
 				~Address ();
 
-			const Address &  getAddress  () const;
-			const String  &	getStreet	() const;
-			const String  &	getCity		() const;
-	//			Address & 	getState    () const;
-	//			Address &   getZip 		() const;
+		const	Address &  			getAddress  () const;
+		const 	String  &			getStreet	() const;
+		const 	String  &			getCity		() const;
+		const	String    & 		getState    () const;
+		const 	FLdigitString<6> &   getZip 	() const;
 
-	//			Address & 	setAddress	(const String &, const String &, const FLUCString &, const FLdigitString &);
-				Address &   setStreet   (const String &);
-				Address &   setCity     (const String &);
+				Address & 			setAddress	(const String &, const String &, const String &, const FLdigitString<6> &);
+				Address &   		setStreet   (const String &);
+				Address &  			setCity     (const String &);
+				Address &   		setState	(const String &);
+				Address & 			setZip		(const FLdigitString <6> &);
 	//			Address &   setState    (const String &);
 
 
@@ -48,7 +51,7 @@ private:
 	String street;
 	String city;
 	String	state;
-	FLdigitString<6> zipcode;
+	FLdigitString<6> zip;
 };
 
 

@@ -1,17 +1,20 @@
 //============================================================================
-// DESCRIPTION : Lab 06  C++II ReadIn File, Sort, and Display
+// DESCRIPTION : Lab 06  C++II ReadIn File, Sort, and Dislay
 // CLASS       : COSC 1437.S02 – Lab 06
 // AUTHOR      : Matthew Dowell
 // DATE        : 04/23/2015
 //============================================================================
 
 #include "Student.h"
+#include "fileCommands.h"
 #include <fstream> //fstream is used for file operations.
 //http://www.cplusplus.com/reference/fstream/fstream/
 #include <iostream>
 #include <stdlib.h>
 
-using namespace std; 
+
+
+
 
 /*
 When we write to a disk, Bill says that the easiest way to do that is one string at a time.
@@ -25,17 +28,24 @@ When we write to a disk, Bill says that the easiest way to do that is one string
 	 * 	Street
 	 * 	City
 	 * 	State
-	 * 	Zip
+	 * 	Zip - 7 digits
   Phone-
-	 * 	Area Code
-	 * 	Phone NUmber
-	 * 	ID
+	 * 	Area Code - 3 digits
+	 * 	Phone Number - 7 digits (no spaces)
+	 * 	ID - 9 numeric digits exactly
+	 *
+	 * 	The user will be allowed to enter records from the keyboard,
+	 * 	sort records by either name (last, first, middle) or by ID,
+	 * 	save the records to a disk file (name supplied by user),
+	 * 	and read the records from a disk file (name again supplied by user).
+	 *
 */
-
 
 
 int main (){
 
+
+  bool continueon = true;
   Array  <Student, 0, 25> studentGArray;
   fstream studentFile;
   string line;
@@ -43,43 +53,88 @@ int main (){
  //to Open a file, by prompting the user.
   fstream studentFile2;
   String fileName;
-  cout << "Enter File Name" << endl;
-  cin >> fileName;
-  studentFile2.open((const char *) fileName, ios_base::out);
-	if(studentFile2.is_open()){
-		cout << "Student File 2 is open to write" << endl;
-	};
 
 
-cout << "Next Place" << endl;
-
-  studentFile.open("ToRead.txt", ios_base::in);
-
-  if (studentFile.is_open ()){
-	  cout << "File is open" << endl;
-
-	 studentGArray.importData(studentFile);
-
-
-  } else{
-	  cout << "File is not open" << endl;
-  };
-  
-
-  studentGArray.sortStudents();
-
-
-  cout << "Students Sorted: " << endl;
+  cout << "Tree Top University STUDENT RECORD.TRON ACTIVATED ... " << endl;
+  displayHelp();
 
 
 
+do{
+cout << "Input Command >";
+
+	switch (getCommand()){
+		case CmdImportRecords:
+
+			studentFile.open("ToRead.txt", ios_base::in);
+
+			  if (studentFile.is_open ()){
+				 cout << "File is open" << endl;
+				 studentGArray.importData(studentFile);
+			  } else{
+				  cout << "File failed to open" << endl;
+			  };
+
+			break;
+		case CmdInputRecords:
 
 
-  cout << "Made it to the end" << endl;
+			break;
+		case CmdSortRecords:
+		//			studentGArray.sortStudents();
+					 cout << "Students Sorted" << endl;
+
+			break;
+		case CmdDisplayRecords:
+
+			if(studentGArray.importCount()){
+				cout << "No Records to Display" << endl;
+				  }
+			else{
+				for (int i = 0; i < (studentGArray.importCount()); i++){
+					  studentGArray[i].displayStudent();
+					  cout << endl;
+					  cout << endl;
+					}
+				};
+
+
+			break;
+		case CmdExportRecords:
+			cout << "Enter File Name >";
+			cin >> fileName;
+			studentFile2.open((const char *) fileName, ios_base::out);
+
+			if(studentFile2.is_open()){
+				cout << fileName << " is open to write." << endl;
+			};
+
+
+			break;
+		case CmdHelp:
+			displayHelp();
+
+			break;
+		case CmdExit:
+			 continueon = false;
+
+			 break;
+		case CmdInvalid:
+						cout << "Command Invalid try again, or type 'Help'" << endl;
+			break;
+		default: cout << "Internal error #1, don't abandon all hope, contact customer support" << endl;
+	}
+
+
+}while(continueon);
+
+
+
+
 
  // while(studentGArray[i++].Read(studentFile));
 
-  
+cout << "Program Ended" << endl;
   return 0; 
 }
 

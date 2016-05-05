@@ -3,7 +3,7 @@
 #define  PHONENO_H_
 
 
-#include "DigitString.h"
+#include "FLdigitString.h"
 
 
 class phoneNo {
@@ -13,10 +13,20 @@ public:			phoneNo ();
 				~phoneNo ();
 
 
+		phoneNo & 		setareaCode (const FLdigitString<4> &);
+		phoneNo &		setphoneNum (const FLdigitString<8> &);
+
+		void	Display ();
+		void    getAt   ();
+		void 	setAt	();
+		void    Copy    ();
+
+
+
 
 private:
 	FLdigitString<4> areaCode;
-	FLdigitString<8> directPhone;
+	FLdigitString<8> phoneNum;
 
 
 };
