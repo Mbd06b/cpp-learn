@@ -62,7 +62,7 @@ FLdigitString<L>::FLdigitString(const String & str): String (str){
 }
 
 template <size_t L>
-FLdigitString<L>::FLdigitString (const char str []): String (str){
+FLdigitString<L>::FLdigitString (const char str []){
 	if(strlen(str) != L){
 		throw invalid_argument("String is not the right size");
 	};
@@ -92,8 +92,7 @@ FLdigitString<L> &  FLdigitString<L>::setFLDstring (const String & str){
 	if(str.Length() != (L - 1)){
 		throw invalid_argument("Index out of Bounds");
 	}else
-	this = str;
-	return *this;
+		return *this;
 };
 
 

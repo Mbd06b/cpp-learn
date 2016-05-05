@@ -1,6 +1,9 @@
 #include "fileCommands.h"
 #include <iostream>
 #include <string.h>
+
+
+
 using namespace std;
 
 
@@ -14,6 +17,13 @@ char * CmdStrings [NumCommands] = {
 									"Exit",
 };
 
+char * CompareStrings [NumCompareOptions] = {
+									"First",
+									"Middle",
+									"Last",
+									"", //Default
+};
+
 void displayHelp(){
 	  cout << "Commands are: " << endl;
 	  cout << "[Import] - Select a file in project directory to read, (Sample is named ToRead.txt)." << endl;
@@ -24,7 +34,7 @@ void displayHelp(){
 	  cout << "[Help] - Show available commands." << endl;
 }
 
-Commands GetCommand (){
+Commands getCommand (){
 
 	char * Cmd;
 	Cmd = ReadString();
@@ -39,9 +49,23 @@ Commands GetCommand (){
 		return CmdInvalid; //CmdInvalid is part of the Commands Enumeration (-1)
 }
 
-using namespace std;
 
 
+CompareOption getCompareOption (){
+	char * Cmd;
+	int	i;
+
+	Cmd = ReadString();
+
+	for (i = CompareLast; i < NumCompareOptions; i++){ //NumCommands in at the bottom of our Commands Enumeration and will always hold the largest integer.
+		if (strcmp (Cmd, CompareStrings [i]) == 0){ //  _strcmpi is strcmp "case insensitive" if
+			delete [] Cmd;
+			return (CompareOption)i; //added (Commands) to specify return a commands enumeration integer
+		}
+	}
+		delete [] Cmd;
+		return CompareInvalid; //CmdInvalid is part of the Commands Enumeration (-1)
+}
 
 
 char * ReadString ()

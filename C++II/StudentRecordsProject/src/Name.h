@@ -8,17 +8,19 @@
 #ifndef NAME_H_
 #define NAME_H_
 #include "myStringclass.h"
+#include "fileCommands.h"
 #include <iostream>
 
 using namespace std;
 
 enum whichName {first, middle, last, enumEnd};
 
+
 class Name {
+	public:
 
 
-
-	public:						Name (); //constructor
+								Name (); //constructor
 								Name (const Name &); //copy
 								~Name();
 
@@ -31,7 +33,8 @@ class Name {
 					Name &		setLast		(const String &);
 
 
-					int			Compare     (const Name &) const;
+					int			Compare     (const Name &, const CompareOption) const;
+					int			sortCompare     (const Name &, const CompareOption) const;
 					ostream & 	Display 	(ostream & = cout)const;
 					void 		Display		();
 
@@ -84,27 +87,27 @@ inline ostream & operator << (ostream & out, Name & myName){
 
 //-------------------Comparison Operators---------------------------------
 inline bool Name::operator <= (const Name & N2) const{
-	return ((Compare(N2)) <= (0));
+	return ((Compare(N2, option)) <= (0));
 }
 
 inline bool Name::operator == (const Name & N2) const{
-	return ((Compare(N2)) == (0));
+	return ((Compare(N2, option)) == (0));
 }
 
 inline bool Name::operator >= (const Name & N2) const{
-	return ((Compare(N2)) >= (0));
+	return ((Compare(N2, option)) >= (0));
 }
 
 inline bool Name::operator != (const Name & N2) const{
-	return ((Compare(N2)) != (0));
+	return ((Compare(N2, option)) != (0));
 }
 
 inline bool Name::operator > (const Name & N2) const{
-	return ((Compare(N2)) > (0));
+	return ((Compare(N2, option)) > (0));
 }
 
 inline bool Name::operator < (const Name & N2) const{
-	return ((Compare(N2)) < (0));
+	return ((Compare(N2, option)) < (0));
 }
 /**/
 

@@ -18,7 +18,7 @@ public:			phoneNo ();
 
 		void	Display ();
 		void    getAt   ();
-		void 	setAt	();
+		phoneNo & 	setAt	();
 		void    Copy    ();
 
 

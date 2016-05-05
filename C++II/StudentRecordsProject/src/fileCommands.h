@@ -2,6 +2,8 @@
 #ifndef FILECOMMANDS_H_
 #define FILECOMMANDS_H_
 
+
+
 enum Commands{
 	CmdInvalid = -1,
 	CmdImportRecords,
@@ -17,10 +19,21 @@ enum Commands{
 
 Commands getCommand();
 
+enum CompareOption{	CompareInvalid = -1,
+					CompareLast = 1,
+					CompareFirst,
+					CompareMiddle,
+					NumCompareOptions,
+				};
+
+CompareOption getCompareOption();
+
+
 void displayHelp();
 
 char * ReadString ();
 
+static CompareOption option;
 
 
 

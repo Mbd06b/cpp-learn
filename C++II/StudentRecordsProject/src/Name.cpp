@@ -75,21 +75,51 @@ const String &  Name::get1Name(const whichName num) const{
 }
 
 
- int Name::Compare(const Name & thisName) const {
+ int Name::Compare(const Name & thisName, CompareOption option) const {
 
-	int check;
-	check = strcasecmp(sLast, thisName.sLast);
-		if(check == 0){ 								//if last names are the same, check
-			check = strcasecmp(sFirst, thisName.sFirst);	    //check first names
-			  if (check == 0){							//if first names are the same,
-					check = strcasecmp(sMiddle, thisName.sMiddle); 	//check middle
-					  if (check == 0){					//if all names are the same
-						  	  	  return check;					//return check, which == 0 ;
-					  }else return check; 				//middle is > or < 0;
-			 }else return check; 						//first is > or < 0;
-		}else return check; 							//last is > or < 0;
+	 int check;
+//compare for Last
+	if(option == CompareLast){
+		check = strcasecmp(sLast, thisName.sLast);
+			if(check == 0){ 								//if last names are the same, check
+				check = strcasecmp(sFirst, thisName.sFirst);	    //check first names
+				  if (check == 0){							//if first names are the same,
+						check = strcasecmp(sMiddle, thisName.sMiddle); 	//check middle
+						  if (check == 0){					//if all names are the same
+									  return check;					//return check, which == 0 ;
+						  }else return check; 				//middle is > or < 0;
+				 }else return check; 						//first is > or < 0;
+			}else return check; 							//last is > or < 0;
+	}else
+//compare for First
+	if (option == CompareFirst){
+		check = strcasecmp(sFirst, thisName.sFirst);
+			if(check == 0){ 								//if first names are the same, check
+				check = strcasecmp(sLast, thisName.sLast);	    //check last names
+				  if (check == 0){							//if last names are the same,
+						check = strcasecmp(sMiddle, thisName.sMiddle); 	//check middle
+						  if (check == 0){					//if all names are the same
+							  	  	  return check;					//return check, which == 0 ;
+						  }else return check; 				//middle is > or < 0;
+				 }else return check; 						//first is > or < 0;
+			}else return check; 							//last is > or < 0;
+	}else
 
-
+//compare for Middle
+	if(option == CompareMiddle){
+			check = strcasecmp(sMiddle, thisName.sMiddle);
+				if(check == 0){ 								//if last names are the same, check
+					check = strcasecmp(sLast, thisName.sLast);	    //check first names
+					  if (check == 0){							//if first names are the same,
+							check = strcasecmp(sFirst, thisName.sFirst); 	//check middle
+							  if (check == 0){					//if all names are the same
+								  	  	  return check;					//return check, which == 0 ;
+							  }else return check; 				//middle is > or < 0;
+					 }else return check; 						//first is > or < 0;
+				}else return check; 							//last is > or < 0;
+	}else
+		cout << "Name Compare Failed" << endl;
+		return false;
 };
 
 

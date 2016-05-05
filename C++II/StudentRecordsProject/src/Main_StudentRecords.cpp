@@ -5,13 +5,13 @@
 // DATE        : 04/23/2015
 //============================================================================
 
+
 #include "Student.h"
 #include "fileCommands.h"
 #include <fstream> //fstream is used for file operations.
 //http://www.cplusplus.com/reference/fstream/fstream/
 #include <iostream>
 #include <stdlib.h>
-
 
 
 
@@ -44,7 +44,7 @@ When we write to a disk, Bill says that the easiest way to do that is one string
 
 int main (){
 
-
+  option = CompareLast;
   bool continueon = true;
   Array  <Student, 0, 25> studentGArray;
   fstream studentFile;
@@ -81,6 +81,9 @@ cout << "Input Command >";
 
 			break;
 		case CmdSortRecords:
+					cout << "How should we sort the students? by [First], [Last], or [Middle]?" << endl;
+					cout << ">";
+					option = getCompareOption();
 		//			studentGArray.sortStudents();
 					 cout << "Students Sorted" << endl;
 

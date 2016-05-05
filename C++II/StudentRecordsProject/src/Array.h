@@ -34,7 +34,7 @@ class Array
 					D   setAt       (int, D) const throw ();
 
  Array <D, Low, High> & Copy 	    (const Array<D, Low, High> &);
- 	 	 		   void sortStudents   (SortOption);
+ 	 	 		   void sortStudents   ();
   	  	  	  	   void importData  (fstream &); //for importing files into Array
   	  	  	  	   int importCount () const; //see import counter
   	  	  	 const int & getImportCount () const;
@@ -82,7 +82,7 @@ Array <D, Low, High>::Array(const Array<D, Low, High> & toCopy){
 }
 
 template <class D, int Low, int High>
-void Array<D,Low,High>::sortStudents (SortOption option){ //int a is our Array size (NumElements in SortLab)
+void Array<D,Low,High>::sortStudents (){ //int a is our Array size (NumElements in SortLab)
 
 if(importCounter){ //if Zero, there are no objects to sort
 	 int	NumElements = importCounter; //

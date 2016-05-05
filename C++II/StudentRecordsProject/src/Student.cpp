@@ -34,7 +34,7 @@ Student::~Student(){
 
 int Student::sCompare (const Student & a, const Student & b){
 
-	return (a.getSName().Compare(b.getSName()));
+	return (a.getSName().Compare(b.getSName(), option));
 }
 
 
@@ -61,15 +61,14 @@ bool Student::importObject (fstream & file){ //from file
 			studentAddress.setCity(Line);
 			file.getline(Line,STRING_SIZE); //moves line forward by 1;
 			studentAddress.setState(Line);
-			file.getline(Line,STRING_SIZE); //moves line forward by 1;
+			file.getline(Line,5); //moves line forward by 1;
 			studentAddress.setZip(Line);
-			file.getline(Line,STRING_SIZE); //moves line forward by 1;
+			file.getline(Line,3); //moves line forward by 1;
 			studentPhone.setareaCode(Line);
-			file.getline(Line,STRING_SIZE); //moves line forward by 1;
+			file.getline(Line,7); //moves line forward by 1;
 			studentPhone.setphoneNum(Line);
-			file.getline(Line,STRING_SIZE); //moves line forward by 1;
+			file.getline(Line,9); //moves line forward by 1;
 			setstudentID(Line);
-			file.getline(Line,STRING_SIZE); //moves line forward by 1;
 
 //		getGrades(Line);
 			return true;
