@@ -20,6 +20,7 @@ public:
 				Address (Address &);
 				~Address ();
 
+				Address & 		Copy (const Address &);
 		const	Address &  			getAddress  () const;
 		const 	String  &			getStreet	() const;
 		const 	String  &			getCity		() const;
@@ -39,6 +40,7 @@ public:
 				void 		Display		();
 
 				//operators
+
 				void		    Read	 (istream &);//method used to facilitate the read in '>>' operator.
 				Address & 	    operator = 	 (const Address &);
 

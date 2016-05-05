@@ -28,8 +28,12 @@ class Student {
 
 		Student & 	 setstudentID 		(const String &);
 
-				void	 displayStudent 	();
-		const	Name & 	 getSName			()const;
+				void	 			displayStudent 	();
+		const	Name & 				getSName		()const;
+		const   FLdigitString<10> &  getSID 			()const;
+		const   Address & 			getSAddress 	()const;
+		const	phoneNo &			getSPhone		()const;
+
 				//void	 getGrades  		(char []);
 
 
@@ -37,7 +41,7 @@ class Student {
 
 	private:
 		Name studentName;
-		FLdigitString <7>  studentID;
+		FLdigitString <10>  studentID;
 		Address studentAddress;
 		phoneNo studentPhone;
 	/*

@@ -15,7 +15,7 @@ public:
 			FLdigitString (const digitString &);
 			FLdigitString (const String &);
 			FLdigitString (const char []);
-			~FLdigitString ();
+virtual		~FLdigitString ();
 
 
 			FLdigitString<L> &	Copy 	 (const digitString &);
@@ -58,6 +58,7 @@ FLdigitString<L>::FLdigitString(const String & str): String (str){
 	if(!digitCheck()){
 		throw invalid_argument("digitString class can only accept digits");
 	}
+	pData = str;
 
 }
 
@@ -70,6 +71,11 @@ FLdigitString<L>::FLdigitString (const char str []){
 			throw invalid_argument("digitString class can only accept digits");
 		}
 }
+
+//destructor
+template <size_t L>
+FLdigitString<L>::~FLdigitString(){
+};
 
 template <size_t L>
 FLdigitString<L> & FLdigitString<L>::setAt(char c, int i){

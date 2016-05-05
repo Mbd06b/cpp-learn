@@ -80,6 +80,18 @@ const Name & Student::getSName()const{
 	return studentName.getName();
 }
 
+const FLdigitString<10> & Student::getSID ()const{
+	return studentID;
+}
+
+const Address & Student::getSAddress()const{
+	return studentAddress;
+}
+
+const phoneNo & Student::getSPhone ()const{
+	return studentPhone;
+}
+
 Student & 	Student::setstudentID (const String & str){
 
 	studentID.setFLDstring(str);
