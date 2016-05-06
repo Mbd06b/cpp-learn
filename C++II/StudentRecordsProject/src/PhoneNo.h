@@ -13,13 +13,13 @@ public:			phoneNo ();
 				~phoneNo ();
 
 		phoneNo & 		Copy		(const phoneNo &);
-		phoneNo & 		setareaCode (const FLdigitString<4> &);
-		phoneNo &		setphoneNum (const FLdigitString<8> &);
+		phoneNo & 		setareaCode (const FLdigitString<3> &);
+		phoneNo &		setphoneNum (const FLdigitString<7> &);
 
 		void	Display ();
 const   phoneNo & 			 getfullPhoneNum () const;
-const 	FLdigitString<4> &     getareaCode   () const;
-const   FLdigitString<8> & 	  getphoneNum	() const;
+const 	FLdigitString<3> &     getareaCode   () const;
+const   FLdigitString<7> & 	  getphoneNum	() const;
 
 		phoneNo & operator = (const phoneNo &);
 
@@ -32,8 +32,8 @@ const   FLdigitString<8> & 	  getphoneNum	() const;
 
 
 private:
-	FLdigitString<4> areaCode;
-	FLdigitString<8> phoneNum;
+	FLdigitString<3> areaCode;
+	FLdigitString<7> phoneNum;
 
 
 };

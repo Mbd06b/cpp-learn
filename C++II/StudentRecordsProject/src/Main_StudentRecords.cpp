@@ -74,6 +74,7 @@ cout << "Input Command >";
 			  } else{
 				  cout << "File failed to open" << endl;
 			  };
+			  studentFile.clear();
 
 			break;
 		case CmdInputRecords:

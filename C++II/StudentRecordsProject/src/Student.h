@@ -41,7 +41,7 @@ class Student {
 
 	private:
 		Name studentName;
-		FLdigitString <10>  studentID;
+		FLdigitString <9>  studentID;
 		Address studentAddress;
 		phoneNo studentPhone;
 	/*

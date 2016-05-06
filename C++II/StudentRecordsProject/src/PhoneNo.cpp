@@ -31,21 +31,18 @@ phoneNo & phoneNo::operator = (const phoneNo & str){
 		return *this;
 }
 
-phoneNo & phoneNo::setareaCode (const FLdigitString<4> & str){
-	String temp = str;
+phoneNo & phoneNo::setareaCode (const FLdigitString<3> & str){
 	for(int i = 0; i < 3; i++){
-		temp[i] = str[i];
+		areaCode[i] = str[i];
 	}
-	areaCode = temp;
 	return *this;
 };
-phoneNo & phoneNo::setphoneNum (const FLdigitString<8> & str){
-	String temp = str;
-		for(int i = 0; i < 7; i++){
-			temp[i] = str[i];
-		}
-		phoneNum = temp;
-		return *this;
+phoneNo & phoneNo::setphoneNum (const FLdigitString<7> & str){
+	for(int i = 0; i < 7; i++){
+		areaCode[i] = str[i];
+	}
+	return *this;
+
 };
 
 void phoneNo::Display(){
@@ -56,11 +53,11 @@ const phoneNo & phoneNo::getfullPhoneNum () const{
 	return *this;
 }
 
-const FLdigitString<4> & phoneNo::getareaCode () const{
+const FLdigitString<3> & phoneNo::getareaCode () const{
 
 	return areaCode;
 }
 
-const FLdigitString<8> & phoneNo::getphoneNum() const {
+const FLdigitString<7> & phoneNo::getphoneNum() const {
 	return phoneNum;
 }

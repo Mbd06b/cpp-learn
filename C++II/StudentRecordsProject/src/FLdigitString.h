@@ -24,6 +24,7 @@ virtual		~FLdigitString ();
 			FLdigitString<L> &  setFLDstring (const String &);
 			FLdigitString<L> & operator = (const String &);
 			FLdigitString<L> & operator = (const char []);
+			FLdigitString<L> & makeString ();
 
 
 private:
@@ -39,37 +40,59 @@ private:
 
 template <size_t L>
 FLdigitString<L>::FLdigitString(){
+	makeString();
 }
 
 
 template <size_t L>
-FLdigitString<L>::FLdigitString(const digitString & dstr){
-	if(dstr.Length() != L){
-		throw invalid_argument("String is not the right size");
-	}
-	pData = dstr;
-}
-
-template <size_t L>
-FLdigitString<L>::FLdigitString(const String & str): String (str){
-	if(str.Length() != L){
-			throw invalid_argument("String is not the right size");
-		};
-	if(!digitCheck()){
-		throw invalid_argument("digitString class can only accept digits");
-	}
-	pData = str;
-
-}
-
-template <size_t L>
-FLdigitString<L>::FLdigitString (const char str []){
-	if(strlen(str) != L){
-		throw invalid_argument("String is not the right size");
-	};
-	if(!digitCheck()){
-			throw invalid_argument("digitString class can only accept digits");
+FLdigitString<L>::FLdigitString(const digitString & dstr): digitString (dstr){
+/*	if(dstr.Length() != L){
+		throw invalid_argument("String is not the right size (FLdS cpy constructor dS & dstr)");
+	}else
+*/
+	for(size_t i = 0; i < L; i++){
+		   setAt(dstr[i], i);
 		}
+}
+
+template <size_t L>
+FLdigitString<L>::FLdigitString(const String & str): digitString (str){
+/*
+	if(str.Length() != L){
+			throw invalid_argument("String is not the right size (FLds cpy constructor &str)");
+		}else
+	if(!digitCheck()){
+		throw invalid_argument("digitString class can only accept digits (FLdS cpyconst &str)");
+	}else
+*/
+	for(size_t i = 0; i < L; i++){
+		setAt(str[i], i);
+	}
+
+}
+
+template <size_t L>
+FLdigitString<L>::FLdigitString (const char str []): digitString (str){
+/*
+		if(strlen(str) != L){
+				throw invalid_argument("String is not the right size (FLds cpy constructor &str)");
+			}else
+		if(!digitCheck()){
+			throw invalid_argument("digitString class can only accept digits (FLdS cpyconst &str)");
+		}else
+*/
+	for(size_t i = 0; i < L; i++){
+		setAt(str[i], i);
+	}
+
+}
+
+template<size_t L>
+FLdigitString<L> & FLdigitString<L>::makeString(){
+	for(size_t i = 0; i < L; i++){
+		setAt('0', i);
+	}
+ return *this;
 }
 
 //destructor
@@ -79,53 +102,51 @@ FLdigitString<L>::~FLdigitString(){
 
 template <size_t L>
 FLdigitString<L> & FLdigitString<L>::setAt(char c, int i){
-	if(!isdigit(c)){ //if not a digit
-			throw invalid_argument("digitString class can only accept digits");
-		}else
-	if(i > L){
-		throw invalid_argument("Index out of Bounds");
-	}else
-	String::setAt(c,i);
+	setAt(c,i);
 	return *this;
 }
 
 template <size_t L>
 FLdigitString<L> &  FLdigitString<L>::setFLDstring (const String & str){
-	String temp = str;
-	if(!temp.digitCheck()){ //if not a digit
-			throw invalid_argument("digitString class can only accept digits");
+/*
+	if(!str.digitCheck()){ //if not a digit
+			throw invalid_argument("digitString class can only accept digits (FLdS setFLDstring)");
 		}else
-	if(str.Length() != (L - 1)){
-		throw invalid_argument("Index out of Bounds");
+	if(str.Length() != L){
+		throw invalid_argument("Index out of Bounds(FLdS setFLDstring)");
 	}else
+*/
+		for(size_t i = 0; i < L; i++){
+			setAt(str[i],i);
+		}
 		return *this;
 };
 
 
 template <size_t L>
  FLdigitString<L> & FLdigitString<L>::operator = (const String & str){
-	String temp (str);
-		if(!temp.digitCheck()){
-			throw invalid_argument("digitString class can only accept digits");
-		}else
-		if(temp.Length() != L){
-			throw invalid_argument("String is not the right size");
-		}else
-	String::Copy(str);
+
+	for(size_t i; i < L; i++){
+		setAt(str[i], i);
+	}
 
 		return *this;
 }
 
 template <size_t L>
  FLdigitString<L> & FLdigitString<L>::operator = (const char str []){
-	String temp (str);
-	if(!temp.digitCheck()){
-				throw invalid_argument("digitString class can only accept digits");
+/*
+ *
+ if(strlen(str) != L){
+				throw invalid_argument("String is not the right size (FLdS = Op str[])");
 			}else
-	if(temp.Length() != L){
-				throw invalid_argument("String is not the right size");
+*/
+	for(size_t i = 0; i < L; i++){
+		setAt(str[i],i);
+	}
+	if(!digitCheck()){
+	throw invalid_argument("digitString class can only accept digits (FLds = Op str[]");
 			}else
-	 String::Copy(str);
 
 	return * this;
 }

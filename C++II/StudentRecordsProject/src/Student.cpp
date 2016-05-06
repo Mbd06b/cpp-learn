@@ -65,6 +65,9 @@ bool Student::importObject (fstream & file){ //from file
 			studentAddress.setZip(Line);
 			file.getline(Line,3); //moves line forward by 1;
 			studentPhone.setareaCode(Line);
+				if(strlen(Line)!= 3){
+					throw invalid_argument("Area code is not 3 digits long");
+				};
 			file.getline(Line,7); //moves line forward by 1;
 			studentPhone.setphoneNum(Line);
 			file.getline(Line,9); //moves line forward by 1;

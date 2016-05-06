@@ -38,6 +38,8 @@ class String{
 			void 			Display     () const;
 			bool			GetAt		(char &, int)const;
 			bool 			setAt 		(char c, int i);
+			String &		setNumChar  (size_t &);
+			String &		setNumSlots (size_t &);
 			istream &       Read       (istream &);//method used to facilitate the read in '>>' operator.
 			static	char	ReadChar	(istream & = cin);
 
@@ -133,7 +135,7 @@ inline char & String::operator [] (int i)
 	if (IsValidSubscript (i))
 			return pData [i];
 		else
-			throw invalid_argument("No char exists at that location pData[i] in String");
+			throw invalid_argument("No char exists at that location pData[i] in String (myStrclass IsValidSubscript)");
 	}
 
 inline char String::operator [] (int i) const
@@ -169,6 +171,7 @@ inline unsigned long String::Length() const{
 }
 
 inline bool String::GetAt (char & c, int i) const{
+
 	if (IsValidSubscript (i)){
 		c = pData [i];
 		return true;

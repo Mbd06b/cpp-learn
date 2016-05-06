@@ -4,18 +4,19 @@
 
 //Default Constructor  - "one with no parameters to initialize the class to empty;"
 digitString::digitString (){
+
 };
 
 //Other Constructor
 digitString::digitString(const String & str): String (str){
 	if(!digitCheck()){
-		throw invalid_argument("digitString class can only accept digits");
+		throw invalid_argument("digitString class can only accept digits(DS constructor & str)");
 	}
 }
 
 digitString::digitString (const char str []): String (str){
 	if(!digitCheck()){
-			throw invalid_argument("digitString class can only accept digits");
+			throw invalid_argument("digitString class can only accept digits (DS constructor str[])");
 		}
 };
 
@@ -32,9 +33,9 @@ digitString & digitString::Copy(const digitString & str){
 };
 
 digitString & digitString::Copy(const char str []){
-digitString temp (str);
+String temp = str;
 	if(!temp.digitCheck()){
-			throw invalid_argument("digitString class can only accept digits");
+			throw invalid_argument("digitString class can only accept digits (DS::Copy str[])");
 		}else
 		String::Copy(str);
 	return *this;
@@ -43,7 +44,7 @@ digitString temp (str);
 
 digitString & digitString::Concat(const String & str){
 	if(!str.digitCheck()){
-		throw invalid_argument("digitString class can only accept digits");
+		throw invalid_argument("digitString class can only accept digits (DS::Concat & str)");
 	}else
 String::Concat(str);
 
@@ -51,9 +52,9 @@ return *this;
 }
 
 digitString & digitString::Concat(const char str []){
-digitString temp (str);
+String temp = str;
 	if(!temp.digitCheck()){
-		throw invalid_argument("digitString class can only accept digits");
+		throw invalid_argument("digitString class can only accept digits(DS::Concat str []");
 	}else
 String::Concat(str);
 return *this;
@@ -61,25 +62,25 @@ return *this;
 
 digitString & digitString::setAt(char c, int i){
 	if(!isdigit(c)){ //if not a digit
-			throw invalid_argument("digitString class can only accept digits");
+			throw invalid_argument("digitString class can only accept digits(DS::setAt)");
 		}else
 	setAt(c,i);
 	return *this;
 }
 
 inline digitString & digitString::operator = (const String & str){
-	digitString temp (str);
+	String temp = str;
 		if(!temp.digitCheck()){
-			throw invalid_argument("digitString class can only accept digits");
+			throw invalid_argument("digitString class can only accept digits(DS::op = &str)");
 		}else
 	String::Copy(str);
 		return *this;
 }
 
 inline digitString & digitString::operator = (const char str []){
-	digitString temp (str);
+	String temp = str;
 	if(!temp.digitCheck()){
-				throw invalid_argument("digitString class can only accept digits");
+				throw invalid_argument("digitString class can only accept digits(DS::op = []str)");
 			}else
 	 String::Copy(str);
 	return * this;
@@ -87,29 +88,45 @@ inline digitString & digitString::operator = (const char str []){
 
 
 inline digitString & digitString::operator &= (const char str []){
+	String temp = str;
+	if(!temp.digitCheck()){
+		throw invalid_argument("digitString class can only accept digits(DS::op &= str[])");
+	}else
 return Concat (str);
 }
 
 inline digitString & digitString::operator &= (const String & str){
+	String temp = str;
+		if(!temp.digitCheck()){
+		 throw invalid_argument("digitString class can only accept digits(DS::op &= &str)");
+		}else
 return Concat (str);
 }
 
 
 
 inline digitString digitString::operator & (const char str []){
-digitString temp (*this);
-return temp.Concat (str);
+	String temp = str;
+			if(!temp.digitCheck()){
+			 throw invalid_argument("digitString class can only accept digits(DS::op & str[])");
+			}else
+return Concat (str);
 }
 
 
 inline digitString digitString::operator & (const String & str){
-digitString temp (*this);
-temp.Concat (str);
-return temp;
+	String temp (str);
+	if(!temp.digitCheck()){
+	 throw invalid_argument("digitString class can only accept digits(DS::op & &str)");
+	}else
+return Concat (str);
 }
 
 inline digitString operator & (const digitString & str, const char pChar []){
-digitString temp (str);
+	String temp = str;
+		if(!temp.digitCheck()){
+		 throw invalid_argument("digitString class can only accept digits(DS::op & &str, pchar[])");
+		}else
 temp.Concat (str);
 return temp;
 };
