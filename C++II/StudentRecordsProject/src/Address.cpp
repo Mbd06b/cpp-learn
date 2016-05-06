@@ -65,10 +65,12 @@ Address &  Address::setState(const String & str){
 	return *this;
 };
 
-Address & Address::setZip(const FLdigitString<6> & str){
-	for(int i = 0; i < 5; i++){
+Address & Address::setZip(const FLdigitString<5> & str){
+
+		for(int i = 0; i < 5; i++){
 		zip[i] = str [i];
 	}
+
 	return *this;
 }
 

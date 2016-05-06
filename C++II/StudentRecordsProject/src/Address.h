@@ -31,7 +31,7 @@ public:
 				Address &   		setStreet   (const String &);
 				Address &  			setCity     (const String &);
 				Address &   		setState	(const String &);
-				Address & 			setZip		(const FLdigitString <6> &);
+				Address & 			setZip		(const FLdigitString <5> &);
 	//			Address &   setState    (const String &);
 
 
@@ -53,7 +53,7 @@ private:
 	String street;
 	String city;
 	String	state;
-	FLdigitString<6> zip;
+	FLdigitString<5> zip;
 };
 
 

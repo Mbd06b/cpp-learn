@@ -37,6 +37,7 @@ phoneNo & phoneNo::setareaCode (const FLdigitString<3> & str){
 	}
 	return *this;
 };
+
 phoneNo & phoneNo::setphoneNum (const FLdigitString<7> & str){
 	for(int i = 0; i < 7; i++){
 		areaCode[i] = str[i];

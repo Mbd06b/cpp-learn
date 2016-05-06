@@ -63,15 +63,19 @@ bool Student::importObject (fstream & file){ //from file
 			studentAddress.setState(Line);
 			file.getline(Line,6); //moves line forward by 1;
 			studentAddress.setZip(Line);
+				cout << "ZipCode Set, ";
 			file.getline(Line,4); //moves line forward by 1;
 			studentPhone.setareaCode(Line);
+				cout << "areaCode set, ";
 				if(strlen(Line)!= 3){
 					throw invalid_argument("Area code is not 3 digits long");
 				};
 			file.getline(Line,8); //moves line forward by 1;
 			studentPhone.setphoneNum(Line);
+				cout << "studentPhone set, ";
 			file.getline(Line,10); //moves line forward by 1;
 			setstudentID(Line);
+				cout << "studentID set, ";
 
 //		getGrades(Line);
 			return true;
