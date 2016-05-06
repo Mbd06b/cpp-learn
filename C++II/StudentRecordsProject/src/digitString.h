@@ -16,6 +16,7 @@ class digitString : public String{
 
 public:									digitString		();
 										digitString		(const String &);
+										digitString		(const digitString &);
 										digitString		(const char []);
 						virtual			~digitString		();
 

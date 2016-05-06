@@ -1,7 +1,7 @@
 
 
 
-#include <curses.h> //conio.h is the Visual Studio
+//#include <curses.h> //conio.h is the Visual Studio
 #include "ReadInt.h"
 #include <stdlib.h>
 

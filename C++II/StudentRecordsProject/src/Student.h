@@ -30,7 +30,7 @@ class Student {
 
 				void	 			displayStudent 	();
 		const	Name & 				getSName		()const;
-		const   FLdigitString<10> &  getSID 			()const;
+		const   FLdigitString<9> &  getSID 			()const;
 		const   Address & 			getSAddress 	()const;
 		const	phoneNo &			getSPhone		()const;
 

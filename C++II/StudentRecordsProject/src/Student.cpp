@@ -61,16 +61,16 @@ bool Student::importObject (fstream & file){ //from file
 			studentAddress.setCity(Line);
 			file.getline(Line,STRING_SIZE); //moves line forward by 1;
 			studentAddress.setState(Line);
-			file.getline(Line,5); //moves line forward by 1;
+			file.getline(Line,6); //moves line forward by 1;
 			studentAddress.setZip(Line);
-			file.getline(Line,3); //moves line forward by 1;
+			file.getline(Line,4); //moves line forward by 1;
 			studentPhone.setareaCode(Line);
 				if(strlen(Line)!= 3){
 					throw invalid_argument("Area code is not 3 digits long");
 				};
-			file.getline(Line,7); //moves line forward by 1;
+			file.getline(Line,8); //moves line forward by 1;
 			studentPhone.setphoneNum(Line);
-			file.getline(Line,9); //moves line forward by 1;
+			file.getline(Line,10); //moves line forward by 1;
 			setstudentID(Line);
 
 //		getGrades(Line);
@@ -83,7 +83,7 @@ const Name & Student::getSName()const{
 	return studentName.getName();
 }
 
-const FLdigitString<10> & Student::getSID ()const{
+const FLdigitString<9> & Student::getSID ()const{
 	return studentID;
 }
 
@@ -96,7 +96,6 @@ const phoneNo & Student::getSPhone ()const{
 }
 
 Student & 	Student::setstudentID (const String & str){
-
 	studentID.setFLDstring(str);
 	return *this;
 }

@@ -20,6 +20,12 @@ digitString::digitString (const char str []): String (str){
 		}
 };
 
+digitString::digitString (const digitString & str){
+	if(!digitCheck()){
+		throw invalid_argument("digitString class can only accopt digits (DS constructor DS & str");
+	}
+}
+
 digitString::~digitString(){
 };
 
