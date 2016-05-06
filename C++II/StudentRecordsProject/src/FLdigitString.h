@@ -74,14 +74,15 @@ FLdigitString<L>::FLdigitString(const String & str):String(str){
 }
 
 template <size_t L>
-FLdigitString<L>::FLdigitString (const char str []): String(str){
-	String temp = str;
+FLdigitString<L>::FLdigitString (const char str []): digitString(str){
+
 for(size_t i = 0; i < (L); i++){
 			cout << str [i];
 			if(!isdigit(str[i])){
 				throw invalid_argument("FLdigitString constructor received a char str [] with a character that is not a digit");
 			}else;
 	};
+			pData = new char [L];
 			for (int i = 0; i < L; i++){
 				pData [i] = str[i];
 		};
