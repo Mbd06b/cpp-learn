@@ -16,13 +16,13 @@ class digitString : public String{
 
 public:									digitString		();
 										digitString		(const String &);
-										digitString		(const digitString &);
 										digitString		(const char []);
+										digitString		(const size_t &);
 						virtual			~digitString		();
 
 										digitString &    Concat	 (const String &);
 										digitString &    Concat	 (const char []);
-										digitString &	Copy 	 (const digitString &);
+										digitString &   Copy	 (const String &);
 										digitString &   Copy	 (const char []);
 										digitString &	setAt	 (char, int);
 

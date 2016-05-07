@@ -13,6 +13,7 @@
 #include <stdexcept>
 
 
+
 #pragma warning (disable:4996)
 using namespace std;
 
@@ -25,6 +26,7 @@ class String{
 					String		 (); //Default constructor.- "one with no parameters to initialize the class to empty;"
 					String		 (const char []);//C-TYPE Constructor one with a pointer to a “C” type string as a parameter to initialize the class to contain a copy of that string;
 					String 		 (const String &);//COPY Class Constructor and one with a parameter that is of class String to initialize to a copy of that value.
+					String		 (const size_t &);
 		virtual		~String		 (); //Destructor
 	//virtual should be used, particularly if the class will be used for inheretance.
 
@@ -123,7 +125,7 @@ class String{
 
 inline bool String::digitCheck() const{
 	for(size_t i = 0; i < (numChars); i++){
-		if(!isdigit(pData[i])){
+		if(!isdigit((unsigned char)pData[i])){
 			return false;
 		}
 	}
@@ -392,21 +394,6 @@ inline istream & operator >> (istream & in, String & str){   //this is a stand-a
 	str.Read (in);
 	return in;
 }
-
-
-/*
-
-Modify Program One to add the following:
-Assignment operator (“=”).
-Comparison operators (“<”, “<=”, “==”, “!=”, “>=”, “>”)
-Concatenation operator (“&”).
-Concatenation and assignment operator (“&=”)
-
-
-Above items 1 through 4 should have versions that work with a String object and a “C” type string on the right of the operator.
-Items 1 and 4 will require a String object on the left of the operator.
-
- */
 
 
 

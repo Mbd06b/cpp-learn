@@ -3,10 +3,22 @@
 #include <string.h>
 #include <memory.h>
 
+
+
 #define STRING_SIZE 50
 
 #include "myStringclass.h"
 using namespace std;
+
+String::String (const size_t & L){
+	numChars = L;
+	numSlots = numChars;
+	pData = new char [numChars + 1];
+	for (int i = 0; i < L; i++){
+			pData [i] = '0';
+		};
+		pData[L] = '\0'; //sets the EOS mark,
+}
 
 //Default Constructor  - "one with no parameters to initialize the class to empty;"
 String::String (){
