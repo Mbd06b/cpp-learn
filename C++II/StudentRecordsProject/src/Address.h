@@ -25,13 +25,14 @@ public:
 		const 	String  &			getStreet	() const;
 		const 	String  &			getCity		() const;
 		const	String    & 		getState    () const;
-		const 	FLdigitString<6> &   getZip 	() const;
+		const 	FLdigitString<5> &   getZip 	() const;
 
 				Address & 			setAddress	(const String &, const String &, const String &, const FLdigitString<6> &);
 				Address &   		setStreet   (const String &);
 				Address &  			setCity     (const String &);
 				Address &   		setState	(const String &);
-				Address & 			setZip		(const FLdigitString <5> &);
+				Address & 			setZip		(const String &);
+
 	//			Address &   setState    (const String &);
 
 

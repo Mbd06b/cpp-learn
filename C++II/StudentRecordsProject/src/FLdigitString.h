@@ -12,9 +12,6 @@ class FLdigitString : public digitString{
 
 public:
 			FLdigitString ();
-			FLdigitString (const digitString &);
-			FLdigitString (const String &);
-explicit	FLdigitString (const char []);
 virtual		~FLdigitString ();
 
 
@@ -30,7 +27,7 @@ virtual		~FLdigitString ();
 
 private:
 
-			char * pData;
+
 			digitString &    Concat	 (const String &);
 			digitString &    Concat	 (const char []);
 			digitString   operator & (const String &);
@@ -44,51 +41,12 @@ private:
 template <size_t L>
 FLdigitString<L>::FLdigitString(){
 
-	pData = new char [L];
-	for (int i = 0; i < L; i++){
-		pData [i] = 0;
+	size_t i = 0;
+	for (i = 0; i < L; i++){
+		String::setAt('0', i);
 	};
+	String::setAt('\0', L);
 }
-
-
-template <size_t L>
-FLdigitString<L>::FLdigitString(const digitString & dstr): digitString (dstr){
-	pData = new char [L];
-		for (int i = 0; i < L; i++){
-			pData [i] = dstr[i];
-		};
-
-
-}
-
-template <size_t L>
-FLdigitString<L>::FLdigitString(const String & str):String(str){
-	if(str.digitCheck()){
-		throw invalid_argument("FLdigitString constructor received a String & str with a character that is not a digit");
-	}else
-	pData = new char [L];
-		for (int i = 0; i < L; i++){
-			pData [i] = str[i];
-		};
-
-}
-
-template <size_t L>
-FLdigitString<L>::FLdigitString (const char str []): digitString(str){
-
-for(size_t i = 0; i < (L); i++){
-			cout << str [i];
-			if(!isdigit(str[i])){
-				throw invalid_argument("FLdigitString constructor received a char str [] with a character that is not a digit");
-			}else;
-	};
-			pData = new char [L];
-			for (int i = 0; i < L; i++){
-				pData [i] = str[i];
-		};
-
-}
-
 /*
 template<size_t L>
 FLdigitString<L> & FLdigitString<L>::makeString(){
@@ -114,7 +72,10 @@ FLdigitString<L> & FLdigitString<L>::setAt(char c, int i){
 
 template <size_t L>
 FLdigitString<L> &  FLdigitString<L>::setFLDstring (const String & str){
-		Copy (str);
+	size_t i = 0;
+	for (i = 0; i < L; i++){
+		String::setAt(str[i], i);
+	};
 		return *this;
 };
 

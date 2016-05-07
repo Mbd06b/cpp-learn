@@ -65,14 +65,11 @@ Address &  Address::setState(const String & str){
 	return *this;
 };
 
-Address & Address::setZip(const FLdigitString<5> & str){
-
-		for(int i = 0; i < 5; i++){
-		zip[i] = str [i];
-	}
-
+Address & Address::setZip(const String & str){
+		zip.setFLDstring(str);
 	return *this;
 }
+
 
 
 //int	Address::Compare(const Address &) const{};

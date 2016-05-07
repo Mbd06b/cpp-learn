@@ -8,7 +8,6 @@
 #include "Student.h"
 #include "Name.h"
 #include "FLdigitString.h"
-#include "PhoneNo.h"
 #include "Address.h"
 #include <stdlib.h>
 
@@ -23,7 +22,8 @@ Student::Student (const Student & student){
 	studentName = student.studentName;
 	studentID = student.studentID;
 	studentAddress = student.studentAddress;
-	studentPhone = student.studentPhone;
+	studentphoneNum = student.studentphoneNum;
+	studentareaCode = student.studentareaCode;
 	//grades = student.grades;
 	//averageGrade = student.averageGrade;
 
@@ -51,31 +51,34 @@ bool Student::importObject (fstream & file){ //from file
 		}else{
 
 			studentName.setFirst(Line);//should capture a Name
+
 			file.getline(Line,STRING_SIZE); //moves line forward by 1;
 			studentName.setMiddle(Line);
+
 			file.getline(Line,STRING_SIZE); //moves line forward by 1;
 			studentName.setLast(Line);
+
 			file.getline(Line,STRING_SIZE); //moves line forward by 1;
 			studentAddress.setStreet(Line);
+
 			file.getline(Line,STRING_SIZE); //moves line forward by 1;
 			studentAddress.setCity(Line);
+
 			file.getline(Line,STRING_SIZE); //moves line forward by 1;
 			studentAddress.setState(Line);
-			file.getline(Line,6); //moves line forward by 1;
+
+			file.getline(Line,STRING_SIZE); //moves line forward by 1;
 			studentAddress.setZip(Line);
-				cout << "ZipCode Set, ";
-			file.getline(Line,4); //moves line forward by 1;
-			studentPhone.setareaCode(Line);
-				cout << "areaCode set, ";
-				if(strlen(Line)!= 3){
-					throw invalid_argument("Area code is not 3 digits long");
-				};
-			file.getline(Line,8); //moves line forward by 1;
-			studentPhone.setphoneNum(Line);
-				cout << "studentPhone set, ";
-			file.getline(Line,10); //moves line forward by 1;
+
+			file.getline(Line,STRING_SIZE); //moves line forward by 1;
+			setAreaCode(Line);
+
+
+			file.getline(Line,STRING_SIZE); //moves line forward by 1;
+			setPhoneNum(Line);
+
+			file.getline(Line,STRING_SIZE); //moves line forward by 1;
 			setstudentID(Line);
-				cout << "studentID set, ";
 
 //		getGrades(Line);
 			return true;
@@ -95,12 +98,28 @@ const Address & Student::getSAddress()const{
 	return studentAddress;
 }
 
-const phoneNo & Student::getSPhone ()const{
-	return studentPhone;
+const FLdigitString<3> & Student::getAreaCode()const{
+	return studentareaCode;
 }
+
+const FLdigitString<7> & Student::getSPhone()const{
+	return studentphoneNum;
+}
+
+
 
 Student & 	Student::setstudentID (const String & str){
 	studentID.setFLDstring(str);
+	return *this;
+}
+
+Student & Student::setAreaCode (const String & str){
+	studentareaCode.setFLDstring(str);
+	return *this;
+}
+
+Student & Student::setPhoneNum (const String & str){
+	studentphoneNum.setFLDstring(str);
 	return *this;
 }
 
@@ -109,7 +128,8 @@ void Student::displayStudent (){
 	studentName.Display();    //display the name
 	studentID.Display();
 	studentAddress.Display();
-	studentPhone.Display();
+	studentareaCode.Display();
+	studentphoneNum.Display();
 
 };
 

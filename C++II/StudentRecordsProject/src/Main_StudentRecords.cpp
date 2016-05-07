@@ -91,16 +91,16 @@ cout << "Input Command >";
 			break;
 		case CmdDisplayRecords:
 
-			if(studentGArray.importCount()){
-				cout << "No Records to Display" << endl;
-				  }
-			else{
+	//		if(studentGArray.importCount()){
+	//			cout << "No Records to Display" << endl;
+	//			  }
+	//		else{
 				for (int i = 0; i < (studentGArray.importCount()); i++){
 					  studentGArray[i].displayStudent();
 					  cout << endl;
 					  cout << endl;
 					}
-				};
+
 
 
 			break;

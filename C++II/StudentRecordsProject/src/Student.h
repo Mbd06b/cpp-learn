@@ -5,7 +5,6 @@
 #include "Name.h"
 #include "Array.h"
 #include "FLdigitString.h"
-#include "PhoneNo.h"
 #include "Address.h"
 #include <fstream>
 
@@ -27,12 +26,15 @@ class Student {
 				int		 sCompare 			(const Student &, const Student &);
 
 		Student & 	 setstudentID 		(const String &);
+		Student & 	 setAreaCode 		(const String &);
+		Student & 	 setPhoneNum 		(const String &);
 
 				void	 			displayStudent 	();
 		const	Name & 				getSName		()const;
 		const   FLdigitString<9> &  getSID 			()const;
 		const   Address & 			getSAddress 	()const;
-		const	phoneNo &			getSPhone		()const;
+		const   FLdigitString<3> &  getAreaCode		()const;
+		const	FLdigitString<7> &	getSPhone		()const;
 
 				//void	 getGrades  		(char []);
 
@@ -43,7 +45,8 @@ class Student {
 		Name studentName;
 		FLdigitString <9>  studentID;
 		Address studentAddress;
-		phoneNo studentPhone;
+		FLdigitString<3> studentareaCode;
+		FLdigitString<7> studentphoneNum;
 	/*
 		Array <int, 0, 4> grades; //five integer slots
 		int averageGrade;
