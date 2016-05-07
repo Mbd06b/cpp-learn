@@ -10,12 +10,24 @@
 #include "myStringclass.h"
 using namespace std;
 
+//FLdigitString default constructor (creates 00..00 or empty digitstrings)
 String::String (const size_t & L){
 	numChars = L;
 	numSlots = numChars;
 	pData = new char [numChars + 1];
 	for (int i = 0; i < L; i++){
 			pData [i] = '0';
+		};
+		pData[L] = '\0'; //sets the EOS mark,
+}
+
+//FLdigitString build constructor
+String::String (const char str [], const size_t & L){
+	numChars = L;
+	numSlots = numChars;
+	pData = new char [numChars + 1];
+	for (int i = 0; i < L; i++){
+			pData [i] = str[i];
 		};
 		pData[L] = '\0'; //sets the EOS mark,
 }

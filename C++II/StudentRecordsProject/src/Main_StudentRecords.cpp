@@ -84,7 +84,7 @@ cout << "Input Command >";
 		case CmdSortRecords:
 					cout << "How should we sort the students? by [First], [Last], or [Middle]?" << endl;
 					cout << ">";
-					option = getCompareOption();
+					option = getCompareOption(); //option is global static variable
 		//			studentGArray.sortStudents();
 					 cout << "Students Sorted" << endl;
 

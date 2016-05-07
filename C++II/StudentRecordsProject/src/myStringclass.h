@@ -26,7 +26,8 @@ class String{
 					String		 (); //Default constructor.- "one with no parameters to initialize the class to empty;"
 					String		 (const char []);//C-TYPE Constructor one with a pointer to a “C” type string as a parameter to initialize the class to contain a copy of that string;
 					String 		 (const String &);//COPY Class Constructor and one with a parameter that is of class String to initialize to a copy of that value.
-					String		 (const size_t &);
+					String		 (const size_t &);//default for FLdigitString
+					String		 (const char [], const size_t &);//constructor for reading strings in.
 		virtual		~String		 (); //Destructor
 	//virtual should be used, particularly if the class will be used for inheretance.
 

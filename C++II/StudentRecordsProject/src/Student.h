@@ -25,9 +25,9 @@ class Student {
 				bool 	 importObject 		(fstream &);
 				int		 sCompare 			(const Student &, const Student &);
 
-		Student & 	 setstudentID 		(const String &);
-		Student & 	 setAreaCode 		(const String &);
-		Student & 	 setPhoneNum 		(const String &);
+		Student & 	 setstudentID 		(const FLdigitString<9> &);
+		Student & 	 setAreaCode 		(const FLdigitString<3> &);
+		Student & 	 setPhoneNum 		(const FLdigitString<7> &);
 
 				void	 			displayStudent 	();
 		const	Name & 				getSName		()const;

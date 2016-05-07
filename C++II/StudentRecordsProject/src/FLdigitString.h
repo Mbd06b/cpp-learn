@@ -12,13 +12,16 @@ class FLdigitString : public digitString{
 
 public:
 			FLdigitString ();
+			FLdigitString (const char []);
+			FLdigitString (const String &);
+			FLdigitString (const FLdigitString<L> &);
 virtual		~FLdigitString ();
 
-
+			FLdigitString<L> &  Copy	 (const FLdigitString<L> &);
 			FLdigitString<L> &	Copy 	 (const digitString &);
 			FLdigitString<L> &  Copy 	 (const String &);
 			FLdigitString<L> &  Copy	 (const char []);
-			FLdigitString<L> &  setFLDstring (const String &);
+			FLdigitString<L> &  setFLDstring (const FLdigitString<L> &);
 			FLdigitString<L> & operator = (const String &);
 			FLdigitString<L> & operator = (const char []);
 			FLdigitString<L> & makeString ();
@@ -43,6 +46,20 @@ FLdigitString<L>::FLdigitString() : digitString (L){
 
 }
 
+template <size_t L>
+FLdigitString<L>::FLdigitString(const char str []) : digitString (str, L){
+
+};
+
+template <size_t L>
+FLdigitString<L>::FLdigitString(const String & str) : digitString (str, L){
+
+};
+
+template <size_t L>
+FLdigitString<L>::FLdigitString(const FLdigitString<L> & str) : digitString (str, L){
+
+};
 //destructor
 template <size_t L>
 FLdigitString<L>::~FLdigitString(){
@@ -50,7 +67,13 @@ FLdigitString<L>::~FLdigitString(){
 
 
 template <size_t L>
-FLdigitString<L> &  FLdigitString<L>::setFLDstring (const String & str){
+FLdigitString<L> &  FLdigitString<L>::setFLDstring (const FLdigitString<L> & str){
+	 	 Copy(str);
+		return *this;
+};
+
+template <size_t L>
+FLdigitString<L> & FLdigitString<L>::Copy(const FLdigitString<L> & str){
 	size_t i = 0;
 	for (i = 0; i == L; i++){
 		setAt(str[i], i);

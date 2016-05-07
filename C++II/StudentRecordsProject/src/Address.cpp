@@ -65,7 +65,7 @@ Address &  Address::setState(const String & str){
 	return *this;
 };
 
-Address & Address::setZip(const String & str){
+Address & Address::setZip(const FLdigitString<5> & str){
 		zip.setFLDstring(str);
 	return *this;
 }

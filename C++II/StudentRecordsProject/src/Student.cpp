@@ -108,17 +108,17 @@ const FLdigitString<7> & Student::getSPhone()const{
 
 
 
-Student & 	Student::setstudentID (const String & str){
+Student & 	Student::setstudentID (const FLdigitString<9> & str){
 	studentID.setFLDstring(str);
 	return *this;
 }
 
-Student & Student::setAreaCode (const String & str){
+Student & Student::setAreaCode (const FLdigitString<3> & str){
 	studentareaCode.setFLDstring(str);
 	return *this;
 }
 
-Student & Student::setPhoneNum (const String & str){
+Student & Student::setPhoneNum (const FLdigitString<7> & str){
 	studentphoneNum.setFLDstring(str);
 	return *this;
 }

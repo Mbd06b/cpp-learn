@@ -27,11 +27,11 @@ public:
 		const	String    & 		getState    () const;
 		const 	FLdigitString<5> &   getZip 	() const;
 
-				Address & 			setAddress	(const String &, const String &, const String &, const FLdigitString<6> &);
+				Address & 			setAddress	(const String &, const String &, const String &, const FLdigitString<5> &);
 				Address &   		setStreet   (const String &);
 				Address &  			setCity     (const String &);
 				Address &   		setState	(const String &);
-				Address & 			setZip		(const String &);
+				Address & 			setZip		(const FLdigitString<5> &);
 
 	//			Address &   setState    (const String &);
 

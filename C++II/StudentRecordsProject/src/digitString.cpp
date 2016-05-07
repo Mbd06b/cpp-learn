@@ -7,10 +7,15 @@ digitString::digitString (){
 
 };
 
+//default constructor for building empty 000 FLdigitStrings
 digitString::digitString (const size_t & L): String (L){
 
 };
 
+//building constructor for setting custom FldigitStrings from strings read-in
+digitString::digitString (const char str [], const size_t & L): String (str, L){
+
+};
 //Other Constructor
 digitString::digitString(const String & str): String (str){
 	if(!digitCheck()){

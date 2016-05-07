@@ -17,7 +17,8 @@ class digitString : public String{
 public:									digitString		();
 										digitString		(const String &);
 										digitString		(const char []);
-										digitString		(const size_t &);
+										digitString		(const size_t &); //for default FLdigitString
+										digitString		(const char [], const size_t &);//for FLdigitString read-in
 						virtual			~digitString		();
 
 										digitString &    Concat	 (const String &);
