@@ -69,7 +69,7 @@ inline istream & operator >> (istream & in, Name & myName){
 }
 
 inline void Name::Display (){
-	cout << sFirst << " " << sMiddle << " " << sLast;
+	cout << sFirst << sMiddle << sLast;
 }
 
 inline ostream & Name::Display (ostream & out) const

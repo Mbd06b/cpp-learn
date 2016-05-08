@@ -109,26 +109,31 @@ const FLdigitString<7> & Student::getSPhone()const{
 
 
 Student & 	Student::setstudentID (const FLdigitString<9> & str){
-	studentID.setFLDstring(str);
+	studentID = str;
 	return *this;
 }
 
 Student & Student::setAreaCode (const FLdigitString<3> & str){
-	studentareaCode.setFLDstring(str);
+	studentareaCode = str;
 	return *this;
 }
 
 Student & Student::setPhoneNum (const FLdigitString<7> & str){
-	studentphoneNum.setFLDstring(str);
+	studentphoneNum = str;
 	return *this;
 }
 
 void Student::displayStudent (){
 
-	studentName.Display();    //display the name
-	studentID.Display();
+	cout << studentName;    //display the name
+	cout << "ID Number: " << studentID;
+	cout << endl;
 	studentAddress.Display();
+
+	cout << endl;
+	cout << "Area Code:" << endl;
 	studentareaCode.Display();
+	cout << "Phone:" << endl;
 	studentphoneNum.Display();
 
 };

@@ -15,12 +15,10 @@ public:
 			FLdigitString (const char []);
 			FLdigitString (const String &);
 			FLdigitString (const FLdigitString<L> &);
-virtual		~FLdigitString ();
+			~FLdigitString ();
 
 			FLdigitString<L> &  Copy	 (const FLdigitString<L> &);
-			FLdigitString<L> &	Copy 	 (const digitString &);
-			FLdigitString<L> &  Copy 	 (const String &);
-			FLdigitString<L> &  Copy	 (const char []);
+
 			FLdigitString<L> &  setFLDstring (const FLdigitString<L> &);
 			FLdigitString<L> & operator = (const String &);
 			FLdigitString<L> & operator = (const char []);
@@ -51,13 +49,10 @@ FLdigitString<L>::FLdigitString(const char str []) : digitString (str, L){
 
 };
 
-template <size_t L>
-FLdigitString<L>::FLdigitString(const String & str) : digitString (str, L){
 
-};
 
 template <size_t L>
-FLdigitString<L>::FLdigitString(const FLdigitString<L> & str) : digitString (str, L){
+FLdigitString<L>::FLdigitString(const FLdigitString<L> & str){
 
 };
 //destructor
@@ -81,11 +76,6 @@ FLdigitString<L> & FLdigitString<L>::Copy(const FLdigitString<L> & str){
 		return *this;
 };
 
-template <size_t L>
-FLdigitString<L> & FLdigitString<L>::Copy(const String & str){
-		Copy(str);
-		return *this;
-}
 
 template <size_t L>
  FLdigitString<L> & FLdigitString<L>::operator = (const String & str){

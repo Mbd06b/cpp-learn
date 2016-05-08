@@ -48,7 +48,9 @@ const String &  Address::getState() const {
 	return state;
 };
 
-//Address &  Address::getZip() const){};
+const FLdigitString<5> &  Address::getZip() const{
+	return zip;
+};
 //Address &  Address::setAddress(const String &, const String &, const FLUCString &, const FLdigitString &){};
 
 
@@ -66,7 +68,7 @@ Address &  Address::setState(const String & str){
 };
 
 Address & Address::setZip(const FLdigitString<5> & str){
-		zip.setFLDstring(str);
+		zip = str;
 	return *this;
 }
 
@@ -83,16 +85,16 @@ inline istream & operator >> (istream & in, Address & myAddress){
 }
 
  void Address::Display (){
-	cout << street << ", " << city << ", " << state << " " << zip;
+	cout << street << city << state << zip;
 }
 
  ostream & Address::Display (ostream & out) const{
 	return out;
 }
 
- ostream & operator << (ostream & out, Address & myAddress){
+ ostream & operator << (ostream & out, Address & myAddress) {
 
-  return out << myAddress.getStreet() << " " << myAddress.getCity(); // << " " << myAddress.getState() << " " << myAddress.getZip();
+  return out << myAddress.getStreet() << " " << myAddress.getCity() << " " << myAddress.getState() << " " << myAddress.getZip();
 }
 
 
