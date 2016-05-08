@@ -79,6 +79,8 @@ cout << "Input Command >";
 			break;
 		case CmdInputRecords:
 
+			studentGArray.inputData();
+
 
 			break;
 		case CmdSortRecords:

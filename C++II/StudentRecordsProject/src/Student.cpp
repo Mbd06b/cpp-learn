@@ -33,13 +33,13 @@ Student::~Student(){
 };
 
 int Student::sCompare (const Student & a, const Student & b){
-
 	return (a.getSName().Compare(b.getSName(), option));
 }
 
 
-bool Student::importObject (fstream & file){ //from file
 
+
+bool Student::importObject (fstream & file){ //from file
 
 	char Line [STRING_SIZE];
 
@@ -83,8 +83,39 @@ bool Student::importObject (fstream & file){ //from file
 //		getGrades(Line);
 			return true;
 		};
-
 };
+
+
+bool	 Student::inputData			(){ //from file
+
+	char Line [STRING_SIZE];
+
+			studentName.setMiddle(ReadString());
+
+			studentName.setLast(ReadString());
+
+			studentAddress.setStreet(ReadString());
+
+			studentAddress.setCity(ReadString());
+
+
+			studentAddress.setState(ReadString());
+
+
+			studentAddress.setZip(ReadDigit());
+
+			setAreaCode(ReadDigit());
+
+
+			setPhoneNum(ReadDigit());
+
+
+			setstudentID(ReadDigit());
+
+//		getGrades(Line);
+			return true;
+};
+
 
 const Name & Student::getSName()const{
 	return studentName.getName();

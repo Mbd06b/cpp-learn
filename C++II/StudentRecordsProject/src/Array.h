@@ -30,12 +30,15 @@ class Array
 
 					D & getAt       (int) throw();
 					D   getAt       (int) const throw();
+				Array & getArray	(Array <D, Low, High> &);
 					D & setAt       (int, D) throw();
 					D   setAt       (int, D) const throw ();
 
  Array <D, Low, High> & Copy 	    (const Array<D, Low, High> &);
  	 	 		   void sortStudents   ();
   	  	  	  	   void importData  (fstream &); //for importing files into Array
+  	  	  	  	   void inputData 	();//for typing data into array;
+
   	  	  	  	   int importCount () const; //see import counter
   	  	  	 const int & getImportCount () const;
 Array <D, Low, High>  & operator = 	(const Array<D, Low, High> &);
@@ -114,6 +117,16 @@ void Array<D, Low,High>::importData (fstream & file){
 	int i = 0;
 	do{
 		result = gArray[i++].importObject(file);
+	}while(result);
+	importCounter = --i; //result is false (eof bit hit) subtract 1 to get internal array count.
+};
+
+template <class D, int Low, int High>
+void Array<D, Low,High>::inputData (){
+	bool result;
+	int i = 0;
+	do{
+		result = gArray[i++].inputData();
 	}while(result);
 	importCounter = --i; //result is false (eof bit hit) subtract 1 to get internal array count.
 };

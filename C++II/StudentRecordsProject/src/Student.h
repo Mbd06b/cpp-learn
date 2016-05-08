@@ -23,6 +23,7 @@ class Student {
 				void	 read				();
 
 				bool 	 importObject 		(fstream &);
+				bool	 inputData			();
 				int		 sCompare 			(const Student &, const Student &);
 
 		Student & 	 setstudentID 		(const FLdigitString<9> &);

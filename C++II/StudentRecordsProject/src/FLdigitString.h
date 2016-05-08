@@ -18,7 +18,7 @@ public:
 			~FLdigitString ();
 
 			FLdigitString<L> &  Copy	 (const FLdigitString<L> &);
-
+			FLdigitString<L> &  ReadDigits ();
 			FLdigitString<L> &  setFLDstring (const FLdigitString<L> &);
 			FLdigitString<L> & operator = (const String &);
 			FLdigitString<L> & operator = (const char []);

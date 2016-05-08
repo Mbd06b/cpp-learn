@@ -32,9 +32,8 @@ CompareOption getCompareOption();
 void displayHelp();
 
 char * ReadString ();
+size_t ReadDigit();
 
 static CompareOption option;
-
-
 
 #endif /* FILECOMMANDS_H_ */
