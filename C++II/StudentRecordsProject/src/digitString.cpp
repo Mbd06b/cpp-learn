@@ -1,5 +1,5 @@
 #include "digitString.h"
-
+#define STRING_SIZE 50
 
 
 //Default Constructor  - "one with no parameters to initialize the class to empty;"
@@ -11,6 +11,9 @@ digitString::digitString (){
 digitString::digitString (const size_t & L): String (L){
 
 };
+
+
+
 
 //building constructor for setting custom FldigitStrings from strings read-in
 digitString::digitString (const char str [], const size_t & L): String (str, L){
@@ -34,6 +37,13 @@ digitString::digitString (const char str []): String (str){
 
 digitString::~digitString(){
 };
+
+
+istream & digitString::Read (istream & In){
+
+	return In;
+}
+
 
 
 digitString & digitString::Copy(const String & str){

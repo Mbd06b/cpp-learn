@@ -49,36 +49,35 @@ bool Student::importObject (fstream & file){ //from file
 		   (file.close());
 		   return false;
 		}else{
-
 			studentName.setFirst(Line);//should capture a Name
 
 			file.getline(Line,STRING_SIZE); //moves line forward by 1;
-			studentName.setMiddle(Line);
+				studentName.setMiddle(Line);
 
 			file.getline(Line,STRING_SIZE); //moves line forward by 1;
-			studentName.setLast(Line);
+				studentName.setLast(Line);
 
 			file.getline(Line,STRING_SIZE); //moves line forward by 1;
-			studentAddress.setStreet(Line);
+				studentAddress.setStreet(Line);
 
 			file.getline(Line,STRING_SIZE); //moves line forward by 1;
-			studentAddress.setCity(Line);
+				studentAddress.setCity(Line);
 
 			file.getline(Line,STRING_SIZE); //moves line forward by 1;
-			studentAddress.setState(Line);
+				studentAddress.setState(Line);
 
 			file.getline(Line,STRING_SIZE); //moves line forward by 1;
-			studentAddress.setZip(Line);
+				studentAddress.setZip(Line);
 
 			file.getline(Line,STRING_SIZE); //moves line forward by 1;
-			setAreaCode(Line);
+				setAreaCode(Line);
 
 
 			file.getline(Line,STRING_SIZE); //moves line forward by 1;
-			setPhoneNum(Line);
+				setPhoneNum(Line);
 
 			file.getline(Line,STRING_SIZE); //moves line forward by 1;
-			setstudentID(Line);
+				setstudentID(Line);
 
 //		getGrades(Line);
 			return true;
@@ -88,29 +87,42 @@ bool Student::importObject (fstream & file){ //from file
 
 bool	 Student::inputData			(){ //from file
 
-	char Line [STRING_SIZE];
 
+			cout << "First Name>";
+			studentName.setFirst(ReadString());
+
+			if(!studentName.get1Name(first).Compare("End")){
+				studentName.setFirst("");
+				return false;
+			}
+
+
+			cout << "Middle Name>";
 			studentName.setMiddle(ReadString());
 
+			cout << "Last Name>";
 			studentName.setLast(ReadString());
 
+			cout << "Street Address>";
 			studentAddress.setStreet(ReadString());
 
+			cout << "City>";
 			studentAddress.setCity(ReadString());
 
-
+			cout << "State>";
 			studentAddress.setState(ReadString());
 
 
-			studentAddress.setZip(ReadDigit());
+			studentAddress.setZip(readDigits(5));
 
-			setAreaCode(ReadDigit());
+			cout << "Area Code>";
+			setAreaCode(readDigits(3));
 
+			cout << "Phone#>";
+			setPhoneNum(readDigits(7));
 
-			setPhoneNum(ReadDigit());
-
-
-			setstudentID(ReadDigit());
+			cout << "StudentID(9)>";
+			setstudentID(readDigits(9));
 
 //		getGrades(Line);
 			return true;
@@ -120,6 +132,8 @@ bool	 Student::inputData			(){ //from file
 const Name & Student::getSName()const{
 	return studentName.getName();
 }
+
+
 
 const FLdigitString<9> & Student::getSID ()const{
 	return studentID;

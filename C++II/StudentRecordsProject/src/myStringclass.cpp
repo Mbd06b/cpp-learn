@@ -3,8 +3,6 @@
 #include <string.h>
 #include <memory.h>
 
-
-
 #define STRING_SIZE 50
 
 #include "myStringclass.h"

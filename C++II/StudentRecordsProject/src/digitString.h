@@ -27,6 +27,10 @@ public:									digitString		();
 										digitString &   Copy	 (const char []);
 										digitString &	setAt	 (char, int);
 
+										istream &   readDigits   (istream & In);
+										istream & 	operator >>  (const String &);
+										istream &   operator >>  (const char []);
+
 
 										digitString   operator & (const String &);
 										digitString   operator & (const char []);
@@ -34,10 +38,12 @@ public:									digitString		();
 										digitString & operator &= (const char []);
 										digitString & operator = (const String &);
 										digitString & operator = (const char []);
-
-
+										istream &   Read		 (istream & In);
 
 private:
+
+
+
 
 };
 

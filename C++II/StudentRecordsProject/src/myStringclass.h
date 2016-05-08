@@ -43,7 +43,6 @@ class String{
 			bool 			setAt 		(char c, int i);
 			String &		setNumChar  (size_t &);
 			String &		setNumSlots (size_t &);
-			istream &       Read       (istream &);//method used to facilitate the read in '>>' operator.
 			static	char	ReadChar	(istream & = cin);
 
 
@@ -99,15 +98,14 @@ class String{
 			String & operator &= (const String &);
 			String & operator &= (const char []);
 
-
-
-
-		//-------------Input operator #5 (“>>”). and # 6 Output operator (“<<”).
-		//Items 5 and 6 require a String object to the right of the operator.
-			istream & operator  >> 	 (const String &);
-			istream & operator >>	(const char []);
 			ostream & operator  << 	 (const String &);
 			ostream & operator << 	(const char []);
+			istream &       Read       (istream &);//method used to facilitate the read in '>>' operator.
+			istream & operator  >> 	 (const String &);
+			 istream & operator >>	(const char []);
+
+
+
 
 
 		//other operators
@@ -115,6 +113,11 @@ class String{
 
 
 	private:
+			 //-------------Input operator #5 (“>>”). and # 6 Output operator (“<<”).
+			 		//Items 5 and 6 require a String object to the right of the operator.
+
+
+
 		size_t	numChars; //size_t aka unsigned long (positive only)
 		size_t numSlots;
 		char * pData;
@@ -275,6 +278,7 @@ inline bool operator == (const String & str, const char pChar []){
 inline bool operator == (const char pChar [], const String & str){
 	return str.Compare (pChar) == 0;
 }
+
 
 //------------------------------------------------------------------------------------------
 
