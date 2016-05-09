@@ -104,8 +104,28 @@ char * ReadString ()
 		return pString;
 }
 
+char * readFLDString (int length){
 
+		char 	c;
+		int		CurrNumChars;
+		char *	pData2;
 
+		CurrNumChars = 0;
+		pData2 		= new char [length + 1]; // +1 to capture the "End of String" mark returned if we don't input any names.
+
+		do{
+		c = cin.get();
+
+			if (!isdigit(c)){
+				cout << "Invalid Character, string should be [" << length << "] digits. Start over.";
+				CurrNumChars = 0;
+			}else{
+				pData2 [CurrNumChars++] = c;  // this is valid +1 arithmetic because it's in the [] brackets.
+			};
+		}while(CurrNumChars < length);
+			pData2 [length + 1] = '\0';  // when we hit the ENTER KEY, we need to put a end of string mark at the end.
+		return pData2;
+}
 
 
 

@@ -108,19 +108,19 @@ bool	 Student::inputData			(){ //from file
 			studentAddress.setStreet(ReadString());
 
 			cout << "City>";
-			studentAddress.setCity(makeFLDString());
+			studentAddress.setCity(ReadString());
 
 			cout << "State>";
 			studentAddress.setState(ReadString());
 
 
 			cout << "Zip>";
-			studentAddress.setZip(ReadString());
+			studentAddress.setZip(makeFLDString(5));
 
 
 
 			cout << "Area Code>";
-			setAreaCode(ReadString());
+			setAreaCode(makeFLDString(3));
 
 
 

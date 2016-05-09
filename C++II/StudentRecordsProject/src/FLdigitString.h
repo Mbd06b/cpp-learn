@@ -27,7 +27,7 @@ public:
 			FLdigitString<L> &  setFLDstring (const FLdigitString<L> &);
 			FLdigitString<L> & operator = (const String &);
 			FLdigitString<L> & operator = (const char []);
-			FLdigitString<L>   makeFLDString ();
+			char *   makeFLDString (size_t);
 			void 			   Display ()const;
 
 			ostream & operator  << 	 (const FLdigitString<L> &);
@@ -114,6 +114,10 @@ inline void  FLdigitString<L>::Display() const{
 			cout << pData2 << endl;
 		};
 
+template<size_t L>
+inline FLdigitString<L>::operator const char * () const{
+	return pData2;
+}
 
 template <size_t L>
 FLdigitString<L> &  FLdigitString<L>::setFLDstring (const FLdigitString<L> & str){
@@ -144,26 +148,26 @@ template <size_t L>
 }
 
 template<size_t L>
-FLdigitString<L> FLdigitString<L>::makeFLDString(){
+char * FLdigitString<L>::makeFLDString(size_t length){
 		char 	c;
 		int		CurrNumChars;
 		char *	pTempData2;
 
 		CurrNumChars = 0;
-		pData2 		= new char [L + 1]; // +1 to capture the "End of String" mark returned if we don't input any names.
+		pData2 		= new char [length + 1]; // +1 to capture the "End of String" mark returned if we don't input any names.
 
 	do{
 		c = cin.get();
 
 			if (!isdigit(c)){
-				cout << "Invalid Character, string should be [" << L << "] digits. Start over.";
+				cout << "Invalid Character, string should be [" << length << "] digits. Start over.";
 				CurrNumChars = 0;
 			}else{
 				pData2 [CurrNumChars++] = c;  // this is valid +1 arithmetic because it's in the [] brackets.
 			};
-		}while(CurrNumChars < L);
-			pData2 [L + 1] = '\0';  // when we hit the ENTER KEY, we need to put a end of string mark at the end.
-	return *this;
+		}while(CurrNumChars < length);
+			pData2 [length + 1] = '\0';  // when we hit the ENTER KEY, we need to put a end of string mark at the end.
+	return pData2;
 }
 //------------------------ ------------------------------------------
 //Display function (Display) to display the characters in the String object.
