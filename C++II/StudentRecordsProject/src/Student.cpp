@@ -8,6 +8,7 @@
 #include "Student.h"
 #include "Name.h"
 #include "FLdigitString.h"
+#include "fileCommands.h"
 #include "Address.h"
 #include <stdlib.h>
 
@@ -113,16 +114,25 @@ bool	 Student::inputData			(){ //from file
 			studentAddress.setState(ReadString());
 
 
-			studentAddress.setZip(readDigits(5));
+			cout << "Zip>";
+			studentAddress.setZip(ReadString());
+
+
 
 			cout << "Area Code>";
-			setAreaCode(readDigits(3));
+			setAreaCode(ReadString());
+
+
 
 			cout << "Phone#>";
-			setPhoneNum(readDigits(7));
+			setPhoneNum(ReadString());
+
+
 
 			cout << "StudentID(9)>";
-			setstudentID(readDigits(9));
+			setstudentID(ReadString());
+
+
 
 //		getGrades(Line);
 			return true;

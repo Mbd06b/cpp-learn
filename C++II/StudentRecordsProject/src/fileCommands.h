@@ -32,7 +32,7 @@ CompareOption getCompareOption();
 void displayHelp();
 
 char * ReadString ();
-char * ReadDigits ();
+char * readDigits (int);
 
 static CompareOption option;
 

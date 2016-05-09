@@ -1,8 +1,12 @@
 #include "fileCommands.h"
 #include <iostream>
 #include <string.h>
+#include <ctype.h> //for isdigit
 
-
+//----------------Stuff needed to getch working
+#include <termios.h>
+#include <stdio.h>
+//------------------
 
 using namespace std;
 
@@ -101,48 +105,7 @@ char * ReadString ()
 }
 
 
-char * readDigits (size_t length) //int is specific #of digits to grab.
-{
-	char 	c;
-	int		CurrNumChars;
-	int 	Num;
-	char *	pString;
 
-	CurrNumChars = 0;
-	pString 		= new char [length + 1]; // +1 to capture the "End of String" mark returned if we don't input any names.
 
-	while (CurrNumChars != length){ //cin.get gets the characters as you type them  \n is the ENTER or RETURN character on the keyboard.
-			switch (c){
-				case '0':
-				case '1':
-				case '2':
-				case '3':
-				case '4':
-				case '5':
-				case '6':
-				case '7':
-				case '8':
-				case '9':
 
-							Num = (Num * 10) + (c - '0');  //'0' ASCII code for the character 48
-							break;
-				case '\b': //backspace
-							if (CurrNumChars > 0){ //if we've at least typed one character in before (meaning we have at least 10)
-								Num = Num / 10; // taking 1234 divided by 10 is a whole number 123 because we are not dealing with fractional numbers
-								//this effectively shaves off one digit.
-								CurrNumChars--;}else; //else, do nothing, we are still starting and haven't moved forward.
 
-						break;
-
-				default:
-				break;
-			}
-
-			pString [CurrNumChars++] = Num;
-
-			}//end of while
-		pString [length + 1] = '\0';  // when we hit the ENTER KEY, we need to put a end of string mark at the end.
-		do {
-		} while (cin.get() != '\n'); //pause for enter key
-		return pString;
-}

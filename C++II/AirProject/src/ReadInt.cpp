@@ -41,7 +41,7 @@ int ReadInt()
 						NumCharsEntered++;
 						Num = (Num * 10) + (c - '0');  //'0' ASCII code for the character 48
 						break;
-			case '\b':
+			case '\b': //backspace
 						if (NumCharsEntered > 0)
 							{
 							Num = Num / 10; // taking 1234 divided by 10 is a whole number 123 because we are not dealing with fractional numbers

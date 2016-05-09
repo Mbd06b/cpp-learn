@@ -26,6 +26,7 @@ public:									digitString		();
 										digitString &   Copy	 (const String &);
 										digitString &   Copy	 (const char []);
 										digitString &	setAt	 (char, int);
+										digitString &   makeDString ();
 
 										istream &   readDigits   (istream & In);
 										istream & 	operator >>  (const String &);

@@ -54,6 +54,9 @@ int main (){
   fstream studentFile2;
   String fileName;
 
+  string test;
+
+
 
   cout << "Tree Top University STUDENT RECORD.TRON ACTIVATED ... " << endl;
   displayHelp();

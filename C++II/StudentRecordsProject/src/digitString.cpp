@@ -38,6 +38,36 @@ digitString::digitString (const char str []): String (str){
 digitString::~digitString(){
 };
 
+digitString & digitString::makeDString(){
+
+	const int		FirstGuess (50);
+		char 	c;
+		int		CurrNumChars;
+		int		CurrSize;
+		char *	pTempData;
+
+		CurrNumChars = 0;
+		CurrSize 	= FirstGuess;
+		pData 		= new char [CurrSize +1]; // +1 to capture the "End of String" mark returned if we don't input any names.
+
+		while ((c = cin.get()) != '\n') //cin.get gets the characters as you type them  \n is the ENTER or RETURN character on the keyboard.
+				{
+				pData [CurrNumChars++] = c;  // this is valid +1 arithmetic because it's in the [] brackets.
+					if (CurrNumChars >= CurrSize)  // is the array full?
+						{			// Yes, I need a bigger array
+							CurrSize += FirstGuess;
+							pTempData = new char [CurrSize + 1];
+							//stingcopy won't work, because we haven't used an end of string mark to judge the size
+							memcpy (pTempData, pData, CurrNumChars); //copies string Chars to TempData
+							delete [] pData;  //data is not needed now so we are giving it back to the system.
+												// String still contains a memory address, we dont "own" that location anymore.
+												//IF YOU DONT DELETE THE ALLOCATED MEMORY YOU WILL HAVE a memory leak RESOURCE FAILURE.
+							pData = pTempData; //not moving any characters
+						}else;
+				}//end of while
+			pData [CurrNumChars] = '\0';  // when we hit the ENTER KEY, we need to put a end of string mark at the end.
+			return pData;
+}
 
 istream & digitString::Read (istream & In){
 
