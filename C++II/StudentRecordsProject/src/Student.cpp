@@ -108,7 +108,7 @@ bool	 Student::inputData			(){ //from file
 			studentAddress.setStreet(ReadString());
 
 			cout << "City>";
-			studentAddress.setCity(ReadString());
+			studentAddress.setCity(makeFLDString());
 
 			cout << "State>";
 			studentAddress.setState(ReadString());
