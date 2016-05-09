@@ -32,7 +32,7 @@ CompareOption getCompareOption();
 void displayHelp();
 
 char * ReadString ();
-char * makeFLDString (int);
+char * readFLDString (int);
 
 static CompareOption option;
 

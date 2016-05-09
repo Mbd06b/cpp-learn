@@ -75,11 +75,11 @@ template <size_t L>
 FLdigitString<L>::FLdigitString(const char str []){
 	pData2 = new char [L + 1];
 	for (int i = 0; i < L; i++){
-		 if((!isdigit(str[i])) || (str[i] == '\0')){
-			 throw invalid_argument("Flds cnstr str [], cannot take digits for an argument");
-		 }else{
+//		 if((!isdigit(str[i])) || (str[i] == '\0')){
+//	 throw invalid_argument("Flds cnstr str [], cannot take alpha for an argument");
+//		}else{
 			pData2 [i] = str[i];
-		 };
+//		 };
 	};
 		pData2[L + 1] = '\0'; //sets the EOS mark,
 

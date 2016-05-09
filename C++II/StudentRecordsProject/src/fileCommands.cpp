@@ -2,13 +2,57 @@
 #include <iostream>
 #include <string.h>
 #include <ctype.h> //for isdigit
+#include <stdio.h>
+
 
 //----------------Stuff needed to getch working
 #include <termios.h>
 #include <stdio.h>
 //------------------
 
+
+
 using namespace std;
+
+static struct termios old, newstuff;
+
+/* Initialize new terminal i/o settings */
+void initTermios(int echo)
+{
+  tcgetattr(0, & old); /* grab old terminal i/o settings */
+  newstuff = old; /* make new settings same as old settings */
+  newstuff.c_lflag &= ~ICANON; /* disable buffered i/o */
+  newstuff.c_lflag &= echo ? ECHO : ~ECHO; /* set echo mode */
+  tcsetattr(0, TCSANOW, &newstuff); /* use these new terminal i/o settings now */
+}
+
+/* Restore old terminal i/o settings */
+void resetTermios(void)
+{
+  tcsetattr(0, TCSANOW, &old);
+}
+
+/* Read 1 character - echo defines echo mode */
+char getch_(int echo)
+{
+  char ch;
+  initTermios(echo);
+  ch = getchar();
+  resetTermios();
+  return ch;
+}
+
+/* Read 1 character without echo */
+char getch(void)
+{
+  return getch_(0);
+}
+
+/* Read 1 character with echo */
+char getche(void)
+{
+  return getch_(1);
+}
 
 
 char * CmdStrings [NumCommands] = {
@@ -106,26 +150,58 @@ char * ReadString ()
 
 char * readFLDString (int length){
 
-		char 	c;
-		int		CurrNumChars;
-		char *	pData2;
+	bool errEntry = true;
+	bool wrongLength = true;
+	bool stillWrong = true;
+	int		i; //we need to keep track of the number of characters typed
+	char * pDTemp;
+	pDTemp = new char [length + 1];
+	i = 0;
 
-		CurrNumChars = 0;
-		pData2 		= new char [length + 1]; // +1 to capture the "End of String" mark returned if we don't input any names.
+	cout << "input [" << length << "] digits>";
+				while((stillWrong) || (wrongLength)){
+						char Ch;
+						cin >> Ch;
+								if(Ch == '0' || Ch == '1' || Ch == '2'|| Ch == '3'|| Ch == '4'|| Ch == '5'||Ch == '6'|| Ch == '7' || Ch == '8'|| Ch == '9' || Ch == '\n'){
+									pDTemp[i++] = Ch;
+									errEntry = false;
+								}else{
+									errEntry = true;
+									i = 0;
+								};
+									if(errEntry || (i > length)){ //if error entry turns on, it stays on
+										stillWrong = true;
+									};
 
-		do{
-		c = cin.get();
+								if(i != (length)){ // will only be Length once.
+									wrongLength = true;
+								}else{
+									wrongLength = false;
+								};
 
-			if (!isdigit(c)){
-				cout << "Invalid Character, string should be [" << length << "] digits. Start over.";
-				CurrNumChars = 0;
-			}else{
-				pData2 [CurrNumChars++] = c;  // this is valid +1 arithmetic because it's in the [] brackets.
-			};
-		}while(CurrNumChars < length);
-			pData2 [length + 1] = '\0';  // when we hit the ENTER KEY, we need to put a end of string mark at the end.
-		return pData2;
+								if(!wrongLength && stillWrong){
+									i = 0;
+
+								}else{
+									stillWrong = false; //loop ends;
+
+								}
+				};
+
+
+
+			pDTemp[length + 1] = '\0';
+
+			cin.sync();
+		cin.ignore(100, '\n');
+
+			return pDTemp;
 }
+
+
+
+
+
 
 
 

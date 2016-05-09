@@ -114,24 +114,17 @@ bool	 Student::inputData			(){ //from file
 			studentAddress.setState(ReadString());
 
 
-			cout << "Zip>";
-			studentAddress.setZip(makeFLDString(5));
+			cout << "Zip ";
+			studentAddress.setZip(readFLDString(5));
 
+			cout << "Area Code ";
+			setAreaCode(readFLDString(3));
 
+			cout << "Phone ";
+			setPhoneNum(readFLDString(7));
 
-			cout << "Area Code>";
-			setAreaCode(makeFLDString(3));
-
-
-
-			cout << "Phone#>";
-			setPhoneNum(ReadString());
-
-
-
-			cout << "StudentID(9)>";
-			setstudentID(ReadString());
-
+			cout << "StudentID ";
+			setstudentID(readFLDString(9));
 
 
 //		getGrades(Line);
@@ -181,10 +174,10 @@ Student & Student::setPhoneNum (const FLdigitString<7> & str){
 void Student::displayStudent (){
 
 	cout << studentName;    //display the name
+	cout << endl;
 	cout << "ID Number: " << studentID;
 	cout << endl;
 	studentAddress.Display();
-
 	cout << endl;
 	cout << "Area Code:" << endl;
 	studentareaCode.Display();

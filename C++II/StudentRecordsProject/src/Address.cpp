@@ -85,7 +85,9 @@ inline istream & operator >> (istream & in, Address & myAddress){
 }
 
  void Address::Display (){
-	cout << street << city << state << zip;
+	cout << street << endl;
+	cout << city << ", " << state << endl;
+	cout << zip;
 }
 
  ostream & Address::Display (ostream & out) const{

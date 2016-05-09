@@ -69,7 +69,7 @@ cout << "Input Command >";
 	switch (getCommand()){
 		case CmdImportRecords:
 
-			studentFile.open("ToRead.txt", ios_base::in);
+			studentFile.open("ToRead.txt", ios_base::in | ios_base::binary); //binary, i don't want to pick up the \n char conversion
 
 			  if (studentFile.is_open ()){
 				 cout << "File is open" << endl;
