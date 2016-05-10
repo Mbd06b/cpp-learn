@@ -34,7 +34,7 @@ Student::~Student(){
 };
 
 int Student::sCompare (const Student & a, const Student & b){
-	return (a.getSName().Compare(b.getSName(), option));
+	return (a.getSName().Compare(b.getSName(), option)); //static global variable option is in fileCommands.
 }
 
 
@@ -131,15 +131,48 @@ bool	 Student::inputData			(){ //from file
 			return true;
 };
 
+bool Student::exportObject (fstream & file){ //fr
+
+		file << "--------------------------------------------------------------------------" << '\n';
+		file << studentName.get1Name(first) << '\n';
+		file << studentName.get1Name(middle)<< '\n';
+		file << studentName.get1Name(last) << '\n';
+		file << "ID#: " << getSID() << '\n';
+		file << "\n";
+		file << getAStreet() << '\n';
+		file << getACity() << '\n';
+		file << getAState() << getAZip() << '\n';
+		file << "Area Code: " << getAreaCode() << '\n';
+		file << "Phone#: " << getSPhone() << '\n';
+		file << "\n";
+		file << "\n";
+	return true;
+}
+
 
 const Name & Student::getSName()const{
 	return studentName.getName();
 }
 
+const String & Student::getAStreet()const{
+	return studentAddress.getStreet();
+}
+
+const String & Student::getACity() const{
+	return studentAddress.getCity();
+}
+
+const String & Student::getAState() const {
+	return studentAddress.getState();
+}
+
+const FLdigitString<5> & Student::getAZip()const {
+	return studentAddress.getZip();
+}
 
 
 const FLdigitString<9> & Student::getSID ()const{
-	return studentID;
+	return studentID.getFLDstring();
 }
 
 const Address & Student::getSAddress()const{
@@ -147,11 +180,11 @@ const Address & Student::getSAddress()const{
 }
 
 const FLdigitString<3> & Student::getAreaCode()const{
-	return studentareaCode;
+	return studentareaCode.getFLDstring();
 }
 
 const FLdigitString<7> & Student::getSPhone()const{
-	return studentphoneNum;
+	return studentphoneNum.getFLDstring();
 }
 
 
@@ -172,16 +205,17 @@ Student & Student::setPhoneNum (const FLdigitString<7> & str){
 }
 
 void Student::displayStudent (){
+  cout << "------------------------------------------------------------------------------" << endl;
 
 	cout << studentName;    //display the name
 	cout << endl;
-	cout << "ID Number: " << studentID;
+	cout << "ID#: " << studentID;
 	cout << endl;
 	studentAddress.Display();
 	cout << endl;
-	cout << "Area Code:" << endl;
+	cout << "Area Code: ";
 	studentareaCode.Display();
-	cout << "Phone:" << endl;
+	cout << "Phone: ";
 	studentphoneNum.Display();
 
 };

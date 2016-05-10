@@ -5,54 +5,7 @@
 #include <stdio.h>
 
 
-//----------------Stuff needed to getch working
-#include <termios.h>
-#include <stdio.h>
-//------------------
-
-
-
 using namespace std;
-
-static struct termios old, newstuff;
-
-/* Initialize new terminal i/o settings */
-void initTermios(int echo)
-{
-  tcgetattr(0, & old); /* grab old terminal i/o settings */
-  newstuff = old; /* make new settings same as old settings */
-  newstuff.c_lflag &= ~ICANON; /* disable buffered i/o */
-  newstuff.c_lflag &= echo ? ECHO : ~ECHO; /* set echo mode */
-  tcsetattr(0, TCSANOW, &newstuff); /* use these new terminal i/o settings now */
-}
-
-/* Restore old terminal i/o settings */
-void resetTermios(void)
-{
-  tcsetattr(0, TCSANOW, &old);
-}
-
-/* Read 1 character - echo defines echo mode */
-char getch_(int echo)
-{
-  char ch;
-  initTermios(echo);
-  ch = getchar();
-  resetTermios();
-  return ch;
-}
-
-/* Read 1 character without echo */
-char getch(void)
-{
-  return getch_(0);
-}
-
-/* Read 1 character with echo */
-char getche(void)
-{
-  return getch_(1);
-}
 
 
 char * CmdStrings [NumCommands] = {
@@ -69,17 +22,16 @@ char * CompareStrings [NumCompareOptions] = {
 									"First",
 									"Middle",
 									"Last",
-									"", //Default
 };
 
 void displayHelp(){
 	  cout << "Commands are: " << endl;
-	  cout << "[Import] - Select a file in project directory to read, (Sample is named ToRead.txt)." << endl;
-	  cout << "[Input] - Input new student records to the program" << endl;
-	  cout << "[Sort] -  Sort records by name." << endl;
+	  cout << "[Import]  - Select a .txt file in directory (Import Sample is named ToRead.txt)." << endl;
+	  cout << "[Input]   - Input new student records to the program" << endl;
+	  cout << "[Sort]    -  Sort records by name." << endl;
 	  cout << "[Display] - Displays student records currently loaded in program." << endl;
-	  cout << "[Export] - Writes Student Records to a .txt file in project directory." << endl;
-	  cout << "[Help] - Show available commands." << endl;
+	  cout << "[Export]  - Writes Student Records to a .txt file in project directory." << endl;
+	  cout << "[Help] and [Exit]- Show these commands again or End Program" << endl;
 }
 
 Commands getCommand (){
@@ -100,18 +52,18 @@ Commands getCommand (){
 
 
 CompareOption getCompareOption (){
-	char * Cmd;
+	char * Cmds;
 	int	i;
 
-	Cmd = ReadString();
+	Cmds = ReadString();
 
-	for (i = CompareLast; i < NumCompareOptions; i++){ //NumCommands in at the bottom of our Commands Enumeration and will always hold the largest integer.
-		if (strcmp (Cmd, CompareStrings [i]) == 0){ //  _strcmpi is strcmp "case insensitive" if
-			delete [] Cmd;
+	for (int i = CompareFirst; i < NumCompareOptions; i++){ //NumCommands in at the bottom of our Commands Enumeration and will always hold the largest integer.
+		if (strcasecmp (Cmds, CompareStrings [i]) == 0){ //  _strcmpi is strcmp "case insensitive" if
+			delete [] Cmds;
 			return (CompareOption)i; //added (Commands) to specify return a commands enumeration integer
 		}
 	}
-		delete [] Cmd;
+		delete [] Cmds;
 		return CompareInvalid; //CmdInvalid is part of the Commands Enumeration (-1)
 }
 

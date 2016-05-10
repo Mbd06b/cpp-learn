@@ -123,9 +123,7 @@ const String &  Name::get1Name(const whichName num) const{
 };
 
 
-//inline void Name::Display(){
-//	cout << sFirst << " " << sMiddle << " " << sLast;
-//}
+
 
 Name & Name::operator = (const Name & toCopy){
 

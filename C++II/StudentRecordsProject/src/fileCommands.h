@@ -20,9 +20,9 @@ enum Commands{
 Commands getCommand();
 
 enum CompareOption{	CompareInvalid = -1,
-					CompareLast = 1,
 					CompareFirst,
 					CompareMiddle,
+					CompareLast,
 					NumCompareOptions,
 				};
 

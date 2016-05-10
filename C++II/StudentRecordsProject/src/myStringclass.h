@@ -110,13 +110,11 @@ class String{
 
 		//other operators
 			 operator const char *	 () const;//const here for the ostream Display method because they are not changing anything in the class.
-
+			 const char * getpData() const;
 
 	private:
 			 //-------------Input operator #5 (“>>”). and # 6 Output operator (“<<”).
 			 		//Items 5 and 6 require a String object to the right of the operator.
-
-
 
 		size_t	numChars; //size_t aka unsigned long (positive only)
 		size_t numSlots;
@@ -149,7 +147,9 @@ inline char String::operator [] (int i) const
 	return (*const_cast <String *> (this)).operator [] (i);
 	}
 
-
+inline const char * String::getpData()const{
+	return (const char *)pData;
+}
 
 inline bool String::IsValidSubscript (int i) const{
 		return (i >= 0) && (i < static_cast <int> (numChars));

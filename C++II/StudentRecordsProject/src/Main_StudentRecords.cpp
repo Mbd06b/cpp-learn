@@ -74,10 +74,13 @@ cout << "Input Command >";
 			  if (studentFile.is_open ()){
 				 cout << "File is open" << endl;
 				 studentGArray.importData(studentFile);
+				 cout << studentGArray.importCount() << " Records Imported" << endl;
 			  } else{
 				  cout << "File failed to open" << endl;
 			  };
 			  studentFile.clear();
+
+
 
 			break;
 		case CmdInputRecords:
@@ -90,24 +93,25 @@ cout << "Input Command >";
 					cout << "How should we sort the students? by [First], [Last], or [Middle]?" << endl;
 					cout << ">";
 					option = getCompareOption(); //option is global static variable
-		//			studentGArray.sortStudents();
+					studentGArray.sortStudents();
 					 cout << "Students Sorted" << endl;
 
 			break;
 		case CmdDisplayRecords:
-				cout << endl;
-				cout << studentGArray.importCount()<< " Students On Record:"<< endl;
-				cout << endl;
-	//		if(studentGArray.importCount()){
-	//			cout << "No Records to Display" << endl;
-	//			  }
-	//		else{
-				for (int i = 0; i < (studentGArray.importCount()); i++){
-					  studentGArray[i].displayStudent();
-					  cout << endl;
-					  cout << endl;
-					}
 
+					cout << endl;
+					cout << studentGArray.importCount()<< " Students On Record:"<< endl;
+					cout << endl;
+				if(studentGArray.importCount() == 0){
+					cout << "No Records to Display" << endl;
+					  }
+				else{
+					for (int i = 0; i < (studentGArray.importCount()); i++){
+						  studentGArray[i].displayStudent();
+						  cout << endl;
+						  cout << endl;
+						}
+					}
 
 
 			break;
@@ -118,8 +122,11 @@ cout << "Input Command >";
 
 			if(studentFile2.is_open()){
 				cout << fileName << " is open to write." << endl;
+			}else{
+				cout << "File is not open" << endl;
 			};
-
+					studentGArray.exportData(studentFile2);
+			cout << studentGArray.importCount() << " Student Records Exported" << endl;
 
 			break;
 		case CmdHelp:
@@ -134,16 +141,11 @@ cout << "Input Command >";
 						cout << "Command Invalid try again, or type 'Help'" << endl;
 			break;
 		default: cout << "Internal error #1, don't abandon all hope, contact customer support" << endl;
+				 cout << "Or if this is Bill, just give me an 'A', this was hard enough for less than a page of instruction" << endl;
 	}
 
 
 }while(continueon);
-
-
-
-
-
- // while(studentGArray[i++].Read(studentFile));
 
 cout << "Program Ended" << endl;
   return 0; 

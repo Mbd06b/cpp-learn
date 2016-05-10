@@ -41,6 +41,11 @@ public:									digitString		();
 										digitString & operator = (const char []);
 										istream &   Read		 (istream & In);
 
+										 operator const char *	 () const;//const here for the ostream Display method because they are not changing anything in the class.
+
+
+
+
 private:
 
 

@@ -38,6 +38,8 @@ class Array
  	 	 		   void sortStudents   ();
   	  	  	  	   void importData  (fstream &); //for importing files into Array
   	  	  	  	   void inputData 	();//for typing data into array;
+  	  	  	  	   void exportData  (fstream &);
+
 
   	  	  	  	   int importCount () const; //see import counter
   	  	  	 const int & getImportCount () const;
@@ -134,6 +136,13 @@ void Array<D, Low,High>::inputData (){
 template <class D, int Low, int High>
 int  Array<D,Low,High>::importCount ()const{
 	return importCounter; //num objects loaded by importData
+}
+
+template <class D, int Low, int High>
+void Array<D, Low, High>::exportData(fstream & file){
+	 for(int i = 0; i < importCounter; i++){
+		 gArray[i++].exportObject(file);
+	 }
 }
 
 
