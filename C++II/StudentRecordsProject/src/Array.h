@@ -9,7 +9,8 @@
 #define ARRAY_H_
 
 #include <fstream>
-#include "Student.h"
+#include "Student.h"		//to sort by Student Name
+#include "FLdigitString.h" //to sort by IDNumber
 
 
 template <class D, int Low , int High >
@@ -90,25 +91,44 @@ template <class D, int Low, int High>
 void Array<D,Low,High>::sortStudents (){ //int a is our Array size (NumElements in SortLab)
 
 if(importCounter){ //if Zero, there are no objects to sort
-	 int	NumElements = importCounter; //
+	int	NumElements = importCounter; //
 	 bool	Sorted;
 	 D Temp; // a temporary place to store our object as we sort.
-	 NumElements--; //NumElements -- we are subtracting 1 from our array, because we don't want the EOF beyond our array
+	NumElements--; //NumElements -- we are subtracting 1 from our array, because we don't want the EOF beyond our array
 
-	 do{
-		Sorted = true;
-		for (int i = 0; i < NumElements; i++){
-			if ((gArray[i].getSName()) > (gArray[i + 1].getSName())){  //what do I do if The element above is higher than the element below?
+	if(option == 4){ //option 4 is we are sorting by IDNumber instead of names
+				do{
+							Sorted = true;
+							for (int i = 0; i < NumElements; i++){
+								if ((gArray[i].getSID()) > (gArray[i + 1].getSID())){  //what do I do if The element above is higher than the element below?
 
-				Temp = gArray [i];   //save the existing value
-				gArray [i] = gArray [i + 1]; //swop the value
-				gArray [i + 1] = Temp;  // assign the new value
-				Sorted = false;
-			}
+									Temp = gArray [i];   //save the existing value
+									gArray [i] = gArray [i + 1]; //swop the value
+									gArray [i + 1] = Temp;  // assign the new value
+									Sorted = false;
+								}
 
-		}
-	  }while (!Sorted);//END DO LOOP  ! Is NOT, so !Sorted is Not-Sorted.
-	}else
+							}
+						  }while (!Sorted);//END DO LOOP  ! Is NOT, so !Sorted is Not-Sorted.
+
+	}else{   //Name Sort Options
+
+				 do{
+					Sorted = true;
+					for (int i = 0; i < NumElements; i++){
+						if ((gArray[i].getSName()) > (gArray[i + 1].getSName())){  //what do I do if The element above is higher than the element below?
+
+							Temp = gArray [i];   //save the existing value
+							gArray [i] = gArray [i + 1]; //swop the value
+							gArray [i + 1] = Temp;  // assign the new value
+							Sorted = false;
+						}
+
+					}
+				  }while (!Sorted);//END DO LOOP  ! Is NOT, so !Sorted is Not-Sorted.
+	};
+
+}else
 	{cout << "Nothing to Sort" << endl;};
 }
 

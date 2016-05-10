@@ -22,6 +22,7 @@ char * CompareStrings [NumCompareOptions] = {
 									"First",
 									"Middle",
 									"Last",
+									"ID"
 };
 
 void displayHelp(){

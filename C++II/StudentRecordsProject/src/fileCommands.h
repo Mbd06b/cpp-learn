@@ -23,6 +23,7 @@ enum CompareOption{	CompareInvalid = -1,
 					CompareFirst,
 					CompareMiddle,
 					CompareLast,
+					CompareID,
 					NumCompareOptions,
 				};
 

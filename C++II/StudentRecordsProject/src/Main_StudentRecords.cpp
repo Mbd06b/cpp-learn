@@ -1,6 +1,6 @@
 //============================================================================
-// DESCRIPTION : Lab 06  C++II ReadIn File, Sort, and Dislay
-// CLASS       : COSC 1437.S02 – Lab 06
+// DESCRIPTION : Semester Project Studest Records C++II
+// CLASS       : COSC 1437.S02 –
 // AUTHOR      : Matthew Dowell
 // DATE        : 04/23/2015
 //============================================================================
@@ -68,8 +68,9 @@ cout << "Input Command >";
 
 	switch (getCommand()){
 		case CmdImportRecords:
-
-			studentFile.open("ToRead.txt", ios_base::in | ios_base::binary); //binary, i don't want to pick up the \n char conversion
+			cout << "Enter File Name >";
+			cin >> fileName;
+			studentFile.open((const char *) fileName, ios_base::in | ios_base::binary); //binary, i don't want to pick up the \n char conversion
 
 			  if (studentFile.is_open ()){
 				 cout << "File is open" << endl;
@@ -91,7 +92,7 @@ cout << "Input Command >";
 
 			break;
 		case CmdSortRecords:
-					cout << "How should we sort the students? by [First], [Last], or [Middle]?" << endl;
+					cout << "How should we sort the students? by [First], [Last], [Middle], or [ID]?" << endl;
 					cout << ">";
 					option = getCompareOption(); //option is global static variable
 					studentGArray.sortStudents();
