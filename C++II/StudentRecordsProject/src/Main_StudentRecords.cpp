@@ -79,6 +79,7 @@ cout << "Input Command >";
 				  cout << "File failed to open" << endl;
 			  };
 			  studentFile.clear();
+			  studentFile.close();
 
 
 
@@ -116,17 +117,19 @@ cout << "Input Command >";
 
 			break;
 		case CmdExportRecords:
-			cout << "Enter File Name >";
-			cin >> fileName;
-			studentFile2.open((const char *) fileName, ios_base::out);
+					cout << "Enter File Name >";
+					cin >> fileName;
+					studentFile2.open((const char *) fileName, ios_base::out);
 
-			if(studentFile2.is_open()){
-				cout << fileName << " is open to write." << endl;
-			}else{
-				cout << "File is not open" << endl;
-			};
-					studentGArray.exportData(studentFile2);
-			cout << studentGArray.importCount() << " Student Records Exported" << endl;
+					if(studentFile2.is_open()){
+						cout << fileName << " is open to write." << endl;
+					}else{
+						cout << "File is not open" << endl;
+					};
+							studentGArray.exportData(studentFile2);
+					cout << studentGArray.importCount() << " Student Records Exported" << endl;
+					studentFile2.clear();
+					studentFile2.close();
 
 			break;
 		case CmdHelp:

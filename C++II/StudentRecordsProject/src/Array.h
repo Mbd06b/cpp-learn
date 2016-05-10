@@ -141,7 +141,7 @@ int  Array<D,Low,High>::importCount ()const{
 template <class D, int Low, int High>
 void Array<D, Low, High>::exportData(fstream & file){
 	 for(int i = 0; i < importCounter; i++){
-		 gArray[i++].exportObject(file);
+		 gArray[i].exportObject(file);
 	 }
 }
 
