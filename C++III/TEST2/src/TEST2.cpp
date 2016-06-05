@@ -1,5 +1,5 @@
 //============================================================================
-// Name        : C3Test.cpp
+// Name        : TEST2.cpp
 // Author      : 
 // Version     :
 // Copyright   : Your copyright notice
