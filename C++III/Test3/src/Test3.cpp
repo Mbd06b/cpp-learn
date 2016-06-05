@@ -1,6 +1,6 @@
 //============================================================================
-// Name        : TEST2.cpp
-// Author      : 
+// Name        : Test3.cpp
+// Author      : mbd06b
 // Version     :
 // Copyright   : Your copyright notice
 // Description : Hello World in C++, Ansi-style
