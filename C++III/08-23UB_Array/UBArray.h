@@ -1,60 +1,81 @@
 #ifndef UB_ARRAY_H
 #define UB_ARRAY_H
 
-#include <WCS_Pointer.h>
+
 #include <stdexcept>
+#include "WCS_Pointer.h"
+using namespace std;
+
 
 // NOTE: whatever is used to replace INDEX in the template  below MUST support the comparison
 
-template <class DATA, class INDEX>
+template <class DATA, class INDEX = int> // defaults to integer
 class UBArray{ //UB-Unbounded
 
-
 	private:
+//----------------------------------THIS IS THE NODE OF OUR LINKED LIST --------------------------------------------
 
 		struct Node: public RefCount{ //anything that uses WCS_Pointer needs to receive inheritance from RefCount
 
-			DATA 				Data;
-			INDEX			 	Index;
-			WCS_Pointer <Node> pNext;
-			WCS_Pointer <Node> pPrev;
+				DATA 					Data; //What the list is holding
+				INDEX			 		Index; //the index or "location" of the node.
+				WCS_Pointer <Node>	 	pNext;  //which node comes after this one.
+				WCS_Pointer <Node>	 	pPrev;  //which node comes before this one.
 
-			//THIS Node CONSTRUCTOR IS INSIDE UBArray!!
-			Node (const INDEX &); //writing a contsructor for our Node
-
-
+				//THIS Node CONSTRUCTOR Constructs a node INSIDE UBArray!!
+				Node (const INDEX &); //writing a contsructor for our Node
 		};
 
 	public:
 
 							 UBArray(); //default constructor
-							~UBArray();
-				void deleteAllNodes (); //delete all nodes, when you want to clear out your list and star over.
+				virtual		~UBArray(); //destructor
 
+				void 		deleteAllNodes (); //delete all nodes, when you want to clear out your list and start over.
+
+//------------------_ITERATOR METHODS--------------------------------------
 				DATA &		getFirst();
+		const	DATA &		getFirst()const;
+	//			INDEX &		getFirstIndex();
+
+				DATA &		getLast();
+		const	DATA &		getLast()const;
+
 				DATA & 		getNext ();
+		const	DATA &		getNext ()const;
+
+				DATA & 		getPrev ();
+		const	DATA &		getPrev ()const;
+
+
 				DATA &		Remove  (const INDEX &); // removes the requested index from the list.
 
+				DATA &		getAt  ();
+		const	DATA &		getAt  ()const;
 				DATA &		operator []	(const INDEX &); //returns a & reference to DATA in the index so we can modify it.
-		const   DATA & 		operator [] (const INDEX &)const;
+		const   DATA & 		operator [] (const INDEX &) const; //We want to be able to access the UBarray without changing values
 
 	private:
-		//Copy Operators
-							UBArray (const UBArray <DATA, INDEX> &); //put the copy constructor in private, because copying a whole database would be a massive operation
+
+
+//---------------------------HIDDEN METHODS--------------------------------
+								UBArray (const UBArray <DATA, INDEX> &); //put the copy constructor in private, because copying a whole database would be a massive operation
 		UBArray <DATA, INDEX> & operator = (const UBArray <DATA, INDEX> &);
+//--------------------------------------------------------------------------
 
 
-mutable WCS_Pointer <Node> 		Current; //mutable means that this member is changable even if the class is constant.
-//mutable tells the program that this will not be stored in ROM, but RAM.
-//mutable should only be used "behind the scenes" for the customer, the way the program behaves should not be visible
-//to the customer when you use mutable.
-		WCS_Pointer <Node>		Head;
-		WCS_Pointer <Node> 		Tail;
+		mutable WCS_Pointer <Node> 		Current; //mutable means that this member is changable even if the class is constant.
+		//mutable tells the program that this will not be stored in ROM, but RAM.
+		//mutable should only be used "behind the scenes" for the customer, the way the program behaves should not be visible
+		//to the customer when you use mutable.
+				WCS_Pointer <Node>		Head;
+				WCS_Pointer <Node> 		Tail;
 
-		//we need a counter to keep track of how many nodes we create.
-		//int 				numNodes = 0;
+				//we need a counter to keep track of how many nodes we create.
+				//int 				numNodes = 0;
 	};
 
+//----------------------CONSTRUCTORS------------------------------------
 template <class DATA, class INDEX>
 	UBArray <DATA, INDEX>::UBArray(){
 	//the WCS_Pointers are automatically called to construct null pointers.
@@ -67,18 +88,20 @@ template <class DATA, class INDEX>
 	//Index = I;
 }
 
-
-
 template <class DATA, class INDEX>
 	UBArray <DATA, INDEX>::~UBArray(){
 		deleteAllNodes();
 }
+
+//------------------------METHODS----------------------------------------
 
 template <class DATA, class INDEX>
 	void UBArray <DATA, INDEX>::deleteAllNodes(){
 	//Left as an Exercise for the Student
 }
 
+
+//-------------------ITERATORS------------------------------------------
 template <class DATA, class INDEX>
 	DATA & UBArray <DATA, INDEX>::getFirst(){
 
@@ -87,6 +110,30 @@ template <class DATA, class INDEX>
 		return (*Head).Data;
 	}else{
 		throw exception("Array Empty - getFirst"); //array empty
+	}
+}
+
+
+template <class DATA, class INDEX>
+const	DATA & UBArray <DATA, INDEX>::getFirst() const{
+
+	if (Head){ //if we have  ahead
+		Current = Head;
+		return (*Head).Data;
+	}else{
+		throw exception("Array Empty - getFirst"); //array empty
+	}
+}
+
+
+template <class DATA, class INDEX>
+	const	DATA & UBArray <DATA, INDEX>::getFirst() const{
+
+	if (Head){ //if we have  ahead
+		Current = Head;
+		return (*Head).Data;
+	}else{
+		throw exception("Array Empty - getFirst const"); //array empty
 	}
 
 }
@@ -103,6 +150,21 @@ template <class DATA, class INDEX>
 
 	}else{
 		throw exception("No Element Found - UBArray::getNext");
+	};
+}
+
+template <class DATA, class INDEX>
+	DATA & UBArray <DATA, INDEX>::getNext(){
+	if (Current){
+		if((*Current).pNext){
+			Current = (*Current).pNext;
+			return (*Current).Data;
+		}else{
+			throw exception ("No Next Element - UBArray::getNext const");
+		};
+
+	}else{
+		throw exception("No Element Found - UBArray::getNext const");
 	};
 }
 

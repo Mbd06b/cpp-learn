@@ -1,18 +1,20 @@
 
 
-#include <WCS_String.h>
+
 #include <iostream>
-#include "UBArray.h"
+#include "WCS_UB_Array.h"
+#include "WCS_String.h"
+
 
 using namespace std;
 
 WCS_String Names [5];//Global Variable
 
-void Func (const UBArray <int, WCS_String> &);
+void Func (const WCS_UB_Array <int, WCS_String> &);
 
 int main (){
 
-	UBArray <int, WCS_String> List;
+	WCS_UB_Array <int, WCS_String> List;
 
 	Names[0] = "George";
 	Names[1] = "Megan";
@@ -26,11 +28,15 @@ int main (){
 	List [Names[0]] = 3333;
 	List [Names[3]] = -3333;
 
+	Func(List);
+
+	int x;
+	cin >> x;
 
 	return 0;
 }
 
-void Func (const UBArray <int, WCS_String> & UB){
+void Func (const WCS_UB_Array <int, WCS_String> & UB){
 
 	cout << UB [Names [1]] << endl;
 

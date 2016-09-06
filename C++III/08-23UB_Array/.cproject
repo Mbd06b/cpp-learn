@@ -20,8 +20,8 @@
 							<tool id="cdt.managedbuild.tool.gnu.archiver.base.1735390173" name="GCC Archiver" superClass="cdt.managedbuild.tool.gnu.archiver.base"/>
 							<tool id="cdt.managedbuild.tool.gnu.cpp.compiler.base.115230828" name="GCC C++ Compiler" superClass="cdt.managedbuild.tool.gnu.cpp.compiler.base">
 								<option id="gnu.cpp.compiler.option.include.paths.747856279" name="Include paths (-I)" superClass="gnu.cpp.compiler.option.include.paths" useByScannerDiscovery="false" valueType="includePath">
-									<listOptionValue builtIn="false" value="/home/mbd06b/git/mbd06b-c-learn/cppUtilities/WCS_String"/>
 									<listOptionValue builtIn="false" value="/home/mbd06b/git/mbd06b-c-learn/cppUtilities/WCS_Pointer"/>
+									<listOptionValue builtIn="false" value="/home/mbd06b/git/mbd06b-c-learn/cppUtilities/WCS_String"/>
 								</option>
 								<option id="gnu.cpp.compiler.option.optimization.level.1717500967" name="Optimization Level" superClass="gnu.cpp.compiler.option.optimization.level" useByScannerDiscovery="false" value="gnu.cpp.compiler.optimization.level.none" valueType="enumerated"/>
 								<option id="gnu.cpp.compiler.option.debugging.level.1401667346" name="Debug Level" superClass="gnu.cpp.compiler.option.debugging.level" useByScannerDiscovery="false" value="gnu.cpp.compiler.debugging.level.max" valueType="enumerated"/>
@@ -34,13 +34,11 @@
 							</tool>
 							<tool id="cdt.managedbuild.tool.gnu.c.linker.base.390553346" name="GCC C Linker" superClass="cdt.managedbuild.tool.gnu.c.linker.base"/>
 							<tool id="cdt.managedbuild.tool.gnu.cpp.linker.base.934512809" name="GCC C++ Linker" superClass="cdt.managedbuild.tool.gnu.cpp.linker.base">
-								<option id="gnu.cpp.link.option.libs.1287023383" name="Libraries (-l)" superClass="gnu.cpp.link.option.libs" valueType="libs">
-									<listOptionValue builtIn="false" srcPrefixMapping="" srcRootPath="" value="/home/mbd06b/git/mbd06b-c-learn/cppUtilities"/>
-								</option>
+								<option id="gnu.cpp.link.option.libs.1287023383" name="Libraries (-l)" superClass="gnu.cpp.link.option.libs" valueType="libs"/>
 								<option id="gnu.cpp.link.option.paths.583143817" name="Library search path (-L)" superClass="gnu.cpp.link.option.paths" valueType="libPaths">
 									<listOptionValue builtIn="false" value="/home/mbd06b/git/mbd06b-c-learn/cppUtilities"/>
-									<listOptionValue builtIn="false" value="/home/mbd06b/git/mbd06b-c-learn/cppUtilities/WCS_String"/>
 									<listOptionValue builtIn="false" value="/home/mbd06b/git/mbd06b-c-learn/cppUtilities/WCS_Pointer"/>
+									<listOptionValue builtIn="false" value="/home/mbd06b/git/mbd06b-c-learn/cppUtilities/WCS_String"/>
 								</option>
 								<inputType id="cdt.managedbuild.tool.gnu.cpp.linker.input.1235523866" superClass="cdt.managedbuild.tool.gnu.cpp.linker.input">
 									<additionalInput kind="additionalinputdependency" paths="$(USER_OBJS)"/>
@@ -52,9 +50,6 @@
 							</tool>
 						</toolChain>
 					</folderInfo>
-					<fileInfo id="cdt.managedbuild.config.gnu.cross.exe.debug.1909803626.1858924831" name="mainUBArray.cpp" rcbsApplicability="disable" resourcePath="mainUBArray.cpp" toolsToInvoke="cdt.managedbuild.tool.gnu.cpp.compiler.base.115230828.1700450730">
-						<tool id="cdt.managedbuild.tool.gnu.cpp.compiler.base.115230828.1700450730" name="GCC C++ Compiler" superClass="cdt.managedbuild.tool.gnu.cpp.compiler.base.115230828"/>
-					</fileInfo>
 					<sourceEntries>
 						<entry excluding="cppUtilities" flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name=""/>
 					</sourceEntries>

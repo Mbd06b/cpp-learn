@@ -24,4 +24,36 @@
 		<nature>org.eclipse.cdt.managedbuilder.core.managedBuildNature</nature>
 		<nature>org.eclipse.cdt.managedbuilder.core.ScannerConfigNature</nature>
 	</natures>
+	<linkedResources>
+		<link>
+			<name>RefCount.cpp</name>
+			<type>1</type>
+			<locationURI>PARENT-2-PROJECT_LOC/cppUtilities/WCS_Pointer/RefCount.cpp</locationURI>
+		</link>
+		<link>
+			<name>RefCount.h</name>
+			<type>1</type>
+			<locationURI>PARENT-2-PROJECT_LOC/cppUtilities/WCS_Pointer/RefCount.h</locationURI>
+		</link>
+		<link>
+			<name>WCS_Pointer.h</name>
+			<type>1</type>
+			<locationURI>PARENT-2-PROJECT_LOC/cppUtilities/WCS_Pointer/WCS_Pointer.h</locationURI>
+		</link>
+		<link>
+			<name>WCS_String.cpp</name>
+			<type>1</type>
+			<locationURI>PARENT-2-PROJECT_LOC/cppUtilities/WCS_String/WCS_String.cpp</locationURI>
+		</link>
+		<link>
+			<name>WCS_String.h</name>
+			<type>1</type>
+			<locationURI>PARENT-2-PROJECT_LOC/cppUtilities/WCS_String/WCS_String.h</locationURI>
+		</link>
+		<link>
+			<name>WCS_UB_Array.h</name>
+			<type>1</type>
+			<locationURI>PARENT-2-PROJECT_LOC/cppUtilities/WCS_Pointer/WCS_UB_Array.h</locationURI>
+		</link>
+	</linkedResources>
 </projectDescription>
