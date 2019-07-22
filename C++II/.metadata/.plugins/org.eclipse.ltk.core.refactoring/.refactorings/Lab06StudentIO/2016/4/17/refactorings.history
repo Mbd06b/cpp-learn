@@ -1,3 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<session version="1.0">&#x0A;<refactoring comment="Move &apos;Lab06data.txt&apos; to &apos;Lab06StudentIO&apos;" description="Move &apos;Lab06data.txt&apos; to &apos;Lab06StudentIO&apos;" destination="/Lab06StudentIO" element1="src/Lab06data.txt" flags="7" id="org.eclipse.ltk.core.refactoring.move.resources" resources="1" stamp="1461120342690" updateReferences="true"/>&#x0A;<refactoring comment="Move &apos;Lab06data.txt&apos; to &apos;Lab06StudentIO&apos;" description="Move &apos;Lab06data.txt&apos; to &apos;Lab06StudentIO&apos;" destination="/Lab06StudentIO" element1="src/Lab06data.txt" flags="7" id="org.eclipse.ltk.core.refactoring.move.resources" resources="1" stamp="1461120731768" updateReferences="true"/>
-</session>
